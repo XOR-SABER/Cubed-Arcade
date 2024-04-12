@@ -38,6 +38,21 @@ public class DiscordPresence : MonoBehaviour
         }
     }
 
+    void OnApplicationQuit()
+    {
+        // Clean up Discord presence when the application quits
+        if (discord != null)
+        {
+            // var activityManager = discord.GetActivityManager();
+            // activityManager.ClearActivity((res) =>
+            // {
+            //     if (res != Result.Ok) Debug.LogWarning("Failed to clear Discord activity!");
+                
+            // });
+            discord.Dispose();
+        }
+    }
+
     void LateUpdate() 
     {
         UpdateStatus();
@@ -50,6 +65,7 @@ public class DiscordPresence : MonoBehaviour
             var activity = new Activity
             {
                 Details = details,
+                State = state,
                 Assets = 
                 {
                     LargeImage = largeImage,

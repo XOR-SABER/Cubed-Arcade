@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 public class PlacementSystem : MonoBehaviour {
     [SerializeField]
@@ -6,16 +7,14 @@ public class PlacementSystem : MonoBehaviour {
     private InputSystemLevelEditor inputManager;
     [SerializeField]
     private Grid grid;
+    [Range(0f, 1f)]
+    public float cellInterp = 0.1f;
     private void Update() {
         Vector3 mousePos = inputManager.GetSelectedMapPos();
         Vector3Int gridPosition = grid.WorldToCell(mousePos);
         Vector3 cellWorldPos = grid.CellToWorld(gridPosition);
-
-        // Debug.Log("Mouse Position: " + mousePos);
-        // Debug.Log("Grid Position: " + gridPosition);
-        // Debug.Log("Cell World Position: " + cellWorldPos);
-
         mouseIndicator.transform.position = mousePos;
-        cellIndicator.transform.position = cellWorldPos;
+        // cellIndicator.transform.position = cellWorldPos;
+        cellIndicator.transform.position = Vector3.Lerp(cellIndicator.transform.position, cellWorldPos, cellInterp);
     } 
 }
