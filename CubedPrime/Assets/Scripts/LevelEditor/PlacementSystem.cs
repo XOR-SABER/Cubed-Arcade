@@ -1,4 +1,3 @@
-
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -42,6 +41,12 @@ public class PlacementSystem : MonoBehaviour {
     private TileBase[] allTiles;
     private Vector2 lastPosition;
     private int currentIndex = 0;
+    public enum Modes{
+        PLACEMENT,
+        ERASER,
+        COPY,
+    }
+    public Modes currentMode;
     private void Awake() {
         lastPosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
         DiscordPresence.details = "Messing around with the level editor..";
@@ -56,7 +61,7 @@ public class PlacementSystem : MonoBehaviour {
         Vector2 mousePos = lastPosition;
         Vector3Int gridPosition = getGridPos(mousePos);
         Vector3 cellWorldPos = getCellWorldPos(gridPosition);
-        mouseIndicator.transform.position = mousePos;
+        mouseIndicator.transform.position = new Vector3(mousePos.x, mousePos.y, -1);
         cellIndicator.transform.position = Vector3.Lerp(cellIndicator.transform.position, cellWorldPos, cellInterp);
         handleInput(gridPosition);
     }
@@ -67,12 +72,13 @@ public class PlacementSystem : MonoBehaviour {
         if (!EventSystem.current.IsPointerOverGameObject()) {
             if (Input.GetMouseButton(0))
             {
-                placeTile(gridPosition, allTiles[currentIndex]);
+                if(currentMode == Modes.PLACEMENT) placeTile(gridPosition, allTiles[currentIndex]);
+                if(currentMode == Modes.ERASER) removeTile(gridPosition);
             }
-            if (Input.GetMouseButton(1))
-            {
-                removeTile(gridPosition);
-            }
+            // if (Input.GetMouseButton(1))
+            // {
+            //     removeTile(gridPosition);
+            // }
         }
     }
     private void cameraMovement()
@@ -92,6 +98,7 @@ public class PlacementSystem : MonoBehaviour {
         vCam.m_Lens.OrthographicSize = Mathf.Clamp(vCam.m_Lens.OrthographicSize, minDis, maxDis);
         camTrans.transform.position = pos;
     }
+    
     // Grid and Cell Functions
     public Vector3Int getGridPos(Vector3 mousePos) {
         return grid.WorldToCell(mousePos);

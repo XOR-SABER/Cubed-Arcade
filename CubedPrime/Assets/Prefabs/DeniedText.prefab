@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 4904024459000404377}
-  typingSpeed: 0.01
+  typingSpeed: 1
   typingDelay: 0.2
-  transitionDelay: 3
-  prefix: '//: '
+  transitionDelay: 2
+  prefix: '//:'
