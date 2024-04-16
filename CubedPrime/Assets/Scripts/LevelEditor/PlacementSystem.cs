@@ -7,8 +7,7 @@ public class PlacementSystem : MonoBehaviour {
     [SerializeField]
     private bool isActive = true;
     [Header("Indicators")]
-    [SerializeField]
-    private GameObject mouseIndicator;
+
     [SerializeField]
     private GameObject cellIndicator;
     [Header("Controls")]
@@ -61,7 +60,7 @@ public class PlacementSystem : MonoBehaviour {
         Vector2 mousePos = lastPosition;
         Vector3Int gridPosition = getGridPos(mousePos);
         Vector3 cellWorldPos = getCellWorldPos(gridPosition);
-        mouseIndicator.transform.position = new Vector3(mousePos.x, mousePos.y, -1);
+        // mouseIndicator.transform.position = new Vector3(mousePos.x, mousePos.y, -1);
         cellIndicator.transform.position = Vector3.Lerp(cellIndicator.transform.position, cellWorldPos, cellInterp);
         handleInput(gridPosition);
     }
@@ -72,8 +71,19 @@ public class PlacementSystem : MonoBehaviour {
         if (!EventSystem.current.IsPointerOverGameObject()) {
             if (Input.GetMouseButton(0))
             {
-                if(currentMode == Modes.PLACEMENT) placeTile(gridPosition, allTiles[currentIndex]);
-                if(currentMode == Modes.ERASER) removeTile(gridPosition);
+                switch(currentMode) {
+                    case Modes.PLACEMENT:
+                        placeTile(gridPosition, allTiles[currentIndex]);
+                        break;
+                    case Modes.ERASER:
+                        removeTile(gridPosition);
+                        break;
+                    case Modes.COPY:
+                        copyTile(gridPosition);
+                        break;
+                    default:
+                        break;
+                }
             }
             // if (Input.GetMouseButton(1))
             // {
@@ -122,6 +132,9 @@ public class PlacementSystem : MonoBehaviour {
         if (!checkTilePlaced(position)) return false;
         tiles.SetTile(position, null);
         return true;
+    }
+    public void copyTile(Vector3Int position) {
+
     }
 }
 
