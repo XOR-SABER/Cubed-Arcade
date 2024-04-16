@@ -7,7 +7,11 @@ public class BuildingUI : MonoBehaviour
     [SerializeField]
     private PlacementSystem pSys;
     [SerializeField]
-    private GameObject GridUI;
+    private GameObject GlobalSettingsUI;
+    [SerializeField]
+    private GameObject GridVisualizer;
+    private bool isGridActive = true;
+    private bool isGlobalSettingsActive = false;
     private Animator UIAnimator;
     [SerializeField]
     private TypingText statusText;
@@ -60,10 +64,16 @@ public class BuildingUI : MonoBehaviour
     public void setPlay() {
         
     }
-    public void openGridSettings() {
-        GridUI.SetActive(true);
-    }
     public void closeGridSettings() {
-        GridUI.SetActive(false);
+        GlobalSettingsUI.SetActive(false);
+        isGlobalSettingsActive = false;
     }
+    public void toggleGrid() { 
+        isGridActive = !isGridActive;
+        GridVisualizer.SetActive(isGridActive);
+    }   
+    public void toggleGridUI() { 
+        isGlobalSettingsActive = !isGlobalSettingsActive;
+        GlobalSettingsUI.SetActive(isGlobalSettingsActive);
+    }   
 }
