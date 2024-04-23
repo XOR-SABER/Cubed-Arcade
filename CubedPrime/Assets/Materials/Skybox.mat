@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5075702195578252131
+--- !u!114 &-7682350395656675670
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SkyboxMat
-  m_Shader: {fileID: -6465566751694194690, guid: e6f5f92012ac4814691625f296a22a40, type: 3}
+  m_Name: Skybox
+  m_Shader: {fileID: -6465566751694194690, guid: af7f6c37d1fd3c045aeef33ac7c98d2c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -67,15 +67,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Height: 4
-    - _Intensity: 1
-    - _QueueControl: 1
+    - _Height: 0.5
+    - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _BottomColor: {r: 1, g: 0.8173368, b: 0, a: 0}
+    - _BottomColor: {r: 1, g: 0.32911384, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TopColor: {r: 1, g: 0.5273675, b: 0, a: 0}
-    - _baseColor: {r: 1, g: 0, b: 0, a: 0}
+    - _TopColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
