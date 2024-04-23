@@ -11050,7 +11050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pSys: {fileID: 914842917}
-  GlobalSettingsUI: {fileID: 0}
+  GlobalSettingsUI: {fileID: 366637968}
   GridVisualizer: {fileID: 1310868049}
   statusText: {fileID: 294876081}
   icons:
