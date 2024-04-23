@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SkyboxMat
-  m_Shader: {fileID: -6465566751694194690, guid: 9ba8526e926a013459327d98dfbedb6b, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: e6f5f92012ac4814691625f296a22a40, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -68,6 +68,7 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _Height: 4
+    - _Intensity: 1
     - _QueueControl: 1
     - _QueueOffset: 0
     m_Colors:
@@ -76,4 +77,5 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _TopColor: {r: 1, g: 0.5273675, b: 0, a: 0}
+    - _baseColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
