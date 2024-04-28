@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class TypingText : MonoBehaviour
@@ -10,6 +11,7 @@ public class TypingText : MonoBehaviour
     public float typingSpeed = 0.1f;
     public float typingDelay = 0.2f;
     public float transitionDelay = 2f;
+    public bool autoStart = true;
     
     public string prefix; 
 
@@ -20,9 +22,9 @@ public class TypingText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(textField.text.Length != 0) startType(textField.text);
+        if(textField.text.Length != 0 && autoStart) startType(textField.text);
     }
-
+    
     public void startType(string newText) {
         Debug.Log("Start of type: Text: " + newText);
         if(_isTyping) {
@@ -47,7 +49,7 @@ public class TypingText : MonoBehaviour
         Debug.Log("End of type");
         yield return new WaitForSeconds(transitionDelay);
         Debug.Log("Backspace started.. ");
-        StartCoroutine(BackSpace());
+        if (autoStart) StartCoroutine(BackSpace());
     }
     IEnumerator BackSpace() {
         Debug.Log("In backspace.. ");
@@ -63,5 +65,18 @@ public class TypingText : MonoBehaviour
         if(backLogBuffer.Count != 0) {
             startType(backLogBuffer.Pop());
         }
+    }
+
+    public void RestartType(string newText)
+    {
+        Debug.Log("Start of type: Text: " + newText);
+        StopAllCoroutines();
+
+        _isTyping = false;
+        if(prefix.Length != 0) _initText = prefix + newText;
+        else  _initText = newText;
+        textField.text = "";
+        
+        StartCoroutine(Type());
     }
 }

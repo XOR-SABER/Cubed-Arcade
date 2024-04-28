@@ -152,6 +152,51 @@ MonoBehaviour:
   typingDelay: 0
   transitionDelay: 3
   prefix: 
+--- !u!1 &1284118857057441564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540664883047606308}
+  - component: {fileID: 6841479021156884185}
+  m_Layer: 0
+  m_Name: DiscordPresence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1540664883047606308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284118857057441564}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.209991, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6633550446793244740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6841479021156884185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284118857057441564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 106bac024bb95c844a390c3530ac3d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applicationID: 1228270738067296307
 --- !u!1 &1522885513541620059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1493,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1540664883047606308}
   - {fileID: 5248780625831346069}
   - {fileID: 8276062061845954850}
   - {fileID: 4265991787152985601}
@@ -2268,6 +2314,7 @@ GameObject:
   - component: {fileID: 3592144931361727146}
   - component: {fileID: 1909795048672718438}
   - component: {fileID: 1310337002407574546}
+  - component: {fileID: 3282079584142481472}
   m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
@@ -2412,6 +2459,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3282079584142481472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692692061094893239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33f6dbb41eea9741a3dd864d6b4996f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMesh: {fileID: 1909795048672718438}
+  colorChangeSpeed: 2
+  saturation: 1
+  startDelay: 0
+  isPerText: 0
 --- !u!1 &6893673216684709265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,7 +2662,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11.209991, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6633550446793244740}
@@ -2631,7 +2695,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2970316dc2534424d81fd20a1e02dd2e, type: 2}
+  - {fileID: 2100000, guid: 4f9179dbd38299f47b0066a1cfd3f9b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

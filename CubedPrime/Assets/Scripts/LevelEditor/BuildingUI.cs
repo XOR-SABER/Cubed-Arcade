@@ -9,9 +9,12 @@ public class BuildingUI : MonoBehaviour
     [SerializeField]
     private GameObject GlobalSettingsUI;
     [SerializeField]
+    private GameObject AssetsUI;
+    [SerializeField]
     private GameObject GridVisualizer;
     private bool isGridActive = true;
     private bool isGlobalSettingsActive = false;
+    private bool isAssetUIActive = false;
     private Animator UIAnimator;
     [SerializeField]
     private TypingText statusText;
@@ -35,14 +38,14 @@ public class BuildingUI : MonoBehaviour
             isTextUpdated = true;
             statusText.startType(currentStatus);
         }
-        if (!EventSystem.current.IsPointerOverGameObject()) closeGridSettings();
     }
     public void setCursorIcon(int index) {
         Cursor.SetCursor(icons[index % icons.Length].texture, Vector2.zero, CursorMode.Auto);
     }
     public void setVis(bool value) {
         UIAnimator.SetBool("inPlaymode", !value);
-        closeGridSettings();
+        if(isAssetUIActive) toggleAssetUI();
+        if(isGlobalSettingsActive) toggleGridUI();
     }
     public void setErase() {
         
@@ -64,10 +67,7 @@ public class BuildingUI : MonoBehaviour
     public void setPlay() {
         
     }
-    public void closeGridSettings() {
-        GlobalSettingsUI.SetActive(false);
-        isGlobalSettingsActive = false;
-    }
+    
     public void toggleGrid() { 
         isGridActive = !isGridActive;
         GridVisualizer.SetActive(isGridActive);
@@ -75,5 +75,11 @@ public class BuildingUI : MonoBehaviour
     public void toggleGridUI() { 
         isGlobalSettingsActive = !isGlobalSettingsActive;
         GlobalSettingsUI.SetActive(isGlobalSettingsActive);
+        if(isAssetUIActive) toggleAssetUI();
     }   
+    public void toggleAssetUI() {
+        isAssetUIActive = !isAssetUIActive;
+        AssetsUI.SetActive(isAssetUIActive);
+        if(isGlobalSettingsActive) toggleGridUI();
+    }
 }
