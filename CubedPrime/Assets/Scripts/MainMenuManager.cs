@@ -30,18 +30,21 @@ public class MainMenuManager : MonoBehaviour
     public void OnClickLoadGameScene()
     {
         audioMan.Play("ModeButtonSelect");
+        audioMan.fadeOutCurrentTrack(1f);
         SceneManager.LoadScene(gameScene);
     }
 
     public void OnClickLoadTutorialScene()
     {
         audioMan.Play("ModeButtonSelect");
+        audioMan.fadeOutCurrentTrack(1f);
         SceneManager.LoadScene(tutorialScene);
     }
     
     public void OnClickLoadLevelEditorScene()
     {
         audioMan.Play("ModeButtonSelect");
+        audioMan.fadeOutCurrentTrack(1f);
         SceneManager.LoadScene(levelEditorScene);
     }
 
