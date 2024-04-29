@@ -17,7 +17,7 @@ public class LoadingSceneLogic : MonoBehaviour
         topTextField.startType(sceneSw.levels[sceneSw.levelToGoto].GameMode);
         bottomTextField.startType(sceneSw.levels[sceneSw.levelToGoto].LevelName);
         DiscordPresence.state = "Loading into " + sceneSw.levels[sceneSw.levelToGoto].LevelName;
-        StartCoroutine(loadTimer(15f));
+        StartCoroutine(loadTimer(7.5f));
     }
 
     IEnumerator loadTimer(float sec) {

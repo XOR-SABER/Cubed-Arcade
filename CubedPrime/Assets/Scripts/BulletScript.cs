@@ -29,7 +29,8 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
         Rigidbody2D body = other.GetComponent<Rigidbody2D>();
-        if(body != null) {
+        if(body == null) return;
+        if(body.CompareTag("BulletSolid")) {
             Destroy(gameObject);
         }
     }
