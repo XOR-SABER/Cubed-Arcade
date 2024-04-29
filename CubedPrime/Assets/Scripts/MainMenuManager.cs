@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
+using Scripts;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class MainMenuManager : MonoBehaviour
 {
     
@@ -11,6 +8,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject mainMenuCamera;
     public GameObject mainMenuCanvas;
     public Animator startAnimation;
+    public SceneSwitcher sceneSwitch;
 
     public GameObject changeLogCamera;
 
@@ -24,28 +22,28 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         startAnimation.SetTrigger("StartTransition");
-        audioMan.Play("MainMenuTheme");
+        audioMan.fadeInNewTrack("MainMenuTheme", 0.5f);
     }
 
     public void OnClickLoadGameScene()
     {
         audioMan.Play("ModeButtonSelect");
         audioMan.fadeOutCurrentTrack(1f);
-        SceneManager.LoadScene(gameScene);
+        sceneSwitch.FadeTo(gameScene);
     }
 
     public void OnClickLoadTutorialScene()
     {
         audioMan.Play("ModeButtonSelect");
         audioMan.fadeOutCurrentTrack(1f);
-        SceneManager.LoadScene(tutorialScene);
+        sceneSwitch.FadeTo(tutorialScene);
     }
     
     public void OnClickLoadLevelEditorScene()
     {
         audioMan.Play("ModeButtonSelect");
         audioMan.fadeOutCurrentTrack(1f);
-        SceneManager.LoadScene(levelEditorScene);
+        sceneSwitch.FadeTo(levelEditorScene);
     }
 
     public void OnClickLoadChangeLog()

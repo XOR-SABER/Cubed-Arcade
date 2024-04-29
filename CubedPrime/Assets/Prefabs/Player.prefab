@@ -386,7 +386,7 @@ MonoBehaviour:
   secondaryHolster: {fileID: 7040283292542869427}
   weaponLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   pickupDistance: 4
 --- !u!1 &7040283292542869427
 GameObject:

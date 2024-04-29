@@ -49,7 +49,9 @@ public class WeaponSwitching : MonoBehaviour
 
     void PickUpWeapon()
     {
+        Debug.Log("Ride on Bus");
         Collider2D[] nearbyWeaponColliders = Physics2D.OverlapCircleAll(weaponPickupPoint.position, pickupDistance, weaponLayer);
+        Debug.Log("Weapons Detected: " + nearbyWeaponColliders.Length.ToString());
         foreach (Collider2D nearbyWeaponCollider in nearbyWeaponColliders)
         {
             Weapon newWeapon = nearbyWeaponCollider.GetComponent<Weapon>();

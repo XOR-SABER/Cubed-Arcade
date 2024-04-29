@@ -1,11 +1,9 @@
 using System;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
     public Joystick moveJoystick;
     public Joystick aimJoystick;
 

@@ -1,5 +1,9 @@
 using UnityEngine;
+
+// This code only works on desktop builds.
+#if UNITY_STANDALONE
 using Discord;
+#endif
 
 public class DiscordPresence : MonoBehaviour
 {
@@ -15,8 +19,12 @@ public class DiscordPresence : MonoBehaviour
     public static string largeImage = "game_logo";
     public static string largeText = "Cubed Prime";
     private long time;    
+    #if UNITY_STANDALONE
     public Discord.Discord discord;
+    #endif
+
     private static bool instanceExists;
+    
     void Awake()  {
         if (!instanceExists) {
             instanceExists = true;
@@ -27,6 +35,7 @@ public class DiscordPresence : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #if UNITY_STANDALONE
     void Start() {
         // Log in with the Application ID
         discord = new Discord.Discord(applicationID, (System.UInt64)CreateFlags.NoRequireDiscord);
@@ -80,4 +89,5 @@ public class DiscordPresence : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endif
 }
