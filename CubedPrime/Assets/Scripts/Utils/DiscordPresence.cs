@@ -19,21 +19,19 @@ public class DiscordPresence : MonoBehaviour
     public static string largeImage = "game_logo";
     public static string largeText = "Cubed Prime";
     private long time;    
+    private static DiscordPresence instance;
     #if UNITY_STANDALONE
     public Discord.Discord discord;
     #endif
-
-    private static bool instanceExists;
     
     void Awake()  {
-        if (!instanceExists) {
-            instanceExists = true;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (FindObjectsOfType(GetType()).Length > 1) {
+        if (instance == null) instance = this;
+        else {
             Debug.Log("Discord presence already exists");
             Destroy(gameObject);
+            return;
         }
+        DontDestroyOnLoad(gameObject);
     }
     #if UNITY_STANDALONE
     void Start() {

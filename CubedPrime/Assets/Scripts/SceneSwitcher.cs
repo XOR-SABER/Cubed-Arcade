@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,16 +10,28 @@ namespace Scripts
     {
         public Image img;
         public AnimationCurve curve;
+        public LevelDetails[] levels;
+        public static SceneSwitcher instance;
+        public int levelToGoto;
 
+        void Awake() {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            if (instance == null) instance = this;
+            else
+            {
+                Destroy(gameObject);
+                return;
+            }
+            DontDestroyOnLoad(gameObject);
+        }
         private void Start()
         {
-            DontDestroyOnLoad(gameObject);
+            img = FindObjectOfType<FadeImage>().fadeIMG;
             StartCoroutine(FadeIn());
         }
 
         public void FadeTo(string sceneToFadeInto)
         { 
-            SceneManager.GetSceneByName(sceneToFadeInto);
             StartCoroutine(FadeOut(sceneToFadeInto));
         }
 
@@ -52,6 +63,11 @@ namespace Scripts
             }
 
             SceneManager.LoadScene(scene);
+        }
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            img = FindObjectOfType<FadeImage>().fadeIMG;
+            StartCoroutine(FadeIn());
         }
     }
 }

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 76c409bcf66d13d4b97478bf81e86adc
+  - enabled: 1
+    path: Assets/Scenes/Levels/RecRoom.unity
+    guid: ac4ff671c21bccb41bf633214d3eecb4
   m_configObjects: {}

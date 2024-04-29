@@ -29,6 +29,7 @@ public class MainMenuManager : MonoBehaviour
     {
         audioMan.Play("ModeButtonSelect");
         audioMan.fadeOutCurrentTrack(1f);
+        sceneSwitch.levelToGoto = 0;
         sceneSwitch.FadeTo(gameScene);
     }
 

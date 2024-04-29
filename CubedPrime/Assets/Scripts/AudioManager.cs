@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AnimationCurve curve;
     private Dictionary<string, int> soundMap = new Dictionary<string, int>(); 
     private AudioSource currentTrack;
+
     void Awake() {
         if (instance == null) instance = this;
         else

@@ -80,6 +80,20 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
+  - audioName: LevelTrack2
+    clip: {fileID: 8300000, guid: 7f168756f7382ad47a6a90bffa244b94, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 1
+  - audioName: LevelTrack3
+    clip: {fileID: 8300000, guid: a72d62e08486ae14496beec486f303e9, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 1
   - audioName: Temp
     clip: {fileID: 8300000, guid: c96057ef4c6963744b5aa778bac11591, type: 3}
     volume: 0.5

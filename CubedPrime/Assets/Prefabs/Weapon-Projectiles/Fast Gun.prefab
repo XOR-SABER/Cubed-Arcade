@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7562239258590473808}
   - component: {fileID: 4968732557534253597}
   - component: {fileID: -950641277083572785}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Fast Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3361546805415272323}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.6, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.6, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8568425533484806874}
