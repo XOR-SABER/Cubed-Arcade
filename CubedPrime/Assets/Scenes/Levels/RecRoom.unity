@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8711863853553988945, guid: d9febe85ba9720a4a94e666bbc977a55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 4.261
       objectReference: {fileID: 0}
     - target: {fileID: 8711863853553988945, guid: d9febe85ba9720a4a94e666bbc977a55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4625,6 +4625,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325039887}
   m_CullTransparentMesh: 1
+--- !u!4 &1340775993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3523007105383939611, guid: dfd666cf045f94739953ab746265b457, type: 3}
+  m_PrefabInstance: {fileID: 1448570312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1448570312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4633,6 +4638,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4557308999596299078, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557308999596299078, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557308999596299078, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826435959527079787, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: EquipPos.y
+      value: -2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826435959527079787, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: weaponPickupPoint
+      value: 
+      objectReference: {fileID: 1340775993}
     - target: {fileID: 5540230005384580758, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: m_Name
       value: Player
