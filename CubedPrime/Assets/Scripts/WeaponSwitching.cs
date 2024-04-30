@@ -5,7 +5,8 @@ public class WeaponSwitching : MonoBehaviour
     public Weapon primary;
     public Weapon secondary;
     public Transform weaponPickupPoint;
-    public GameObject secondaryHolster;
+    public Vector3 EquipPos;
+    public GameObject offhandSlot;
     public LayerMask weaponLayer;
     public float pickupDistance = 2f;
     
@@ -21,6 +22,7 @@ public class WeaponSwitching : MonoBehaviour
 
     void Update()
     {
+        // Todo: make Angel Look at this 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SwitchWeapon();
@@ -49,47 +51,71 @@ public class WeaponSwitching : MonoBehaviour
 
     void PickUpWeapon()
     {
-        Debug.Log("Ride on Bus");
         Collider2D[] nearbyWeaponColliders = Physics2D.OverlapCircleAll(weaponPickupPoint.position, pickupDistance, weaponLayer);
         Debug.Log("Weapons Detected: " + nearbyWeaponColliders.Length.ToString());
         foreach (Collider2D nearbyWeaponCollider in nearbyWeaponColliders)
         {
             Weapon newWeapon = nearbyWeaponCollider.GetComponent<Weapon>();
-            if (newWeapon != null && newWeapon != primary && newWeapon != secondary)
-            {
-                if (secondary != null)
-                {
-                    Destroy(secondary.gameObject);
-                }
-
-                secondary = newWeapon;
-                var transform1 = secondary.transform;
-                transform1.parent = secondaryHolster.transform;
-                transform1.localPosition = Vector3.zero;
-                transform1.localRotation = Quaternion.identity;
-                
-                EquipSecondary(); 
-                
-                Debug.Log("Picked up " + secondary.name);
-                return; 
+            // If no weapon is not avaliable
+            if(newWeapon == null) continue;
+            // If we already have it as primary
+            if(newWeapon == primary) continue;
+            // If we already have it as secondary
+            if(newWeapon == secondary) continue;
+            // If already have a different 
+            if (secondary != null) {
+                // Drop the bitch.. 
+                Instantiate(secondary.gameObject, transform);
+                Destroy(secondary.gameObject);
             }
+
+            // Okay Finally assign the weapon.    
+            secondary = newWeapon;
+            // secondary.transform.parent = weaponPickupPoint.transform;
+            // secondary.transform.localPosition = weaponPickupPoint.transform.position;
+            // secondary.transform.localRotation = weaponPickupPoint.transform.rotation;
+            dequipWeapon(primary);
+            var transform1 = secondary.transform;
+            transform1.parent = transform;
+            transform.position = weaponPickupPoint.transform.position;
+            transform.localRotation = weaponPickupPoint.transform.rotation;
+            //  transform1.parent = weaponPickupPoint.transform;
+            // transform1.localPosition = Vector3.zero;
+            transform1.parent = weaponPickupPoint.transform;
+            // transform1.localPosition = Vector3.zero;
+            // transform1.localRotation = Quaternion.identity;
+            
+
+
+            
+            EquipSecondary(); 
+            
+            Debug.Log("Picked up " + secondary.name);
+            return; 
         }
     }
 
     void EquipPrimary()
     {
-        secondary.isEquipped = false;
-        secondary.gameObject.SetActive(false);
-        primary.isEquipped = true;
-        primary.gameObject.SetActive(true);
+        dequipWeapon(secondary);
+        equipWeapon(primary);
     }
 
     void EquipSecondary()
     {
-        primary.isEquipped = false;
-        primary.gameObject.SetActive(false);
-        secondary.isEquipped = true;
-        secondary.gameObject.SetActive(true);
+        dequipWeapon(primary);
+        equipWeapon(secondary);
+    }
+
+    void dequipWeapon(Weapon toDequip) {
+        toDequip.isEquipped = false;
+        toDequip.transform.localPosition = offhandSlot.transform.position;
+    }
+
+    void equipWeapon(Weapon toEquip) {
+        toEquip.isEquipped = true;
+        // toEquip.transform.parent = weaponPickupPoint.transform;
+        // toEquip.transform.rotation = Quaternion.identity;
     }
     
     void OnDrawGizmosSelected()
