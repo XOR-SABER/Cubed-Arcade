@@ -37,18 +37,9 @@ public class WeaponSwitching : MonoBehaviour
 
     void SwitchWeapon()
     {
-        if (secondary == null)
-        {
-            return;
-        }
-        if (primary.isEquipped)
-        {
-            EquipSecondary();
-        }
-        else
-        {
-            EquipPrimary();
-        }
+        if (secondary == null) return;
+        if (primary.isEquipped) EquipSecondary();
+        else EquipPrimary();
     }
 
     void PickUpWeapon()
@@ -57,7 +48,9 @@ public class WeaponSwitching : MonoBehaviour
         Debug.Log("Weapons Detected: " + nearbyWeaponColliders.Length.ToString());
         foreach (Collider2D nearbyWeaponCollider in nearbyWeaponColliders)
         {
+
             Weapon newWeapon = nearbyWeaponCollider.GetComponent<Weapon>();
+            Debug.Log(newWeapon);
             // If no weapon is not avaliable
             if(newWeapon == null) continue;
             // If we already have it as primary
@@ -78,7 +71,7 @@ public class WeaponSwitching : MonoBehaviour
             // Transform to a point!
             transform1.parent = weaponPickupPoint.transform;
             transform1.localPosition = Vector3.zero;
-            transform1.localPosition = EquipPos;
+            transform1.localPosition = secondary.equipOffset;
             transform1.localRotation = weaponPickupPoint.transform.localRotation;
 
 

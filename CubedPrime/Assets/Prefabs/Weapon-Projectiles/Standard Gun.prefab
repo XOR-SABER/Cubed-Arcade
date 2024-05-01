@@ -99,9 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
+  equipOffset: {x: 0, y: 2.55, z: 0}
   firePoint: {fileID: 4282382088284823514}
   projectilePrefab: {fileID: 2592730709790584201, guid: 27201929704fcd6499d8ad460a851ee9, type: 3}
+  fireRate: 2
   isEquipped: 0
 --- !u!61 &5379849622557117443
 BoxCollider2D:
