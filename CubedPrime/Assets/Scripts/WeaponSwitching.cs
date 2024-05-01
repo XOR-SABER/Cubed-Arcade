@@ -1,3 +1,5 @@
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
@@ -71,20 +73,13 @@ public class WeaponSwitching : MonoBehaviour
 
             // Okay Finally assign the weapon.    
             secondary = newWeapon;
-            // secondary.transform.parent = weaponPickupPoint.transform;
-            // secondary.transform.localPosition = weaponPickupPoint.transform.position;
-            // secondary.transform.localRotation = weaponPickupPoint.transform.rotation;
             dequipWeapon(primary);
             var transform1 = secondary.transform;
-            transform1.parent = transform;
-            transform.position = weaponPickupPoint.transform.position;
-            transform.localRotation = weaponPickupPoint.transform.rotation;
-            //  transform1.parent = weaponPickupPoint.transform;
-            // transform1.localPosition = Vector3.zero;
+            // Transform to a point!
             transform1.parent = weaponPickupPoint.transform;
-            // transform1.localPosition = Vector3.zero;
-            // transform1.localRotation = Quaternion.identity;
-            
+            transform1.localPosition = Vector3.zero;
+            transform1.localPosition = EquipPos;
+            transform1.localRotation = weaponPickupPoint.transform.localRotation;
 
 
             
@@ -109,13 +104,12 @@ public class WeaponSwitching : MonoBehaviour
 
     void dequipWeapon(Weapon toDequip) {
         toDequip.isEquipped = false;
-        toDequip.transform.localPosition = offhandSlot.transform.position;
+        toDequip.gameObject.SetActive(false);
     }
 
     void equipWeapon(Weapon toEquip) {
         toEquip.isEquipped = true;
-        // toEquip.transform.parent = weaponPickupPoint.transform;
-        // toEquip.transform.rotation = Quaternion.identity;
+        toEquip.gameObject.SetActive(true);
     }
     
     void OnDrawGizmosSelected()
