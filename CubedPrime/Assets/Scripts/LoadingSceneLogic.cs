@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class LoadingSceneLogic : MonoBehaviour
 {
-    public SceneSwitcher sceneSw;
-    public AudioManager audMan;
+
     public TypingText bottomTextField;
     public TypingText topTextField;
+    private SceneSwitcher _sceneSw;
+    private AudioManager _audMan;
     // Start is called before the first frame update
     void Start()
     {
-        sceneSw = SceneSwitcher.instance;
-        audMan = AudioManager.instance;
-        audMan.fadeInNewTrack(sceneSw.levels[sceneSw.levelToGoto].levelTheme, 1f);
-        topTextField.startType(sceneSw.levels[sceneSw.levelToGoto].GameMode);
-        bottomTextField.startType(sceneSw.levels[sceneSw.levelToGoto].LevelName);
-        DiscordPresence.state = "Loading into " + sceneSw.levels[sceneSw.levelToGoto].LevelName;
+        _sceneSw = SceneSwitcher.instance;
+        _audMan = AudioManager.instance;
+        _audMan.fadeInNewTrack(_sceneSw.levels[_sceneSw.levelToGoto].levelTheme, 1f);
+        topTextField.startType(_sceneSw.levels[_sceneSw.levelToGoto].GameMode);
+        bottomTextField.startType(_sceneSw.levels[_sceneSw.levelToGoto].LevelName);
+        DiscordPresence.state = "Loading into " + _sceneSw.levels[_sceneSw.levelToGoto].LevelName;
         StartCoroutine(loadTimer(7.5f));
     }
 
     IEnumerator loadTimer(float sec) {
         yield return new WaitForSeconds(sec);
         // Load to recRoom for now.. 
-        sceneSw.FadeTo(sceneSw.levels[sceneSw.levelToGoto].SceneName);
+        _sceneSw.FadeTo(_sceneSw.levels[_sceneSw.levelToGoto].SceneName);
     }
 }

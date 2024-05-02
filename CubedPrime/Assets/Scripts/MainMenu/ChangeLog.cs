@@ -16,7 +16,7 @@ public class ChangeLog : MonoBehaviour
 
     public string fileName;
     public string folderName;
-    public AudioManager audioMan;
+    private AudioManager _audioMan;
 
     public List<string> titleIdentifier = new List<string>();
     public List<string> pageIdentifier = new List<string>();
@@ -27,20 +27,21 @@ public class ChangeLog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _audioMan = AudioManager.instance;
         Parse();
         LoadPage();
     }
 
     public void LoadNextPage()
     {
-        audioMan.Play("ButtonConfirm");
+        _audioMan.Play("ButtonConfirm");
         _index++;
         LoadPage();
     }
 
     public void LoadPreviewsPage()
     {
-        audioMan.Play("ButtonDeConfirm");
+        _audioMan.Play("ButtonDeConfirm");
         _index--;
         LoadPage();
     }

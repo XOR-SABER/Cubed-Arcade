@@ -1,25 +1,27 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
     public AnimationCurve curve;
-    private Dictionary<string, int> soundMap = new Dictionary<string, int>(); 
-    private AudioSource currentTrack;
+    public static AudioSource currentTrack;
+    private static Dictionary<string, int> _soundMap;
 
     void Awake() {
-        if (instance == null) instance = this;
-        else
+        
+        if (instance != null && instance != this)
         {
-            Destroy(gameObject);
-                return;
+            Destroy(gameObject); // Destroy if another instance exists.
+            return;
         }
+        instance = this;
+        
         DontDestroyOnLoad(gameObject);
         int index = 0;
+        _soundMap = new Dictionary<string, int>();
         // Loading.. 
         foreach (Sound s in sounds)
         {
@@ -30,23 +32,36 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             Debug.Log(string.Format("Adding {0}, {1} to the map", s.audioName, index));
-            soundMap.Add(s.audioName, index);
+            _soundMap.Add(s.audioName, index);
             index++;
         }
     }
-
     private Sound getSound(string name) {
-        if(!soundMap.ContainsKey(name)) return null;
-        int index = soundMap[name];
+        if(!_soundMap.ContainsKey(name)) return null;
+        int index = _soundMap[name];
         return sounds[index];
     }
 
     public void Play(string name) {
-        Sound s = getSound(name);
-        if (s == null) {
-            Debug.Log(string.Format("Sound: {0} not found!", name));
+        if (string.IsNullOrEmpty(name)) {
+            Debug.LogError("Attempted to play a sound with a null or empty name.");
             return;
         }
+        Sound s = getSound(name);
+        if (s == null || s.source == null) {
+            Debug.Log(string.Format("Sound: {0} not found!", name));
+            if(_soundMap.Values.Count == 0) Debug.Log("The _soundmap is empty!");
+            foreach(var v in _soundMap) {
+                Debug.Log(v.Value);
+            }
+            Debug.Log(sounds.Length);
+            foreach (var item in sounds)
+            {
+                Debug.Log(item.audioName);
+            }
+            return;
+        }
+        Debug.Log(s.audioName);
         if(!s.isMusicTrack) {
             s.source.Play();
             return;
@@ -70,11 +85,9 @@ public class AudioManager : MonoBehaviour
 		{
 			t -= Time.deltaTime / fadeTime;
             currentTrack.volume = curve.Evaluate(t);
-            Debug.Log(currentTrack.volume);	
 			yield return 0;
 		}
         currentTrack.Stop();
-        Debug.Log("Fade done");
         currentTrack.volume = prevVolume;
         currentTrack = null;
         if(isToFadeIn) {
@@ -93,12 +106,9 @@ public class AudioManager : MonoBehaviour
             t += Time.deltaTime;
             float normalizedTime = t / fadeTime;
             currentTrack.volume = Mathf.Clamp(curve.Evaluate(normalizedTime) * prevVolume, 0, prevVolume);
-            Debug.Log(currentTrack.volume);
             yield return 0;
         }
-        Debug.Log("Fading complete");
         currentTrack.volume = prevVolume;
-        Debug.Log(currentTrack.volume);
     }
 
     public void fadeInNewTrack(string name, float fadeTime) {

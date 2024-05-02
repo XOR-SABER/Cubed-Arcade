@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BulletScript : MonoBehaviour
 {
     public float speed = 50f;
     public int damage = 50;
     public int numberOfPierces = 1;
+    public GameObject wallParticles;
     private Vector2 _playerVelocity;
     
 
@@ -35,6 +34,9 @@ public class BulletScript : MonoBehaviour
         if(body.CompareTag("BulletSolid")) {
             numberOfPierces--;
         }
-        if(numberOfPierces <= 0) Destroy(gameObject);
+        if(numberOfPierces <= 0) {
+            Destroy(gameObject);
+            Instantiate(wallParticles, transform.position, Quaternion.Inverse(transform.rotation));
+        }
     }
 }
