@@ -30,6 +30,7 @@ public class Minimap : MonoBehaviour
 
     private void HandleEnemyVisible()
     {
+        if(_enemies == null) return;
         for (int i = 0; i < _enemies.Length; i++)
         {
             _enemies[i].SetActive(Vector3.Angle(_player.transform.up, _enemies[i].transform.position - _player.position) <= angle);
