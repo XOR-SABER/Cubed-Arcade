@@ -25,7 +25,6 @@ public class TypingText : MonoBehaviour
     }
     
     public void startType(string newText) {
-        Debug.Log("Start of type: Text: " + newText);
         if(_isTyping) {
             backLogBuffer.Push(newText);
             return;
@@ -45,13 +44,10 @@ public class TypingText : MonoBehaviour
             textField.text += c;
             yield return new WaitForSeconds(typingSpeed);
         }
-        Debug.Log("End of type");
         yield return new WaitForSeconds(transitionDelay);
-        Debug.Log("Backspace started.. ");
         if (autoStart) StartCoroutine(BackSpace());
     }
     IEnumerator BackSpace() {
-        Debug.Log("In backspace.. ");
         StringBuilder sb = new StringBuilder(textField.text);
         yield return new WaitForSeconds(typingDelay);
         foreach (char c in _initText)
@@ -68,7 +64,6 @@ public class TypingText : MonoBehaviour
 
     public void RestartType(string newText)
     {
-        Debug.Log("Start of type: Text: " + newText);
         StopAllCoroutines();
 
         _isTyping = false;

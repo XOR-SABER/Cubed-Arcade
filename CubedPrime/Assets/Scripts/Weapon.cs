@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private float nextFireTime;
+    
     public Vector3 equipOffset;
     public Transform firePoint;
     public GameObject projectilePrefab;
@@ -12,16 +12,17 @@ public class Weapon : MonoBehaviour
     public bool isRevUp = false;
     public float maxRevTime = 2f;
     public AnimationCurve revUpCurve;
+    public bool isEquipped = false;
+    public GameObject shootParticles;
     private float _timeHeld = 0;
+    private float _nextFireTime;
     //Magazine/Reload?
     //Particle System for ShootFunction?
-
-    public bool isEquipped = false;
 
     private void Update()
     {
         if (!isEquipped) return;
-        if (Time.time < nextFireTime) return;
+        if (Time.time < _nextFireTime) return;
 
         if (Input.GetButton("Fire1"))
         {
@@ -30,14 +31,14 @@ public class Weapon : MonoBehaviour
                 if (_timeHeld < 1) _timeHeld += Time.deltaTime * (20 / maxRevTime);
                 float curveValue = revUpCurve.Evaluate(_timeHeld / maxRevTime); // Normalize time held to the max rev time
                 Shoot();
-                nextFireTime = Time.time + (1f / (fireRate * curveValue));
-                Debug.Log($"Shooting! Time held: {_timeHeld:F2}, Curve Value: {curveValue:F2}, Next Fire Time: {nextFireTime:F2}");
+                _nextFireTime = Time.time + (1f / (fireRate * curveValue));
+                Debug.Log($"Shooting! Time held: {_timeHeld:F2}, Curve Value: {curveValue:F2}, Next Fire Time: {_nextFireTime:F2}");
             }
             else
             {
                 Shoot();
-                nextFireTime = Time.time + 1f / fireRate;
-                Debug.Log($"Shooting without rev up. Next Fire Time: {nextFireTime:F2}");
+                _nextFireTime = Time.time + 1f / fireRate;
+                Debug.Log($"Shooting without rev up. Next Fire Time: {_nextFireTime:F2}");
             }
         }
         else
@@ -50,6 +51,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
+        Instantiate(shootParticles, firePoint.position, firePoint.rotation);
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 }

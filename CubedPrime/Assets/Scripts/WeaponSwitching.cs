@@ -60,7 +60,7 @@ public class WeaponSwitching : MonoBehaviour
             // If already have a different 
             if (secondary != null) {
                 // Drop the bitch.. 
-                Instantiate(secondary.gameObject, transform);
+                // Instantiate(secondary.gameObject, transform);
                 Destroy(secondary.gameObject);
             }
 

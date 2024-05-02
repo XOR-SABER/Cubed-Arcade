@@ -1,6 +1,9 @@
 using System.Collections;
-using Scripts;
+using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class MainMenuManager : MonoBehaviour
 {
     
@@ -8,9 +11,9 @@ public class MainMenuManager : MonoBehaviour
     public GameObject mainMenuCamera;
     public GameObject mainMenuCanvas;
     public Animator startAnimation;
-    public SceneSwitcher sceneSwitch;
 
     public GameObject changeLogCamera;
+    public GameObject settingsCamera;
 
     public float transitionDelay = 0f;
 
@@ -18,33 +21,29 @@ public class MainMenuManager : MonoBehaviour
     public string levelEditorScene;
     public string tutorialScene;
     
-    // Start is called before the first frame update
+    // Start is called before the first frame updates
     void Start()
     {
         startAnimation.SetTrigger("StartTransition");
-        audioMan.fadeInNewTrack("MainMenuTheme", 0.5f);
+        audioMan.Play("MainMenuTheme");
     }
 
     public void OnClickLoadGameScene()
     {
         audioMan.Play("ModeButtonSelect");
-        audioMan.fadeOutCurrentTrack(1f);
-        sceneSwitch.levelToGoto = 0;
-        sceneSwitch.FadeTo(gameScene);
+        SceneManager.LoadScene(gameScene);
     }
 
     public void OnClickLoadTutorialScene()
     {
         audioMan.Play("ModeButtonSelect");
-        audioMan.fadeOutCurrentTrack(1f);
-        sceneSwitch.FadeTo(tutorialScene);
+        SceneManager.LoadScene(tutorialScene);
     }
     
     public void OnClickLoadLevelEditorScene()
     {
         audioMan.Play("ModeButtonSelect");
-        audioMan.fadeOutCurrentTrack(1f);
-        sceneSwitch.FadeTo(levelEditorScene);
+        SceneManager.LoadScene(levelEditorScene);
     }
 
     public void OnClickLoadChangeLog()
@@ -54,11 +53,20 @@ public class MainMenuManager : MonoBehaviour
         mainMenuCamera.SetActive(false);
         changeLogCamera.SetActive(true);
     }
+    
+    public void OnClickSettings()
+    {
+        audioMan.Play("ModeButtonSelect");
+        mainMenuCanvas.SetActive(false);
+        mainMenuCamera.SetActive(false);
+        settingsCamera.SetActive(true);
+    }
 
     public void OnClickLoadMainMenu()
     {
         audioMan.Play("ModeButtonSelect");
         changeLogCamera.SetActive(false);
+        settingsCamera.SetActive(false);
         mainMenuCamera.SetActive(true);
         StartCoroutine(DelayTransition(transitionDelay));
     }
@@ -67,5 +75,10 @@ public class MainMenuManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         mainMenuCanvas.SetActive(true);
+    }
+
+    public void OnClickQuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -7,17 +7,18 @@ public class BulletScript : MonoBehaviour
 {
     public float speed = 50f;
     public int damage = 50;
+    public int numberOfPierces = 1;
+    private Vector2 _playerVelocity;
     
-    private Vector2 playerVelocity;
 
     public void SetPlayerVelocity(Vector2 velocity)
     {
-        playerVelocity = velocity;
+        _playerVelocity = velocity;
     }
 
     void Update()
     {
-        transform.Translate((Vector2.up + playerVelocity) * (speed * Time.deltaTime));
+        transform.Translate((Vector2.up + _playerVelocity) * (speed * Time.deltaTime));
         Destroy(gameObject, 2f);
     }
 
@@ -26,12 +27,14 @@ public class BulletScript : MonoBehaviour
         Enemy enemy = other.GetComponent<Enemy>();
         if (enemy != null) {
             enemy.TakeDamage(damage);
-            Destroy(gameObject);
+            numberOfPierces--;
         }
+        if(numberOfPierces <= 0) Destroy(gameObject);
         Rigidbody2D body = other.GetComponent<Rigidbody2D>();
         if(body == null) return;
         if(body.CompareTag("BulletSolid")) {
-            Destroy(gameObject);
+            numberOfPierces--;
         }
+        if(numberOfPierces <= 0) Destroy(gameObject);
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3280918677917350861}
   - component: {fileID: 5379849622557117443}
   m_Layer: 0
-  m_Name: Standard Gun
+  m_Name: Glock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.45, y: 1.125, z: 0}
+  m_LocalScale: {x: 25, y: 25, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4282382088284823514}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 653e55e6e95663342b6770801ae66ed5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,11 +99,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipOffset: {x: 0, y: 2.55, z: 0}
+  equipOffset: {x: 0, y: 2.35, z: 0}
   firePoint: {fileID: 4282382088284823514}
   projectilePrefab: {fileID: 2592730709790584201, guid: 27201929704fcd6499d8ad460a851ee9, type: 3}
   fireRate: 2
+  isRevUp: 0
+  maxRevTime: 2
+  revUpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   isEquipped: 0
+  shootParticles: {fileID: 3424826621523161289, guid: 8566f5f5ed4271d4e91576fcb4f7079a, type: 3}
 --- !u!61 &5379849622557117443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,21 +142,21 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0050829407, y: 0.030735698}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.16, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.029751047, y: 0.08179841}
   m_EdgeRadius: 0
 --- !u!1 &6897218884023681920
 GameObject:
@@ -174,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 6897218884023681920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: -0.0066, y: 0.0666, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

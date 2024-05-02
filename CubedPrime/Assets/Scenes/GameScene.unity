@@ -3093,6 +3093,10 @@ PrefabInstance:
       propertyPath: m_DefaultControlScheme
       value: Keyboard&Mouse
       objectReference: {fileID: 0}
+    - target: {fileID: 4826435959527079787, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: weaponLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5540230005384580758, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: m_Name
       value: Player
