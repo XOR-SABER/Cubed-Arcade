@@ -5,43 +5,36 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    
-    [HideInInspector]
-    public float speed;
-    public float startSpeed = 3f;
-    
     public int damage = 1;
-
     public int startHealth = 100;
     private int health;
 
     public int points = 100;
     
-    public GameObject player;
-    PlayerStats playerStats;
-    
-    //TODO: Enemy AI to engage player, Use player gameobject for position? Different Script?
-
-    private void Awake()
-    {
-        playerStats = player.GetComponent<PlayerStats>();
-    }
 
     void Start()
     {
         health = startHealth;
-        speed = startSpeed;
     } 
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerStats.TakeDamage(damage);
+            PlayerStats.instance.TakeDamage(damage);
             Destroy(gameObject);
         }
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerStats.instance.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
+
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
@@ -49,13 +42,12 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             EnemyDeath();
-            
         }
     }
 
     public void EnemyDeath()
     {
-        playerStats.AddPoints(points);
+        PlayerStats.instance.AddPoints(points);
         Destroy(gameObject);
     }
     
