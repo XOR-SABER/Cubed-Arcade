@@ -7,19 +7,29 @@ public class PlayerStats : MonoBehaviour
 {
     public int startingHealth = 4;
     public static int Health;
-
-    public float startingSpeed = 5.0f;
-    public static float Speed;
-
+    
     public int points = 0;
     
     //TODO: Add UI for Health, Points, ect...
     
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
      private void Start()
     {
         Health = startingHealth;
-        Speed = startingSpeed;
     }
+     
+    public static PlayerStats instance;
 
     public void TakeDamage(int damageReceived)
     {
@@ -34,5 +44,4 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Points: " + points);
     }
     
-    //TODO stats for enemies killed, damage dealt
 }
