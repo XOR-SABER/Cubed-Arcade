@@ -88,7 +88,7 @@ MonoBehaviour:
   - audioName: LevelTrack2
     clip: {fileID: 8300000, guid: 7f168756f7382ad47a6a90bffa244b94, type: 3}
     audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
-    volume: 0.5
+    volume: 0.094
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -101,11 +101,51 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
-  - audioName: Temp
-    clip: {fileID: 8300000, guid: c96057ef4c6963744b5aa778bac11591, type: 3}
+  - audioName: GlockShot
+    clip: {fileID: 8300000, guid: a6b199769a7e2f64d8a8692a9f953c40, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
     volume: 0.5
     pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: ShortShot
+    clip: {fileID: 8300000, guid: 93af1b7e41ce0644d9c3c668f60147f4, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: MachineShot
+    clip: {fileID: 8300000, guid: e1193c745dad3b349a21cec30f5b3fe3, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: MagicShot
+    clip: {fileID: 8300000, guid: 602094c59578d5e4c949fec80f1d843d, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.121
+    pitch: 0.68
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: SniperShot
+    clip: {fileID: 8300000, guid: ad7b95842b391054bb76aaac884696e8, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.042
+    pitch: 0.68
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: Explosion
+    clip: {fileID: 8300000, guid: d3da2b032d881304c90170c5be076198, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.121
+    pitch: 0.68
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0

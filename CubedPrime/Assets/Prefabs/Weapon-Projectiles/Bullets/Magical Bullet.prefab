@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4254119733635163542}
   - component: {fileID: 6736083256958345270}
   - component: {fileID: 9184421507218990098}
-  - component: {fileID: -8500069238729568562}
+  - component: {fileID: 6018932714620868466}
   - component: {fileID: 6201331973750570283}
   m_Layer: 8
   m_Name: Magical Bullet
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0.5347996, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e76eb4a4845ea4e90982f4977c3d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 75
+  speed: 25
   damage: 50
   numberOfPierces: 1
-  wallParticles: {fileID: 3424826621523161289, guid: 8f36a0d700844004caf89570175a2e11, type: 3}
+  wallParticles: {fileID: 4566381003206891631, guid: 07c1aa33f2a03764da1da2bf260abfb6, type: 3}
 --- !u!50 &9184421507218990098
 Rigidbody2D:
   serializedVersion: 4
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -131,8 +131,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &-8500069238729568562
-BoxCollider2D:
+--- !u!58 &6018932714620868466
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,18 +164,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!96 &6201331973750570283
 TrailRenderer:
   serializedVersion: 3
@@ -228,7 +218,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.45000076
+        value: 0.8916054
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -236,8 +226,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.2642868
-        value: 0.34999746
+        time: 0.23700407
+        value: 0.5434255
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -245,7 +235,25 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.4214286
+        time: 0.3611822
+        value: 0.33211744
+        inSlope: -1.3638932
+        outSlope: -1.3638932
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.13409397
+      - serializedVersion: 3
+        time: 0.6252193
+        value: 0.08395386
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75876987
         value: 0
         inSlope: 0
         outSlope: 0

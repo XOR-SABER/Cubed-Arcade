@@ -20,6 +20,7 @@ public class Weapon : MonoBehaviour
     public bool isTracking;
     private float _timeHeld = 0;
     private float _nextFireTime;
+    public string soundName;
     //Magazine/Reload?
     //Particle System for ShootFunction?
 
@@ -48,8 +49,12 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(shootParticles, firePoint.position, firePoint.rotation);
+        if(isMagic) Instantiate(shootParticles, firePoint.position, firePoint.rotation, transform);
+        else Instantiate(shootParticles, firePoint.position, firePoint.rotation);
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        if(soundName != null) {
+            AudioManager.instance.PlayOnShot(soundName);
+        }
     }
 
     void handleRevUp() {

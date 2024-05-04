@@ -99,10 +99,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
+  equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 4282382088284823514}
   projectilePrefab: {fileID: 2592730709790584201, guid: 27201929704fcd6499d8ad460a851ee9, type: 3}
+  fireRate: 2
+  isRevUp: 0
+  maxRevTime: 2
+  revUpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   isEquipped: 0
+  shootParticles: {fileID: 0}
+  isBurst: 0
+  roundsPerBurst: 0
+  isMagic: 0
+  isTracking: 0
 --- !u!60 &-240562839515529919
 PolygonCollider2D:
   m_ObjectHideFlags: 0

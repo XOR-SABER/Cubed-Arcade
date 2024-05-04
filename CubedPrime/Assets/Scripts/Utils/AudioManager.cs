@@ -48,19 +48,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Sound s = getSound(name);
-        if (s == null || s.source == null) {
-            Debug.Log(string.Format("Sound: {0} not found!", name));
-            if(_soundMap.Values.Count == 0) Debug.Log("The _soundmap is empty!");
-            foreach(var v in _soundMap) {
-                Debug.Log(v.Value);
-            }
-            Debug.Log(sounds.Length);
-            foreach (var item in sounds)
-            {
-                Debug.Log(item.audioName);
-            }
-            return;
-        }
         Debug.Log(s.audioName);
         if(!s.isMusicTrack) {
             s.source.Play();
@@ -68,6 +55,18 @@ public class AudioManager : MonoBehaviour
         }
         currentTrack = s.source;
         currentTrack.Play();
+    }
+
+    public void PlayOnShot(string name) {
+        if (string.IsNullOrEmpty(name)) {
+            Debug.LogError("Attempted to play a sound with a null or empty name.");
+            return;
+        }
+        Sound s = getSound(name);
+        Debug.Log(s.audioName);
+        s.source.PlayOneShot(s.source.clip);
+        return;
+        
     }
 
     public void fadeOutCurrentTrack (float fadeTime)
@@ -115,5 +114,15 @@ public class AudioManager : MonoBehaviour
         float transitionTime = fadeTime / 2 ;
         if(currentTrack != null) StartCoroutine(FadeOut(transitionTime, true, name));
         else StartCoroutine(FadeInto(name, fadeTime));
+    }
+
+    public bool isPlaying(string name) {
+        if (string.IsNullOrEmpty(name)) {
+            Debug.LogError("Attempted to play a sound with a null or empty name.");
+            return false;
+        }
+        Sound s = getSound(name);
+        if(s.source.isPlaying) return true;
+        else return false;
     }
 }

@@ -18,6 +18,5 @@ public class Sound {
 
     public bool loop;
     public bool isMusicTrack;
-    
   
 }

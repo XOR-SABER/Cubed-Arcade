@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipOffset: {x: 1, y: 3, z: 0}
+  equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 8568425533484806874}
   projectilePrefab: {fileID: 3630596066284524872, guid: 23b0ae24e8c6dab40bfb1a8d66faadff, type: 3}
   fireRate: 30
@@ -131,6 +131,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   isEquipped: 0
   shootParticles: {fileID: 3424826621523161289, guid: 8566f5f5ed4271d4e91576fcb4f7079a, type: 3}
+  isBurst: 0
+  roundsPerBurst: 0
+  isMagic: 0
+  isTracking: 0
+  soundName: MachineShot
 --- !u!61 &4899758923373239247
 BoxCollider2D:
   m_ObjectHideFlags: 0

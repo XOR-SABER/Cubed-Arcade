@@ -13,7 +13,9 @@ public class Turret : MonoBehaviour
     public Transform firePoint;
     public GameObject player;
     public Transform playerTransform;
-    
+    public GameObject ExplosionFX;
+    public bool isReinforcer;
+    public GameObject reinforcement;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -44,6 +46,15 @@ public class Turret : MonoBehaviour
     public void Shoot()
     {
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        AudioManager.instance.PlayOnShot("ShortShot");
+        if (isReinforcer) {
+            int randomNumber = Random.Range(0, 5);
+            if(randomNumber == 1) Instantiate(reinforcement, transform.position, reinforcement.transform.rotation);
+        }
+
+    }
+    public void turretDeath() {
+        Instantiate(ExplosionFX, transform.position, transform.rotation);
     }
 }
 

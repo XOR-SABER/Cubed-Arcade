@@ -28,7 +28,10 @@ public class BulletScript : MonoBehaviour
             enemy.TakeDamage(damage);
             numberOfPierces--;
         }
-        if(numberOfPierces <= 0) Destroy(gameObject);
+        if(numberOfPierces <= 0) {
+            Destroy(gameObject);
+            Instantiate(wallParticles, transform.position, Quaternion.Inverse(transform.rotation));
+        }
         Rigidbody2D body = other.GetComponent<Rigidbody2D>();
         if(body == null) return;
         if(body.CompareTag("BulletSolid")) {

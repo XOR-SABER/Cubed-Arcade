@@ -13,9 +13,11 @@ public class Minimap : MonoBehaviour
     public Transform minimapOverlay;
 
     private Transform _offset;
+    private float _prevZ;
     // Start is called before the first frame update
     void Start()
     {
+        _prevZ = transform.position.z;
         _player = GameObject.FindWithTag("Player").transform;
         _enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
@@ -23,18 +25,8 @@ public class Minimap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = _player.position;
-        HandleEnemyVisible();
+        transform.position = new Vector3(_player.position.x, _player.position.y, _prevZ);
         RotateOverlay();
-    }
-
-    private void HandleEnemyVisible()
-    {
-        if(_enemies == null) return;
-        for (int i = 0; i < _enemies.Length; i++)
-        {
-            _enemies[i].SetActive(Vector3.Angle(_player.transform.up, _enemies[i].transform.position - _player.position) <= angle);
-        }
     }
 
     private void RotateOverlay()

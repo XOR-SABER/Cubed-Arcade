@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     public int points = 100;
     
+    public Image healthBar; 
 
     void Start()
     {
@@ -38,7 +37,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
-
+        healthBar.fillAmount = (float)health / startHealth;
         if (health <= 0)
         {
             EnemyDeath();
@@ -48,6 +47,8 @@ public class Enemy : MonoBehaviour
     public void EnemyDeath()
     {
         PlayerStats.instance.AddPoints(points);
+        Turret tur = GetComponent<Turret>();
+        if(tur != null) tur.turretDeath();
         Destroy(gameObject);
     }
     

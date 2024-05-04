@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3280918677917350861}
   - component: {fileID: 5379849622557117443}
   m_Layer: 0
-  m_Name: Glock 1
+  m_Name: Tome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipOffset: {x: 0, y: 2.35, z: 0}
+  equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 4282382088284823514}
-  projectilePrefab: {fileID: 2592730709790584201, guid: 27201929704fcd6499d8ad460a851ee9, type: 3}
-  fireRate: 2
+  projectilePrefab: {fileID: 2592730709790584201, guid: f117b296539c006418ca8c3283b09054, type: 3}
+  fireRate: 5
   isRevUp: 0
   maxRevTime: 2
   revUpCurve:
@@ -112,7 +112,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isEquipped: 0
-  shootParticles: {fileID: 3424826621523161289, guid: 8566f5f5ed4271d4e91576fcb4f7079a, type: 3}
+  shootParticles: {fileID: 4566381003206891631, guid: 07c1aa33f2a03764da1da2bf260abfb6, type: 3}
+  isBurst: 0
+  roundsPerBurst: 0
+  isMagic: 1
+  isTracking: 0
+  soundName: MagicShot
 --- !u!61 &5379849622557117443
 BoxCollider2D:
   m_ObjectHideFlags: 0
