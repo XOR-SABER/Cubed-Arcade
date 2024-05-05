@@ -241,8 +241,9 @@ MonoBehaviour:
   player: {fileID: 0}
   playerTransform: {fileID: 0}
   ExplosionFX: {fileID: 1969284129530096252, guid: f138a9e14ace3c246b94b8c641c847b4, type: 3}
-  isReinforcer: 0
-  reinforcement: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!60 &4644032391056701394
 PolygonCollider2D:
   m_ObjectHideFlags: 0
