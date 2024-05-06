@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shader Graphs_Rainbow
-  m_Shader: {fileID: -6465566751694194690, guid: e6f5f92012ac4814691625f296a22a40, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 24d61767f7cd9644292982b14e27ca4e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,9 +37,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Intensity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _Speed: 0.415
+    m_Colors:
+    - _BottomColor: {r: 0.37735847, g: 0.37735847, b: 0.37735847, a: 0}
+    - _baseColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4886156545131731873
 MonoBehaviour:

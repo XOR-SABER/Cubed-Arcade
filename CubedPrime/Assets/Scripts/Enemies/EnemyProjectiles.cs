@@ -15,6 +15,7 @@ public class EnemyProjectiles : MonoBehaviour
     // Player
     private GameObject player;
     private Transform playerTransform;
+    private Vector3 _direction;
     
     // Start is called before the first frame update
     void Start()
@@ -34,8 +35,8 @@ public class EnemyProjectiles : MonoBehaviour
             if (isMissile)
             {
                 transform.LookAt(playerTransform);
-                Vector3 direction = (playerTransform.position - transform.position).normalized;
-                transform.position += direction * (speed * Time.deltaTime);
+                _direction = 
+                transform.position += _direction * (speed * Time.deltaTime);
             }
             else
             {

@@ -36,13 +36,13 @@ public class Weapon : MonoBehaviour
             {
                 Shoot();
                 _nextFireTime = Time.time + 1f / fireRate;
-                Debug.Log($"Shooting without rev up. Next Fire Time: {_nextFireTime:F2}");
+                // Debug.Log($"Shooting without rev up. Next Fire Time: {_nextFireTime:F2}");
             }
         }
         else
         {
             if(_timeHeld <= 0) return;
-            if (_timeHeld > 0) Debug.Log("Fire button released, resetting _timeHeld.");
+            // if (_timeHeld > 0) Debug.Log("Fire button released, resetting _timeHeld.");
             _timeHeld -= Time.deltaTime; // Reset time held when the fire button is released
         }
     }
@@ -62,6 +62,6 @@ public class Weapon : MonoBehaviour
         float curveValue = revUpCurve.Evaluate(_timeHeld / maxRevTime);
         Shoot();
         _nextFireTime = Time.time + (1f / (fireRate * curveValue));
-        Debug.Log($"Shooting! Time held: {_timeHeld:F2}, Curve Value: {curveValue:F2}, Next Fire Time: {_nextFireTime:F2}");
+        // Debug.Log($"Shooting! Time held: {_timeHeld:F2}, Curve Value: {curveValue:F2}, Next Fire Time: {_nextFireTime:F2}");
     }
 }
