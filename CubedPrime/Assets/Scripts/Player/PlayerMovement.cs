@@ -207,15 +207,18 @@ public class PlayerMovement : MonoBehaviour
     // This only exists for the bouncy enemy!
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && !isDashing)
-        {
-            PlayerStats.instance.TakeDamage(1);
-        } else if (collision.gameObject.CompareTag("Enemy") && isDashing) {
+        if(collision.gameObject.CompareTag("Enemy")) handleDashing(collision);
+    }
+
+    void handleDashing(Collision2D collision){
+        if(isDashing) {
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
             if(temp != null) {
                 temp.TakeDamage(100);
                 if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
             }
+        } else {
+            PlayerStats.instance.TakeDamage(1);
         }
     }
 

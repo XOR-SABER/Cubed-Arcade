@@ -14,11 +14,11 @@ public class explosiveBarrel : MonoBehaviour
         exp.damageRadius = damageRadius;
         Destroy(gameObject);
     }
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow; // Setting the color of the Gizmo to red
-        Gizmos.DrawWireSphere(transform.position, particleRadius); // Drawing a wireframe sphere at the transform's position
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, damageRadius);
-    }
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.yellow; // Setting the color of the Gizmo to red
+    //     Gizmos.DrawWireSphere(transform.position, particleRadius); // Drawing a wireframe sphere at the transform's position
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(transform.position, damageRadius);
+    // }
 }

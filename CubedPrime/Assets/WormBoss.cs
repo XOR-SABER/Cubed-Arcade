@@ -45,6 +45,8 @@ public class WormBoss : MonoBehaviour
     private float _state_duration = 0f;
     private BossUI _UI;
     private bool _is_dead = false; 
+    private bool _isSmoke1 = false;
+    private bool _isSmoke2 = false;
     void Start()
     {
         _UI = FindObjectOfType<BossUI>();
@@ -121,7 +123,7 @@ public class WormBoss : MonoBehaviour
                 AdjustLazerWidth();
                 _prev_dir = _moveDir;
                 _new_dir = (_player_ref.transform.position - transform.position).normalized * normalSpeed;
-                _moveDir = Vector3.Lerp(_prev_dir, _new_dir, Time.deltaTime * lazerRotationSpeed + 0.01f);
+                _moveDir = Vector3.Lerp(_prev_dir, _new_dir, Time.deltaTime * lazerRotationSpeed + 0.001f);
                 lazerRen.SetPosition(0, fireTrans.position);
                 lazerRen.SetPosition(1, fireTrans.position + fireTrans.up * lazerRange);
                 PerformDualRaycastsForLaser();
@@ -292,11 +294,13 @@ public class WormBoss : MonoBehaviour
     {
         _health -= damageAmount;
         _UI.BossHealthBar.fillAmount = (float)_health / startHealth;
-        if(healthIsWithinRange(0.8f)) {
+        if(healthIsWithinRange(0.8f) && !_isSmoke1) {
             smoke1.SetActive(true);
+            _isSmoke1 = true;
         }
-        if(healthIsWithinRange(0.4f)) {
+        if(healthIsWithinRange(0.4f) && !_isSmoke2) {
             smoke2.SetActive(true);
+            _isSmoke2 = true;
         }
         if (_health <= 0 && !_is_dead)
         {

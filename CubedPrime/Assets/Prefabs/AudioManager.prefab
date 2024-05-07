@@ -197,6 +197,14 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
+  - audioName: DashSound
+    clip: {fileID: 8300000, guid: cb0b697db856f4148b4becf48c09f06a, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.264
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
   curve:
     serializedVersion: 2
     m_Curve:
