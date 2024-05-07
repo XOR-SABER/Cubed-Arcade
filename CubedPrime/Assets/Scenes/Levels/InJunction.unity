@@ -2658,6 +2658,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.size
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[20].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 74229682de8b38e4facbe1d6b1a96174, type: 3}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[21].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb0b697db856f4148b4becf48c09f06a, type: 3}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[22].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb0b697db856f4148b4becf48c09f06a, type: 3}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[20].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[21].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[22].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[20].volume
+      value: 0.264
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[21].volume
+      value: 0.264
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[22].volume
+      value: 0.264
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[20].audioName
+      value: CodeRedScream1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[21].audioName
+      value: CodeRedScream2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[22].audioName
+      value: CodeRedSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[20].audioMixerGroup
+      value: 
+      objectReference: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[21].audioMixerGroup
+      value: 
+      objectReference: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    - target: {fileID: 1490606779109804208, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
+      propertyPath: sounds.Array.data[22].audioMixerGroup
+      value: 
+      objectReference: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
     - target: {fileID: 6701226252425716272, guid: 3ac77b39af24cec4a82f9e82f8799602, type: 3}
       propertyPath: m_Name
       value: AudioManager
