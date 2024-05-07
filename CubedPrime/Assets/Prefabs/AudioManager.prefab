@@ -128,7 +128,7 @@ MonoBehaviour:
   - audioName: MagicShot
     clip: {fileID: 8300000, guid: 602094c59578d5e4c949fec80f1d843d, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
-    volume: 0.121
+    volume: 0.042
     pitch: 0.68
     source: {fileID: 0}
     loop: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ad7b95842b391054bb76aaac884696e8, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
     volume: 0.042
-    pitch: 0.68
+    pitch: 1
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
@@ -145,10 +145,58 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d3da2b032d881304c90170c5be076198, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
     volume: 0.121
-    pitch: 0.68
+    pitch: 1
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+  - audioName: Code_RedTransition
+    clip: {fileID: 8300000, guid: 851fd5f66695f94409b96184841fb059, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.358
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: Code_RedRoar1
+    clip: {fileID: 8300000, guid: c060a851661bf8840a41811f1aba4882, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.347
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: Code_RedRoar2
+    clip: {fileID: 8300000, guid: 40ab45626920fef49a90123928c78a41, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.355
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: Code_RedError
+    clip: {fileID: 8300000, guid: 2e28c2ab00797de4a81e23eff5eb8a51, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.415
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: Code_RedChargeUp
+    clip: {fileID: 8300000, guid: 87926544b6fbdad4287c7f0e000000d9, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.355
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+  - audioName: Code_RedTheme
+    clip: {fileID: 8300000, guid: 10b2aef7162465e49b460958e2a81c19, type: 3}
+    audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.068
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 1
   curve:
     serializedVersion: 2
     m_Curve:

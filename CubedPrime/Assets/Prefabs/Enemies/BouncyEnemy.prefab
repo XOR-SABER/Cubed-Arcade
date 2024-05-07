@@ -98,9 +98,9 @@ GameObject:
   - component: {fileID: 2388653900613663028}
   - component: {fileID: 5285931897702134001}
   - component: {fileID: 2154704082156893539}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BouncyEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,6 +275,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5856054101769393597}
     m_Modifications:
+    - target: {fileID: 123111080560098172, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2252319727117217771, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -355,9 +359,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2967090606488496636, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886298710360613597, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8109939264585055423, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109939264585055423, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

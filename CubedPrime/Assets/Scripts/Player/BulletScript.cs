@@ -25,6 +25,12 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        dealEnemyDamage(other);
+        dealBossDamage(other);
+        BarrelCheck(other);
+        solidCheck(other);
+    }
+    void dealEnemyDamage(Collider2D other) {
         Enemy enemy = other.GetComponent<Enemy>();
         if (enemy != null) {
             enemy.TakeDamage(damage);
@@ -34,6 +40,8 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
             Instantiate(bloodParticles, transform.position, Quaternion.Inverse(transform.rotation));
         }
+    }
+    void dealBossDamage(Collider2D other) {
         Boss1Segments boss = other.GetComponent<Boss1Segments>();
         if(boss != null) {
             boss.TakeDamage(damage);
@@ -43,6 +51,18 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
             Instantiate(bloodParticles, transform.position, Quaternion.Inverse(transform.rotation));
         }
+    }
+    void BarrelCheck(Collider2D other) {
+        explosiveBarrel body = other.GetComponent<explosiveBarrel>();
+        if(body != null) {
+            body.destroyBarrel();
+        }
+        if(numberOfPierces <= 0) {
+            Destroy(gameObject);
+            Instantiate(wallParticles, transform.position, Quaternion.Inverse(transform.rotation));
+        }
+    }
+    void solidCheck(Collider2D other) {
         Rigidbody2D body = other.GetComponent<Rigidbody2D>();
         if(body == null) return;
         if(body.CompareTag("BulletSolid")) {
@@ -54,3 +74,4 @@ public class BulletScript : MonoBehaviour
         }
     }
 }
+

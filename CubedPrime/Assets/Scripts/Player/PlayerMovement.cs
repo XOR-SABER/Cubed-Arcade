@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -37,12 +38,17 @@ public class PlayerMovement : MonoBehaviour
     [Range(0.2f, 0.6f)]
     public float joystickDeadZone;
 
+    [Header("Dashing mech")]
+    public bool isDashing;
+    public float slowFactor = 0.5f;
+    public float duration = 0.25f; 
+    public float recoveryTime = 0.1f;
+    private bool _isTimeStopped = false;
 
     private PlayersControls _playersControls;
     private Rigidbody2D _rb;
     private Vector2 _movement;
     private Vector2 _direction;
-    private Transform _target;
     private Vector2 currentVelocity;
     private Vector2 overAllMovement;
     private InputAction _move;
@@ -51,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastDir;
     private Vector2 overAllDirection;
     private Camera _camera;
-    private bool _isDashing;
     private Vector2 dashDir;
 
 
@@ -116,13 +121,13 @@ public class PlayerMovement : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
 
-        if (_isDashing)
+        if (isDashing)
         {
             overAllMovement = dashDir;
             _dashSpeed -= (baseDashSpeed - moveSpeed) * Time.deltaTime / dashDuration;
             if (_dashSpeed <= moveSpeed)
             {
-                _isDashing = false;
+                isDashing = false;
                 _dashSpeed = baseDashSpeed;
             }
         }
@@ -147,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 targetVelocity;
-        if (_isDashing)
+        if (isDashing)
         {
             targetVelocity = _movement * _dashSpeed;
         }
@@ -172,11 +177,11 @@ public class PlayerMovement : MonoBehaviour
     
     private void Dash()
     {
-        if (_isDashing)
+        if (isDashing)
         {
             return;
         }
-        _isDashing = true;
+        isDashing = true;
         dashDir = dashType switch
         {
             DashType.InAimDirection => lastDir.normalized,
@@ -184,5 +189,55 @@ public class PlayerMovement : MonoBehaviour
             _ => dashDir
         };
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy") && !isDashing)
+        {
+            PlayerStats.instance.TakeDamage(1);
+        } else if (other.gameObject.CompareTag("Enemy") && isDashing) {
+            Enemy temp = other.GetComponent<Enemy>();
+            if(temp != null) {
+                temp.TakeDamage(100);
+                if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
+            }
+        }
+    }
+    // This only exists for the bouncy enemy!
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && !isDashing)
+        {
+            PlayerStats.instance.TakeDamage(1);
+        } else if (collision.gameObject.CompareTag("Enemy") && isDashing) {
+            Enemy temp = collision.gameObject.GetComponent<Enemy>();
+            if(temp != null) {
+                temp.TakeDamage(100);
+                if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
+            }
+        }
+    }
+
+    private IEnumerator SlowMotionRoutine(float slowFactor, float duration, float recoveryTime)
+    {
+        AudioManager.instance.PlayOnShot("DashSound");
+        _isTimeStopped = true;
+        Time.timeScale = slowFactor;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;  
+        yield return new WaitForSecondsRealtime(duration);
+
+        float currentTime = 0f;
+        while (currentTime < recoveryTime)
+        {
+            currentTime += Time.unscaledDeltaTime;
+            Time.timeScale = Mathf.Lerp(slowFactor, 1.0f, currentTime / recoveryTime);
+            Time.fixedDeltaTime = 0.02f * Time.timeScale;
+            yield return null;
+        }
+
+        Time.timeScale = 1.0f;
+        Time.fixedDeltaTime = 0.02f;
+        _isTimeStopped = false;
     }
 }

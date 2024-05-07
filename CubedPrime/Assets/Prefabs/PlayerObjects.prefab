@@ -74,7 +74,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3575
+    m_Bits: 7671
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1139,6 +1139,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: duration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: slowFactor
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: aimJoystick
       value: 
       objectReference: {fileID: 6586498749243511942}
@@ -1146,6 +1154,10 @@ PrefabInstance:
       propertyPath: moveJoystick
       value: 
       objectReference: {fileID: 6469351092270889772}
+    - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: recoveryTime
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8444617902723284438, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
