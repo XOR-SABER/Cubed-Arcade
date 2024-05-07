@@ -4,18 +4,16 @@ public class Turret : MonoBehaviour
 {
 
     public float fireRate = 1f;
-    private float nextFireTime;
+    
     public int range = 15;
-    
-    
     public GameObject projectilePrefab;
-
     public Transform firePoint;
     public GameObject player;
     public Transform playerTransform;
     public GameObject ExplosionFX;
-    private bool _isPlayerInRange;
-    public LayerMask layerMask; 
+    public LayerMask playerLayerMask; 
+    public LayerMask enviromentLayerMask;
+    private float _nextFireTime;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -26,7 +24,7 @@ public class Turret : MonoBehaviour
      void Update()
     {
         if (player == null) return; 
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, range, Vector2.right, 0f, layerMask);  
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, range, Vector2.right, 0f, playerLayerMask);  
         if (hit.collider != null) {
             handleTurret();
         }
@@ -42,14 +40,16 @@ public class Turret : MonoBehaviour
 
     void handleTurret() {
         Vector3 direction = playerTransform.position - transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Vector3.Distance(transform.position, playerTransform.position), enviromentLayerMask);
+        if (hit.collider != null) return;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle + 270, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5f);
 
-        if (Vector3.Distance(transform.position, playerTransform.position) <= range && Time.time >= nextFireTime)
+        if (Vector3.Distance(transform.position, playerTransform.position) <= range && Time.time >= _nextFireTime)
         {
             Shoot();
-            nextFireTime = Time.time + 1f / fireRate;
+            _nextFireTime = Time.time + 1f / fireRate;
         }
     }
         

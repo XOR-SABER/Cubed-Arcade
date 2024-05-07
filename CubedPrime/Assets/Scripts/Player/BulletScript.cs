@@ -7,6 +7,8 @@ public class BulletScript : MonoBehaviour
     public int damage = 50;
     public int numberOfPierces = 1;
     public GameObject wallParticles;
+    public GameObject bloodParticles;
+
     private Vector2 _playerVelocity;
     
 
@@ -30,7 +32,7 @@ public class BulletScript : MonoBehaviour
         }
         if(numberOfPierces <= 0) {
             Destroy(gameObject);
-            Instantiate(wallParticles, transform.position, Quaternion.Inverse(transform.rotation));
+            Instantiate(bloodParticles, transform.position, Quaternion.Inverse(transform.rotation));
         }
         Boss1Segments boss = other.GetComponent<Boss1Segments>();
         if(boss != null) {
@@ -39,7 +41,7 @@ public class BulletScript : MonoBehaviour
         }
         if(numberOfPierces <= 0) {
             Destroy(gameObject);
-            Instantiate(wallParticles, transform.position, Quaternion.Inverse(transform.rotation));
+            Instantiate(bloodParticles, transform.position, Quaternion.Inverse(transform.rotation));
         }
         Rigidbody2D body = other.GetComponent<Rigidbody2D>();
         if(body == null) return;

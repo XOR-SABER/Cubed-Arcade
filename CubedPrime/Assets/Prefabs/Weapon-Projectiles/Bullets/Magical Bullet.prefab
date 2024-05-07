@@ -104,6 +104,7 @@ MonoBehaviour:
   damage: 50
   numberOfPierces: 1
   wallParticles: {fileID: 4566381003206891631, guid: 07c1aa33f2a03764da1da2bf260abfb6, type: 3}
+  bloodParticles: {fileID: 2969572892610431116, guid: 89c19a1f2f76fc34abb184cdb20f085c, type: 3}
 --- !u!50 &9184421507218990098
 Rigidbody2D:
   serializedVersion: 4
