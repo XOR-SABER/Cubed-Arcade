@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 
 public class WeaponManager : MonoBehaviour
 {
+    public PlayerMovement playerMovement;
+    
     private Weapon _mainWeapon;
     public GameObject mainWeaponSlot;
     public GameObject secondaryWeaponSlot;
@@ -25,6 +27,7 @@ public class WeaponManager : MonoBehaviour
 
     private void Awake()
     {
+        playerMovement = GetComponent<PlayerMovement>();
         if (primary != null)
         {
             primary = Instantiate(primary, mainWeaponSlot.transform);
@@ -118,6 +121,10 @@ public class WeaponManager : MonoBehaviour
     
     private void Update()
     {
+        if (playerMovement.inputType == PlayerMovement.InputType.Mobile)
+        {
+            return;
+        }
         if (_shoot.IsPressed())
         {
             _mainWeapon.ShootOrder();
@@ -128,6 +135,11 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
+
+    public void ResetTimeHeld()
+    {
+        _mainWeapon.ResetTimeHeld();
+    }
     public void Shoot()
     {
         _mainWeapon.ShootOrder();

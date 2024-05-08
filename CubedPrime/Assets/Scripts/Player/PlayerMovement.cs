@@ -8,6 +8,7 @@ using Screen = UnityEngine.Device.Screen;
 [RequireComponent(typeof(WeaponManager))]
 public class PlayerMovement : MonoBehaviour
 {
+    
     public Joystick moveJoystick;
     public Joystick aimJoystick;
     public GameObject MoblieUI;
@@ -146,8 +147,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (aimJoystick.Direction.x != 0 || aimJoystick.Direction.y != 0)
             {
-                // shoot with main hand
                 _weaponManager.Shoot();
+            }
+            else
+            {
+                _weaponManager.ResetTimeHeld();
             }
             if (overAllDirection.magnitude >= joystickDeadZone)
             {
@@ -203,25 +207,5 @@ public class PlayerMovement : MonoBehaviour
             DashType.InMovementDirection => overAllMovement.normalized,
             _ => dashDir
         };
-    }
-
-    public void Button1()
-    {
-        Debug.Log("button 1 pressed");
-    }
-    
-    public void Button2()
-    {
-        Debug.Log("button 2 pressed");
-    }
-    
-    public void Button3()
-    {
-        Debug.Log("button 3 pressed");
-    }
-    
-    public void Button4()
-    {
-        Debug.Log("button 4 pressed");
     }
 }
