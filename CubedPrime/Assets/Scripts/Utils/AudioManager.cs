@@ -48,13 +48,13 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Sound s = getSound(name);
-        Debug.Log(s.audioName);
         if(!s.isMusicTrack) {
             s.source.Play();
             return;
         }
         currentTrack = s.source;
         currentTrack.Play();
+        PlayerStats.instance.currentlyPlaying = s.meta;
     }
 
     public void PlayOnShot(string name) {
@@ -63,7 +63,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Sound s = getSound(name);
-        Debug.Log(s.audioName);
         s.source.PlayOneShot(s.source.clip);
         return;
         

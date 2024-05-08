@@ -16,23 +16,23 @@ public class Enemy : MonoBehaviour
         health = startHealth;
     } 
     
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerStats.instance.TakeDamage(damage);
-            Destroy(gameObject);
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         PlayerStats.instance.TakeDamage(damage);
+    //         Destroy(gameObject);
+    //     }
+    // }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            PlayerStats.instance.TakeDamage(damage);
-            Destroy(gameObject);
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //     {
+    //         PlayerStats.instance.TakeDamage(damage);
+    //         // Destroy(gameObject);
+    //     }
+    // }
 
     public void TakeDamage(int damageAmount)
     {
@@ -47,9 +47,13 @@ public class Enemy : MonoBehaviour
     public void EnemyDeath()
     {
         PlayerStats.instance.AddPoints(points);
+        PlayerStats.instance.TotalEnemiesKilled++;
         Turret tur = GetComponent<Turret>();
-        if(tur != null) tur.turretDeath();
-        Destroy(gameObject);
+        if(tur != null) {
+            tur.turretDeath();
+            Destroy(tur.mainObject);
+        }
+         else Destroy(gameObject);
     }
     
     

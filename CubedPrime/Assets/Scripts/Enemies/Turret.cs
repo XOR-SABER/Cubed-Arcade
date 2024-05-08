@@ -6,6 +6,7 @@ public class Turret : MonoBehaviour
     public float fireRate = 1f;
     
     public int range = 15;
+    public GameObject mainObject;
     public GameObject projectilePrefab;
     public Transform firePoint;
     public GameObject player;

@@ -15,8 +15,8 @@ public class Sound {
     
     [HideInInspector]
     public AudioSource source;
-
     public bool loop;
     public bool isMusicTrack;
+    public string meta;
   
 }

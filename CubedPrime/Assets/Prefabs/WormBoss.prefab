@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8879244cd7cf5c4cbb39bf83c4caf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 50000
+  startHealth: 25000
   guideRange: 7
   playerRange: 55
   chargeRange: 200
@@ -1804,6 +1804,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (1)
@@ -1957,6 +1961,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (4)
@@ -2031,6 +2039,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (8)
@@ -2105,6 +2117,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (5)
@@ -2179,6 +2195,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (3)
@@ -2253,6 +2273,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (2)
@@ -2327,6 +2351,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (7)
@@ -2525,6 +2553,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (6)
@@ -2599,6 +2631,10 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
+    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: maxDistance
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body

@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae43e7d6639db6b4c918ebf955e11a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
+  radius: 35
+  damageRadius: 17.5
   explosionParticleEffect: {fileID: 8555022245141203915, guid: 6f440b80d57ed5d4aad5af63da38c685, type: 3}
   damage: 100
   target_tags: 
   soundName: Explosion
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 4096

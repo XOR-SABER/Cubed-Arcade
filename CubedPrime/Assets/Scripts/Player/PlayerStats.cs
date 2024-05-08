@@ -1,17 +1,34 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int startingHealth = 4;
+    public Image healthbar;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI currentTrack;
+    public TextMeshProUGUI FPSCounter;
+    public GameObject bloodParticles;
+    public GameObject healParticles;
+    public GameObject deathPartcles;
+    public int startingHealth = 8;
     public static int Health;
-    
+    private bool _isInvincible = false;
+    public float invincibilityDurationSeconds = 2.0f;
     public int points = 0;
-    
-    //TODO: Add UI for Health, Points, ect...
-    
+    public int TotalHealed = 0;
+    public int TotalDamageDealt = 0;
+    public int TotalDamageTaken = 0;
+    public int TotalEnemiesKilled = 0;
+    public int TotalShotsTaken = 0;
+    public int TotalShotsHit = 0;
+    public bool isPlayerDead = false;
+    public string currentlyPlaying;
+    private PlayerMovement _playerRef;
     private void Awake()
     {
         if (instance == null)
@@ -26,16 +43,46 @@ public class PlayerStats : MonoBehaviour
     
      private void Start()
     {
+        _playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        if(_playerRef == null) Debug.LogError("Player with the player tag does not exist in scene"); 
         Health = startingHealth;
+    }
+
+    private void Update() {
+        scoreText.text = string.Format("Score: {0}", points);
+        healthText.text = string.Format("{0}/{1}", Health, startingHealth);
+        currentTrack.text = string.Format("Currently playing: {0}", currentlyPlaying);
+        FPSCounter.text = string.Format("FPS: {0}", math.round(1.0/Time.deltaTime));
     }
      
     public static PlayerStats instance;
 
     public void TakeDamage(int damageReceived)
     {
+        TotalDamageTaken += damageReceived;
+        if(isPlayerDead) return;
+        if(_isInvincible) return;
+        StartCoroutine(Invincibility());
+        AudioManager.instance.PlayOnShot("DamageSound");
         Health -= damageReceived;
-        Debug.Log("Damage: " + damageReceived + " Health: " + Health + "/" + startingHealth);
-        //Maybe I-frames after?
+        healthbar.fillAmount = (float)Health / startingHealth;
+        Instantiate(bloodParticles, _playerRef.transform.position, Quaternion.Inverse(_playerRef.transform.rotation), _playerRef.transform);
+        if(Health <= 0) onDeath();
+    }
+    public void heal(int healAmount) {
+        Debug.Log("Heal called!");
+        Debug.Log("Healed: " + healAmount);
+        TotalHealed += healAmount;
+        Health += healAmount;
+        Health = Math.Clamp(Health, 0, startingHealth);
+        Instantiate(healParticles, _playerRef.transform.position, _playerRef.transform.rotation, _playerRef.transform); 
+    }
+
+    private IEnumerator Invincibility()
+    {
+        _isInvincible = true;
+        yield return new WaitForSeconds(invincibilityDurationSeconds);
+        _isInvincible = false;
     }
 
     public void AddPoints(int amount)
@@ -43,5 +90,21 @@ public class PlayerStats : MonoBehaviour
         points += amount;
         Debug.Log("Points: " + points);
     }
+
+    public void onDeath() {
+        Debug.Log("DEATH");
+        isPlayerDead = true;
+        Instantiate(deathPartcles, _playerRef.transform.position, _playerRef.transform.rotation, _playerRef.transform);
+        _playerRef.onDeath();
+        // Game over screen right there.. 
+    }
     
+    // public void reset() {
+    //     Health = startingHealth;
+    //     points = 0;
+    //     TotalHealed = 0;
+    //     TotalDamageDealt = 0;
+    //     TotalDamageTaken = 0;
+    //     TotalEnemiesKilled = 0;
+    // }
 }

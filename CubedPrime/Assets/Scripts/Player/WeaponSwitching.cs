@@ -12,8 +12,7 @@ public class WeaponSwitching : MonoBehaviour
     public GameObject offhandSlot;
     public LayerMask weaponLayer;
     public float pickupDistance = 2f;
-    
-    private int currentWeaponIndex;
+
     
     //TODO: Make logic to pickup other guns to replace 2nd index.
     

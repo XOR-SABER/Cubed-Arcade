@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 3810823806857119316}
   - component: {fileID: 1024998457766943154}
   - component: {fileID: -3171983795029226578}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HomingEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,6 +298,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 972798115539107735}
     m_Modifications:
+    - target: {fileID: 123111080560098172, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2252319727117217771, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -378,9 +382,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6886298710360613597, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8109939264585055423, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109939264585055423, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
