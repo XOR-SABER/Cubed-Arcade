@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5379849622557117443}
   m_Layer: 0
   m_Name: Tome
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 51438e0ceb54cab44baa794bb3ec7c0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   firePoint: {fileID: 4282382088284823514}
   projectilePrefab: {fileID: 2592730709790584201, guid: f117b296539c006418ca8c3283b09054, type: 3}
   fireRate: 5
+  maxFireRateRevUpWeapon: 0
   isRevUp: 0
   maxRevTime: 2
   revUpCurve:
@@ -111,7 +112,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isEquipped: 0
   shootParticles: {fileID: 4566381003206891631, guid: 07c1aa33f2a03764da1da2bf260abfb6, type: 3}
   isBurst: 0
   roundsPerBurst: 0

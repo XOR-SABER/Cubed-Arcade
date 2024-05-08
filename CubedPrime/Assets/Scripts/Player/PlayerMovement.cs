@@ -2,11 +2,16 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using Screen = UnityEngine.Device.Screen;
 
+[RequireComponent(typeof(WeaponManager))]
 public class PlayerMovement : MonoBehaviour
 {
+    
     public Joystick moveJoystick;
     public Joystick aimJoystick;
+    public GameObject MoblieUI;
 
     public enum InputType{
         Mobile,
@@ -59,13 +64,23 @@ public class PlayerMovement : MonoBehaviour
     private Camera _camera;
     private Vector2 dashDir;
 
+    private WeaponManager _weaponManager;
+
+
 
     private void Awake()
     {
-        if (aimJoystick is null || moveJoystick is null)
+        Debug.Log(Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>());
+        Application.targetFrameRate = Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>();
+        _weaponManager = GetComponent<WeaponManager>();
+        if (inputType == InputType.Mobile)
         {
-            throw new NullReferenceException("Before using this script, please link the two joystick found in the canvas to their corresponding fields in the player movement script in the inspector");
+            if (aimJoystick is null || moveJoystick is null)
+            {
+                throw new NullReferenceException("Before using this script, please link the two joystick found in the canvas to their corresponding fields in the player movement script in the inspector");
+            }
         }
+        
         _dashSpeed = baseDashSpeed;
         _playersControls = new PlayersControls();
         _rb = GetComponent<Rigidbody2D>();
@@ -92,35 +107,35 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (aimJoystick is null || moveJoystick is null)
+        
+        if (inputType == InputType.Mobile)
         {
-            throw new NullReferenceException("Before using this script, please link the two joystick found in the canvas to their corresponding fields in the player movement script in the inspector");
+            if (aimJoystick is null || moveJoystick is null)
+            {
+                throw new NullReferenceException("Before using this script, please link the two joystick found in the canvas to their corresponding fields in the player movement script in the inspector");
+            }
         }
         switch (inputType)
         {
             case InputType.Mobile:
-                moveJoystick.enabled = true;
-                aimJoystick.enabled = true;
+                MoblieUI.SetActive(true);
                 overAllMovement = moveJoystick.Direction;
                 overAllDirection = aimJoystick.Direction;
                 break;
             case InputType.Keyboard:
-                moveJoystick.enabled = false;
-                aimJoystick.enabled = false;
+                MoblieUI.SetActive(false);
                 var dir = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
                 overAllMovement = _move.ReadValue<Vector2>();
                 overAllDirection = dir;
                 break;
             case InputType.Controller:
-                moveJoystick.enabled = false;
-                aimJoystick.enabled = false;
+                MoblieUI.SetActive(false);
                 overAllMovement = _move.ReadValue<Vector2>();
                 overAllDirection = _look.ReadValue<Vector2>();
                 break;
             default:
-                throw new ArgumentOutOfRangeException();
+                throw new NullReferenceException("HOW did you manage to get this error like its legit impossible");
         }
-
         if (isDashing)
         {
             overAllMovement = dashDir;
@@ -134,6 +149,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputType is not InputType.Keyboard)
         {
+            if (aimJoystick.Direction.magnitude > 0 || _look.ReadValue<Vector2>().magnitude > 0)
+            {
+                _weaponManager.Shoot();
+            }
+            else
+            {
+                _weaponManager.ResetTimeHeld();
+            }
             if (overAllDirection.magnitude >= joystickDeadZone)
             {
                 lastDir = overAllDirection;
@@ -175,7 +198,7 @@ public class PlayerMovement : MonoBehaviour
         _rb.rotation = angle;
     }
     
-    private void Dash()
+    public void Dash()
     {
         if (isDashing)
         {
@@ -188,7 +211,6 @@ public class PlayerMovement : MonoBehaviour
             DashType.InMovementDirection => overAllMovement.normalized,
             _ => dashDir
         };
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
