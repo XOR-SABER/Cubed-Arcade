@@ -624,7 +624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32, y: -11.9999695}
+  m_AnchoredPosition: {x: 32, y: -12}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2612228738464739599
@@ -881,7 +881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 32.00006, y: 10}
+  m_AnchoredPosition: {x: 32, y: 10}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2988699307554340292
@@ -1988,7 +1988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: inputType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: slowFactor
@@ -2092,7 +2092,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4826435959527079787, guid: dfd666cf045f94739953ab746265b457, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5353692540154940607, guid: dfd666cf045f94739953ab746265b457, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfd666cf045f94739953ab746265b457, type: 3}
@@ -2163,8 +2164,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3028516003206883530, guid: f8d18b4595e50472f81dc0228794bef7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3236476464442610419, guid: f8d18b4595e50472f81dc0228794bef7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2958435e931c4ae0bf3bdb56fdc3bb8, type: 3}
     - target: {fileID: 6316254670580631465, guid: f8d18b4595e50472f81dc0228794bef7, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 404
