@@ -1387,6 +1387,10 @@ PrefabInstance:
       propertyPath: recoveryTime
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 4607246751269438094, guid: 34ca0c06f0abc5447b164f80b321fba7, type: 3}
     - target: {fileID: 8444617902723284438, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1432,9 +1436,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2669069332572216111}
     - target: {fileID: 9179195672231606659, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: deathPartcles
+      value: 
+      objectReference: {fileID: 4607246751269438094, guid: 34ca0c06f0abc5447b164f80b321fba7, type: 3}
+    - target: {fileID: 9179195672231606659, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: healParticles
+      value: 
+      objectReference: {fileID: 6001081164048008213, guid: b162e3fd852ce69449ee7b4d038c4d27, type: 3}
+    - target: {fileID: 9179195672231606659, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: bloodParticles
       value: 
       objectReference: {fileID: 2969572892610431116, guid: 89c19a1f2f76fc34abb184cdb20f085c, type: 3}
+    - target: {fileID: 9179195672231606659, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: startingHealth
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
     public float duration = 0.25f; 
     public float recoveryTime = 0.1f;
     private bool _isTimeStopped = false;
-
     private PlayersControls _playersControls;
     private Rigidbody2D _rb;
     private Vector2 _movement;
@@ -215,6 +214,7 @@ public class PlayerMovement : MonoBehaviour
             Enemy temp = collision.gameObject.GetComponent<Enemy>();
             if(temp != null) {
                 temp.TakeDamage(100);
+                PlayerStats.instance.heal(1);
                 if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
             }
         } else {
@@ -242,5 +242,8 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = 0.02f;
         _isTimeStopped = false;
+    }
+    public void onDeath() {
+        Destroy(gameObject);
     }
 }

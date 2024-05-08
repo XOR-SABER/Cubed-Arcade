@@ -48,7 +48,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Sound s = getSound(name);
-        Debug.Log(s.audioName);
         if(!s.isMusicTrack) {
             s.source.Play();
             return;
@@ -63,7 +62,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Sound s = getSound(name);
-        Debug.Log(s.audioName);
         s.source.PlayOneShot(s.source.clip);
         return;
         

@@ -28,7 +28,6 @@ public class WormBoss : MonoBehaviour
         CHARGE,  // Code_Red will charge at a very fast speed at the player
         LAZER, // Code_Red will charge his lazarr
         BREATH, // Code_Red will breath fire and target the player head on. 
-
     }
     public boss_states _current_state;
     public Tentacle tent; 
@@ -68,13 +67,10 @@ public class WormBoss : MonoBehaviour
     {
         if(_is_dead) return;
         _state_duration += Time.deltaTime;
-        if(_prev_dir == _new_dir) {
-            SetNewDirection((_player_ref.transform.position - transform.position).normalized * normalSpeed);
-        }
+        if(_prev_dir == _new_dir) SetNewDirection((_player_ref.transform.position - transform.position).normalized * normalSpeed);
         headTrans.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(_moveDir.y, _moveDir.x) * Mathf.Rad2Deg - 90);
         switch (_current_state) {
             case boss_states.FOLLOW:
-                
                 if(_moveDir != _new_dir) {
                     _transition_time += Time.deltaTime;
                     float lerpFactor = _transition_time / _transition_duration;
@@ -91,9 +87,7 @@ public class WormBoss : MonoBehaviour
                     _prev_dir = _moveDir;
                     SetNewDirection((_player_ref.transform.position - transform.position).normalized * normalSpeed);
                 }
-                if(_state_duration >= _find_duration) {
-                    changeState(DecideState());
-                }
+                if(_state_duration >= _find_duration) changeState(DecideState());
             break;
             case boss_states.CHARGE:
                 _moveDir = (_player_ref.transform.position - transform.position).normalized * normalSpeed;
@@ -101,9 +95,7 @@ public class WormBoss : MonoBehaviour
                 lineRen.SetPosition(1, _player_ref.transform.position);
                 
                 transform.position += _moveDir * Time.deltaTime;
-                if(_state_duration >= _charge_duration) {
-                    changeState(DecideState());
-                }
+                if(_state_duration >= _charge_duration) changeState(DecideState());
             break;
             case boss_states.BREATH:
                 _moveDir = (_player_ref.transform.position - transform.position).normalized * normalSpeed;
@@ -111,12 +103,8 @@ public class WormBoss : MonoBehaviour
                 
 
                 RaycastHit2D hit = Physics2D.CircleCast(fireHitBox.transform.position, guideRange, Vector2.right, 0f, layerMask);  
-                if(hit.collider != null) {
-                    PlayerStats.instance.TakeDamage(1);
-                }
-                if(_state_duration >= _breath_duration) {
-                    changeState(DecideState());
-                }
+                if(hit.collider != null) PlayerStats.instance.TakeDamage(1);
+                if(_state_duration >= _breath_duration) changeState(DecideState());
                 break;
             case boss_states.LAZER:
                 _state_duration += Time.deltaTime;
@@ -126,10 +114,8 @@ public class WormBoss : MonoBehaviour
                 _moveDir = Vector3.Lerp(_prev_dir, _new_dir, Time.deltaTime * lazerRotationSpeed + 0.001f);
                 lazerRen.SetPosition(0, fireTrans.position);
                 lazerRen.SetPosition(1, fireTrans.position + fireTrans.up * lazerRange);
-                PerformDualRaycastsForLaser();
-                if(_state_duration >= _lazer_duration) {
-                    changeState(DecideState());
-                }
+                if(_state_duration >= 2f) PerformDualRaycastsForLaser();
+                if(_state_duration >= _lazer_duration) changeState(DecideState());
             break;
         }
     }
@@ -157,14 +143,10 @@ public class WormBoss : MonoBehaviour
 
     int checkIfNearPlayer() {
         RaycastHit2D chargeCheck = Physics2D.CircleCast(transform.position, chargeRange, Vector2.right, 0f, layerMask);  
-        if(chargeCheck.collider == null) {
-            return 1;
-            
-        }
+        if(chargeCheck.collider == null) return 1;
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, playerRange, Vector2.right, 0f, layerMask);  
-        if (hit.collider == null) {
-            return 2;
-        } else return 3;
+        if (hit.collider == null) return 2;
+        else return 3;
     }
 
     void SetNewDirection(Vector3 newDirection) {
