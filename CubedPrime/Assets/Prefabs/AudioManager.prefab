@@ -228,7 +228,7 @@ MonoBehaviour:
   - audioName: DamageSound
     clip: {fileID: 8300000, guid: fb8a3e6513f130f438df2205576c2674, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
-    volume: 0.264
+    volume: 0.603
     pitch: 1
     source: {fileID: 0}
     loop: 0

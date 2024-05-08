@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -216,6 +217,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Enemy")) handleDashing(other.gameObject);
+        if(other.gameObject.CompareTag("Boss")) PlayerStats.instance.TakeDamage(1);
     }
     // This only exists for the bouncy enemy!
     private void OnCollisionEnter2D(Collision2D collision)

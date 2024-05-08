@@ -10,6 +10,7 @@ TagManager:
   - ParticleAttack
   - weapon
   - weaponEquipped
+  - Boss
   layers:
   - Default
   - TransparentFX

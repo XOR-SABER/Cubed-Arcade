@@ -67,6 +67,9 @@ public class WormBoss : MonoBehaviour
     {
         if(_is_dead) return;
         _state_duration += Time.deltaTime;
+        if(_player_ref == null) {
+            SetNewDirection(Vector2.up);
+        }
         if(_prev_dir == _new_dir) SetNewDirection((_player_ref.transform.position - transform.position).normalized * normalSpeed);
         headTrans.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(_moveDir.y, _moveDir.x) * Mathf.Rad2Deg - 90);
         switch (_current_state) {
@@ -301,6 +304,7 @@ public class WormBoss : MonoBehaviour
             ExplosionObj exp = explosion.GetComponent<ExplosionObj>();
             exp.radius = 35f;
             Debug.Log("Hes Dead jim");
+            PlayerStats.instance.AddPoints(1000);
             _UI.DisableUI();
             Destroy(gameObject);
             

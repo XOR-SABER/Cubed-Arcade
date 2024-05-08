@@ -46,11 +46,11 @@ public class PlayerStats : MonoBehaviour
         _playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         if(_playerRef == null) Debug.LogError("Player with the player tag does not exist in scene"); 
         Health = startingHealth;
+        healthText.text = string.Format("{0}/{1}", Health, startingHealth);
     }
 
     private void Update() {
         scoreText.text = string.Format("Score: {0}", points);
-        healthText.text = string.Format("{0}/{1}", Health, startingHealth);
         currentTrack.text = string.Format("Currently playing: {0}", currentlyPlaying);
         FPSCounter.text = string.Format("FPS: {0}", math.round(1.0/Time.deltaTime));
     }
@@ -59,15 +59,20 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damageReceived)
     {
+        
         TotalDamageTaken += damageReceived;
         if(isPlayerDead) return;
         if(_isInvincible) return;
-        StartCoroutine(Invincibility());
+        Instantiate(bloodParticles, _playerRef.transform.position, Quaternion.Inverse(_playerRef.transform.rotation), _playerRef.transform);
         AudioManager.instance.PlayOnShot("DamageSound");
+        StartCoroutine(Invincibility());
         Health -= damageReceived;
         healthbar.fillAmount = (float)Health / startingHealth;
-        Instantiate(bloodParticles, _playerRef.transform.position, Quaternion.Inverse(_playerRef.transform.rotation), _playerRef.transform);
+        healthText.text = string.Format("{0}/{1}", Health, startingHealth);
         if(Health <= 0) onDeath();
+        
+        
+        
     }
     public void heal(int healAmount) {
         Debug.Log("Heal called!");

@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 1690525130102644176}
   m_Layer: 0
   m_Name: WormBoss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8879244cd7cf5c4cbb39bf83c4caf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 25000
+  startHealth: 10000
   guideRange: 7
   playerRange: 55
   chargeRange: 200
@@ -1812,6 +1812,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1969,6 +1973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2046,6 +2054,10 @@ PrefabInstance:
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2125,6 +2137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2202,6 +2218,10 @@ PrefabInstance:
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2281,6 +2301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2358,6 +2382,10 @@ PrefabInstance:
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2561,6 +2589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2639,6 +2671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body
       objectReference: {fileID: 0}
+    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2660,6 +2696,10 @@ PrefabInstance:
     - target: {fileID: 252733950920140459, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
       propertyPath: m_Name
       value: Tail
+      objectReference: {fileID: 0}
+    - target: {fileID: 252733950920140459, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 931652471371484710, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
       propertyPath: m_LocalScale.x
