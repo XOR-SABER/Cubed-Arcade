@@ -1,11 +1,17 @@
 using System;
 using System.Collections;
+using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     public Image healthbar;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI currentTrack;
+    public TextMeshProUGUI FPSCounter;
     public GameObject bloodParticles;
     public GameObject healParticles;
     public GameObject deathPartcles;
@@ -21,7 +27,8 @@ public class PlayerStats : MonoBehaviour
     public int TotalShotsTaken = 0;
     public int TotalShotsHit = 0;
     public bool isPlayerDead = false;
-    
+    public string currentlyPlaying;
+    private PlayerMovement _playerRef;
     private void Awake()
     {
         if (instance == null)
@@ -36,7 +43,16 @@ public class PlayerStats : MonoBehaviour
     
      private void Start()
     {
+        _playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        if(_playerRef == null) Debug.LogError("Player with the player tag does not exist in scene"); 
         Health = startingHealth;
+    }
+
+    private void Update() {
+        scoreText.text = string.Format("Score: {0}", points);
+        healthText.text = string.Format("{0}/{1}", Health, startingHealth);
+        currentTrack.text = string.Format("Currently playing: {0}", currentlyPlaying);
+        FPSCounter.text = string.Format("FPS: {0}", math.round(1.0/Time.deltaTime));
     }
      
     public static PlayerStats instance;
@@ -47,9 +63,10 @@ public class PlayerStats : MonoBehaviour
         if(isPlayerDead) return;
         if(_isInvincible) return;
         StartCoroutine(Invincibility());
+        AudioManager.instance.PlayOnShot("DamageSound");
         Health -= damageReceived;
         healthbar.fillAmount = (float)Health / startingHealth;
-        Instantiate(bloodParticles, transform.position, Quaternion.Inverse(transform.rotation));
+        Instantiate(bloodParticles, _playerRef.transform.position, Quaternion.Inverse(_playerRef.transform.rotation), _playerRef.transform);
         if(Health <= 0) onDeath();
     }
     public void heal(int healAmount) {
@@ -58,7 +75,7 @@ public class PlayerStats : MonoBehaviour
         TotalHealed += healAmount;
         Health += healAmount;
         Health = Math.Clamp(Health, 0, startingHealth);
-        Instantiate(healParticles, transform.position, transform.rotation); 
+        Instantiate(healParticles, _playerRef.transform.position, _playerRef.transform.rotation, _playerRef.transform); 
     }
 
     private IEnumerator Invincibility()
@@ -77,13 +94,8 @@ public class PlayerStats : MonoBehaviour
     public void onDeath() {
         Debug.Log("DEATH");
         isPlayerDead = true;
-        Instantiate(deathPartcles, transform.position, transform.rotation);
-        var player = GameObject.FindGameObjectWithTag("Player");
-        if (player == null) Debug.LogError("Please set the player object with the 'Player' Tag");
-        else {
-            var pl = player.GetComponent<PlayerMovement>();
-            pl.onDeath();
-        }
+        Instantiate(deathPartcles, _playerRef.transform.position, _playerRef.transform.rotation, _playerRef.transform);
+        _playerRef.onDeath();
         // Game over screen right there.. 
     }
     

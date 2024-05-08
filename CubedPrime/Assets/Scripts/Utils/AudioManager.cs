@@ -54,6 +54,7 @@ public class AudioManager : MonoBehaviour
         }
         currentTrack = s.source;
         currentTrack.Play();
+        PlayerStats.instance.currentlyPlaying = s.meta;
     }
 
     public void PlayOnShot(string name) {

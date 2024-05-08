@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public float duration = 0.25f; 
     public float recoveryTime = 0.1f;
     private bool _isTimeStopped = false;
+    public GameObject dashParticles;
     private PlayersControls _playersControls;
     private Rigidbody2D _rb;
     private Vector2 _movement;
@@ -192,27 +193,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && !isDashing)
-        {
-            PlayerStats.instance.TakeDamage(1);
-        } else if (other.gameObject.CompareTag("Enemy") && isDashing) {
-            Enemy temp = other.GetComponent<Enemy>();
-            if(temp != null) {
-                temp.TakeDamage(100);
-                if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
-            }
-        }
+        if(other.gameObject.CompareTag("Enemy")) handleDashing(other.gameObject);
     }
     // This only exists for the bouncy enemy!
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy")) handleDashing(collision);
+        if(collision.gameObject.CompareTag("Enemy")) handleDashing(collision.gameObject);
     }
 
-    void handleDashing(Collision2D collision){
+    void handleDashing(GameObject obj){
         if(isDashing) {
-            Enemy temp = collision.gameObject.GetComponent<Enemy>();
+            Enemy temp = obj.GetComponent<Enemy>();
             if(temp != null) {
+                var dashFx = Instantiate(dashParticles, transform.position, transform.rotation, transform.parent);
+                dashFx.transform.position = new Vector3(dashFx.transform.position.x, dashFx.transform.position.y, -1);
                 temp.TakeDamage(100);
                 PlayerStats.instance.heal(1);
                 if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));

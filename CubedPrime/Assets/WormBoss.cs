@@ -278,10 +278,12 @@ public class WormBoss : MonoBehaviour
         _UI.BossHealthBar.fillAmount = (float)_health / startHealth;
         if(healthIsWithinRange(0.8f) && !_isSmoke1) {
             smoke1.SetActive(true);
+            AudioManager.instance.PlayOnShot("RoboticScream");
             _isSmoke1 = true;
         }
         if(healthIsWithinRange(0.4f) && !_isSmoke2) {
             smoke2.SetActive(true);
+            AudioManager.instance.PlayOnShot("RoboticScream1");
             _isSmoke2 = true;
         }
         if (_health <= 0 && !_is_dead)

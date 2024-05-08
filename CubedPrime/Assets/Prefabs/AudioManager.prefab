@@ -53,6 +53,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 1
     isMusicTrack: 1
+    meta: MindPalace by Retromancer
   - audioName: ButtonConfirm
     clip: {fileID: 8300000, guid: efdf9777a87a0e146bace69bedd6ef57, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -61,6 +62,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: ButtonDeConfirm
     clip: {fileID: 8300000, guid: 52a0b77aa3b76874a9ecd9b7da599e91, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -69,6 +71,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: ModeButtonSelect
     clip: {fileID: 8300000, guid: c96057ef4c6963744b5aa778bac11591, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -77,6 +80,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: LevelTrack1
     clip: {fileID: 8300000, guid: ee86fe2a064ef604da027833e9f36734, type: 3}
     audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -85,6 +89,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
+    meta: RENEGADE by AKIRA
   - audioName: LevelTrack2
     clip: {fileID: 8300000, guid: 7f168756f7382ad47a6a90bffa244b94, type: 3}
     audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -93,6 +98,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
+    meta: JodySummer by INTL.CMD
   - audioName: LevelTrack3
     clip: {fileID: 8300000, guid: a72d62e08486ae14496beec486f303e9, type: 3}
     audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -101,6 +107,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
+    meta: Nightcrawler turbo boost by Nightcrawler music
   - audioName: GlockShot
     clip: {fileID: 8300000, guid: a6b199769a7e2f64d8a8692a9f953c40, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -109,6 +116,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: ShortShot
     clip: {fileID: 8300000, guid: 93af1b7e41ce0644d9c3c668f60147f4, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -117,6 +125,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: MachineShot
     clip: {fileID: 8300000, guid: e1193c745dad3b349a21cec30f5b3fe3, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -125,6 +134,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: MagicShot
     clip: {fileID: 8300000, guid: 602094c59578d5e4c949fec80f1d843d, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -133,6 +143,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: SniperShot
     clip: {fileID: 8300000, guid: ad7b95842b391054bb76aaac884696e8, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -141,6 +152,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: Explosion
     clip: {fileID: 8300000, guid: d3da2b032d881304c90170c5be076198, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -149,6 +161,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: Code_RedTransition
     clip: {fileID: 8300000, guid: 851fd5f66695f94409b96184841fb059, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -157,6 +170,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: Code_RedRoar1
     clip: {fileID: 8300000, guid: c060a851661bf8840a41811f1aba4882, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -165,6 +179,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: Code_RedRoar2
     clip: {fileID: 8300000, guid: 40ab45626920fef49a90123928c78a41, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -173,6 +188,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: Code_RedError
     clip: {fileID: 8300000, guid: 2e28c2ab00797de4a81e23eff5eb8a51, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -181,6 +197,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: Code_RedChargeUp
     clip: {fileID: 8300000, guid: 87926544b6fbdad4287c7f0e000000d9, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -189,6 +206,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
   - audioName: Code_RedTheme
     clip: {fileID: 8300000, guid: 10b2aef7162465e49b460958e2a81c19, type: 3}
     audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -197,6 +215,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
+    meta: Logickin by Vector Computrouns 1.2
   - audioName: DashSound
     clip: {fileID: 8300000, guid: cb0b697db856f4148b4becf48c09f06a, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -205,6 +224,34 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 0
+    meta: 
+  - audioName: DamageSound
+    clip: {fileID: 8300000, guid: fb8a3e6513f130f438df2205576c2674, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.264
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+    meta: 
+  - audioName: RoboticScream
+    clip: {fileID: 8300000, guid: 74229682de8b38e4facbe1d6b1a96174, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.075
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+    meta: 
+  - audioName: RoboticScream1
+    clip: {fileID: 8300000, guid: 8687f4d2229dbcd44b7f2ac44d82a14a, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.264
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+    meta: 
   curve:
     serializedVersion: 2
     m_Curve:
