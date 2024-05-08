@@ -8,6 +8,8 @@ TagManager:
   - Environment
   - Enemy
   - ParticleAttack
+  - weapon
+  - weaponEquipped
   layers:
   - Default
   - TransparentFX

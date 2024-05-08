@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -240562839515529919}
   m_Layer: 3
   m_Name: Test Gun
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   roundsPerBurst: 0
   isMagic: 0
   isTracking: 0
+  soundName: 
 --- !u!60 &-240562839515529919
 PolygonCollider2D:
   m_ObjectHideFlags: 0

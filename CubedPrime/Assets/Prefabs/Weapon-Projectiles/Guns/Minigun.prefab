@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4899758923373239247}
   m_Layer: 0
   m_Name: Minigun
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,14 +103,15 @@ MonoBehaviour:
   firePoint: {fileID: 8568425533484806874}
   projectilePrefab: {fileID: 3630596066284524872, guid: 23b0ae24e8c6dab40bfb1a8d66faadff, type: 3}
   fireRate: 30
+  maxFireRateRevUpWeapon: 30
   isRevUp: 1
-  maxRevTime: 1
+  maxRevTime: 5
   revUpCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.095832825
-      value: 0.13677979
+      time: 0
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -129,7 +130,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isEquipped: 0
   shootParticles: {fileID: 3424826621523161289, guid: 8566f5f5ed4271d4e91576fcb4f7079a, type: 3}
   isBurst: 0
   roundsPerBurst: 0
