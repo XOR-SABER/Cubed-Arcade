@@ -11889,6 +11889,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4123690190097932464, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
+      propertyPath: primary
+      value: 
+      objectReference: {fileID: 3361546805415272323, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+    - target: {fileID: 4123690190097932464, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
+      propertyPath: secondary
+      value: 
+      objectReference: {fileID: 4462865631501407864, guid: e900832828a81784597141b80b30a51e, type: 3}
     - target: {fileID: 4715433004544147806, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
       propertyPath: m_Name
       value: PlayerObjects
@@ -11932,6 +11940,10 @@ PrefabInstance:
     - target: {fileID: 7127109850443470626, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760715986530549628, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
+      propertyPath: inputType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8026227539716252352, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
       propertyPath: m_BoundingShape2D
