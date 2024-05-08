@@ -68,9 +68,16 @@ public class PlayerMovement : MonoBehaviour
     private WeaponManager _weaponManager;
 
 
+#if UNITY_IOS
+    private const InputType BaseInputType = InputType.Mobile;
+#else
+    private const InputType BaseInputType = InputType.Keyboard;
+#endif
+
 
     private void Awake()
     {
+        inputType = BaseInputType;
         Debug.Log(Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>());
         Application.targetFrameRate = Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>();
         _weaponManager = GetComponent<WeaponManager>();
