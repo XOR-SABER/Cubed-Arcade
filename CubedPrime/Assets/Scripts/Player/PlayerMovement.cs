@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputType is not InputType.Keyboard)
         {
-            if (aimJoystick.Direction.x != 0 || aimJoystick.Direction.y != 0)
+            if (aimJoystick.Direction.magnitude > 0 || _look.ReadValue<Vector2>().magnitude > 0)
             {
                 _weaponManager.Shoot();
             }
