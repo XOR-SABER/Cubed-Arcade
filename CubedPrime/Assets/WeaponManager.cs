@@ -121,7 +121,7 @@ public class WeaponManager : MonoBehaviour
     
     private void Update()
     {
-        if (playerMovement.inputType == PlayerMovement.InputType.Mobile)
+        if (playerMovement.inputType is PlayerMovement.InputType.Mobile or PlayerMovement.InputType.Controller)
         {
             return;
         }
