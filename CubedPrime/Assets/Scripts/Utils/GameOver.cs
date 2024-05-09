@@ -51,6 +51,7 @@ public class GameOver : MonoBehaviour
     public void Retry()
     {
         _audMan.Play("ButtonDeConfirm");
+        PlayerStats.instance.reset();
         Toggle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -62,6 +63,7 @@ public class GameOver : MonoBehaviour
             AudioManager.currentTrack.Stop();
             AudioManager.currentTrack = null;
         }
+        PlayerStats.instance.reset();
         Toggle();
         SceneManager.LoadScene(menuSceneName);
     }

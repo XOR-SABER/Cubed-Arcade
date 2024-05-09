@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: RecRoom
   levelName: RecRoom
-  levelDescription: Can you Survive our test level? Because we didn't
+  levelDescription: Can you Survive our test level? Because we didn't.
   gameMode: EXHAUSTIVE
   levelTheme: LevelTrack2

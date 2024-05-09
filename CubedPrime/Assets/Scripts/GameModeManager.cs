@@ -9,6 +9,7 @@ public class GameModeManager : MonoBehaviour {
     public float enemySpawnTime; 
     public float WeaponSpawnTime;
     public float TurretSpawnTime;
+    public float BossSpawnTime;
     public TextMeshProUGUI timeText;
     public GameObject[] enemiesHighTier;
     public GameObject[] enemiesMiddleTier;
@@ -23,10 +24,13 @@ public class GameModeManager : MonoBehaviour {
     private float _time; 
     private float _enemy_current_spawn_time;
     private float _turret_current_spawn_time;
+    private float _boss_current_spawn_time;
     private float _weapon_current_spawn_time;
     private GameObject _player_ref;
     public LayerMask weaponMask;
     public LayerMask enemyMask;
+    public Transform bossSpawnLoc;
+    public GameObject boss;
 
     private void Start() {
         _player_ref = GameObject.FindGameObjectWithTag("Player");
@@ -41,6 +45,7 @@ public class GameModeManager : MonoBehaviour {
         _enemy_current_spawn_time += Time.deltaTime;
         _weapon_current_spawn_time += Time.deltaTime;
         _turret_current_spawn_time += Time.deltaTime;
+        _boss_current_spawn_time += Time.deltaTime;
         if(_weapon_current_spawn_time >= WeaponSpawnTime) {
             _weapon_current_spawn_time = 0;
             SpawnWeapon();
@@ -53,17 +58,23 @@ public class GameModeManager : MonoBehaviour {
             _turret_current_spawn_time = 0;
             SpawnTurret();
         }
+        if(_boss_current_spawn_time >= BossSpawnTime && !PlayerStats.instance.isBossActive) {
+            _boss_current_spawn_time = 0;
+            SpawnBoss();
+        }
         timeText.text = string.Format("Time survived: {0} seconds", math.round(_time));
     }
 
     private void SpawnEnemy() {
         if (enemySpawnLocations.Length > 0) {
+            if(PlayerStats.instance.currentEnemiesCount >= PlayerStats.instance.maxEnemies) return;
             int rand = UnityEngine.Random.Range(5, enemySpawnLocations.Length);
             List<Transform> locations = new List<Transform>(); 
             DecideLocations(ref locations, enemySpawnLocations);
             int number = 0;
             foreach(Transform loc in locations) {
                 number++;
+                PlayerStats.instance.currentEnemiesCount++;
                 Instantiate(DecideEnemy(), loc.position, loc.rotation);
                 if(number >= rand) break;
             }
@@ -88,12 +99,14 @@ public class GameModeManager : MonoBehaviour {
 
     private void SpawnTurret() {
         if (turrets.Length > 0) {
+            if(PlayerStats.instance.currentEnemiesCount >= PlayerStats.instance.maxEnemies) return;
             List<Transform> locations = new List<Transform>(); 
             DecideLocations(ref locations, turretSpawnLocations);
             foreach(Transform loc in locations) {
                 RaycastHit2D hit = Physics2D.CircleCast(loc.position, 1f, Vector2.right,1f, enemyMask);
                 if(hit.collider == null) {
                     Debug.Log("TurretSpawned!");
+                    PlayerStats.instance.currentEnemiesCount++;
                     int rand = UnityEngine.Random.Range(0, turrets.Length);
                     Instantiate(turrets[rand], loc.position, loc.rotation);
                     return;
@@ -101,6 +114,11 @@ public class GameModeManager : MonoBehaviour {
             }
             Debug.Log("Turret didn't spawn no space!");
         }
+    }
+
+    private void SpawnBoss() {
+        
+        Instantiate(boss, bossSpawnLoc.position, bossSpawnLoc.rotation);
     }
 
     private void DecideLocations(ref List<Transform> finalLocations, Transform[] locations) { 
