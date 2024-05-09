@@ -76,7 +76,7 @@ public class BulletScript : MonoBehaviour
     void solidCheck(Collider2D other) {
         Rigidbody2D body = other.GetComponent<Rigidbody2D>();
         if(body == null) return;
-        if(body.CompareTag("BulletSolid")) {
+        if(body.CompareTag("BulletSolid") || body.CompareTag("Train")) {
             numberOfPierces--;
         }
         if(numberOfPierces <= 0) {

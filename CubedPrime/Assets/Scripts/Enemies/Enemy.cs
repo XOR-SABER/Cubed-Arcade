@@ -9,12 +9,17 @@ public class Enemy : MonoBehaviour
 
     public int points = 100;
     
-    public Image healthBar; 
+    public Image healthBar;
+    public bool delayedDeath = false; 
 
     void Start()
     {
         health = startHealth;
     } 
+
+    public int getHealth() {
+        return health;
+    }
     
     // private void OnCollisionEnter2D(Collision2D collision)
     // {
@@ -25,14 +30,10 @@ public class Enemy : MonoBehaviour
     //     }
     // }
 
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Player"))
-    //     {
-    //         PlayerStats.instance.TakeDamage(damage);
-    //         // Destroy(gameObject);
-    //     }
-    // }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Train")) TakeDamage(10000);
+    }
 
     public void TakeDamage(int damageAmount)
     {
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour
     {
         PlayerStats.instance.AddPoints(points);
         PlayerStats.instance.TotalEnemiesKilled++;
+        if(delayedDeath) return;
         Turret tur = GetComponent<Turret>();
         if(tur != null) {
             tur.turretDeath();
