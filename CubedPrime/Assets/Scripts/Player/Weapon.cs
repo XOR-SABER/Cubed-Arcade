@@ -18,6 +18,9 @@ public class Weapon : MonoBehaviour
     public GameObject shootParticles;
     public bool isBurst; 
     public int roundsPerBurst;
+    public bool isShotgun; 
+    public int numOfShotgunPellets = 5;
+    public int shotGunPelletSpreadAngle = 15;
     public bool isMagic;
     public bool isTracking;
     private float _nextFireTime;
@@ -65,6 +68,16 @@ public class Weapon : MonoBehaviour
         if(isMagic)
         {
             Instantiate(shootParticles, firePoint.position, firePoint.rotation, transform);
+        }
+        else if (isShotgun)
+        {
+            float startAngle = -shotGunPelletSpreadAngle * (numOfShotgunPellets - 1) / 2f;
+    
+            for (int i = 0; i < numOfShotgunPellets; i++)
+            {
+                Quaternion spreadRotation = Quaternion.Euler(0, 0, startAngle + shotGunPelletSpreadAngle * i);
+                Instantiate(projectilePrefab, firePoint.position, firePoint.rotation * spreadRotation);
+            }
         }
         else
         {

@@ -11,6 +11,8 @@ TagManager:
   - weapon
   - weaponEquipped
   - Boss
+  - Train
+  - EndTrigger
   layers:
   - Default
   - TransparentFX

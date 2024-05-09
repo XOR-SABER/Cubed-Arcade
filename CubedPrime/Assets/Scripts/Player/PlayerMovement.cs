@@ -229,6 +229,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy")) handleDashing(other.gameObject);
         if(other.gameObject.CompareTag("Boss")) PlayerStats.instance.TakeDamage(1);
+        if(other.gameObject.CompareTag("Train")) PlayerStats.instance.TakeDamage(100);
     }
     // This only exists for the bouncy enemy!
     private void OnCollisionEnter2D(Collision2D collision)
