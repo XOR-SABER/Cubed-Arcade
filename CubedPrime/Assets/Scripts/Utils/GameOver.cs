@@ -58,6 +58,7 @@ public class GameOver : MonoBehaviour
 
     public void Menu()
     {
+        PlayerStats.instance.isInMenu = true;
         _audMan.Play("ButtonDeConfirm");
         if(AudioManager.currentTrack != null) {
             AudioManager.currentTrack.Stop();

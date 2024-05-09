@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
         Shuffle(trackQueue);
     }
     void Update() {
-        if (currentTrack != null && !currentTrack.isPlaying) {
+        if (currentTrack != null && !currentTrack.isPlaying && !PlayerStats.instance.isInMenu) {
             currentTrack = null; 
             if (trackQueue.Count > 0) {
                 string nextTrackName = trackQueue[0];

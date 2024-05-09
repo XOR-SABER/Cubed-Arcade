@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public Image healthbar;
+    public bool isInMenu = true;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI currentTrack;
