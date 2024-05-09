@@ -1707,7 +1707,7 @@ MonoBehaviour:
     m_AmplitudeGain: 1
     m_FrequencyGain: 1
     m_Duration: 1
-    m_NoiseOffsets: {x: 0, y: 0, z: 0}
+    m_NoiseOffsets: {x: -546.9248, y: 426.70078, z: 410.25754}
 --- !u!1 &6434019029805351397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,6 +2202,10 @@ PrefabInstance:
       propertyPath: secondaryWeaponSlot
       value: 
       objectReference: {fileID: 7154082730148946256}
+    - target: {fileID: 5466268770851319645, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5540230005384580758, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2246,6 +2250,10 @@ PrefabInstance:
       propertyPath: deathParticles
       value: 
       objectReference: {fileID: 4607246751269438094, guid: 34ca0c06f0abc5447b164f80b321fba7, type: 3}
+    - target: {fileID: 8264359406537352607, guid: dfd666cf045f94739953ab746265b457, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8444617902723284438, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

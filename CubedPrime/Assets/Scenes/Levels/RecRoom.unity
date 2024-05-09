@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &20871083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3361546805415272323, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_Name
+      value: Minigun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -259.63882
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 131.47865
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711863853553988945, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
 --- !u!1 &60711895
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,9 +190,9 @@ GameObject:
   m_Component:
   - component: {fileID: 60711896}
   - component: {fileID: 60711897}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (9)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 77173742}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,9 +314,9 @@ GameObject:
   m_Component:
   - component: {fileID: 107111762}
   - component: {fileID: 107111763}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (1)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,9 +398,9 @@ GameObject:
   m_Component:
   - component: {fileID: 157924025}
   - component: {fileID: 157924026}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponSpawn (7)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391838085}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,9 +835,9 @@ GameObject:
   m_Component:
   - component: {fileID: 474081135}
   - component: {fileID: 474081136}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponSpawn (5)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -862,9 +919,9 @@ GameObject:
   m_Component:
   - component: {fileID: 519420342}
   - component: {fileID: 519420343}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (10)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -946,9 +1003,9 @@ GameObject:
   m_Component:
   - component: {fileID: 533568204}
   - component: {fileID: 533568205}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (5)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1030,9 +1087,9 @@ GameObject:
   m_Component:
   - component: {fileID: 568515569}
   - component: {fileID: 568515570}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (7)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1180,9 +1237,9 @@ GameObject:
   m_Component:
   - component: {fileID: 651533826}
   - component: {fileID: 651533827}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponSpawn (4)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1384,9 +1441,9 @@ GameObject:
   m_Component:
   - component: {fileID: 723737766}
   - component: {fileID: 723737767}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (1)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1468,9 +1525,9 @@ GameObject:
   m_Component:
   - component: {fileID: 781969255}
   - component: {fileID: 781969256}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (8)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5430,9 +5487,9 @@ GameObject:
   m_Component:
   - component: {fileID: 807467534}
   - component: {fileID: 807467535}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (2)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5514,9 +5571,9 @@ GameObject:
   m_Component:
   - component: {fileID: 818339049}
   - component: {fileID: 818339050}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (11)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5741,9 +5798,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1012983938}
   - component: {fileID: 1012983939}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (9)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5824,13 +5881,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1044144381}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SpawnLocations
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1044144381
 Transform:
   m_ObjectHideFlags: 0
@@ -5999,9 +6056,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1128667565}
   - component: {fileID: 1128667566}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (6)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6083,9 +6140,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1138233508}
   - component: {fileID: 1138233509}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (3)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6198,9 +6255,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1146084388}
   - component: {fileID: 1146084389}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponSpawn (8)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6665,9 +6722,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1261217340}
   - component: {fileID: 1261217341}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (14)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6907,9 +6964,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1317605630}
   - component: {fileID: 1317605631}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponSpawn (2)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6991,9 +7048,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1318095368}
   - component: {fileID: 1318095369}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (12)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7075,9 +7132,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1326856155}
   - component: {fileID: 1326856156}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (15)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7159,9 +7216,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1418662122}
   - component: {fileID: 1418662123}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponSpawn (6)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7254,7 +7311,7 @@ GameObject:
   - component: {fileID: 1472553892}
   - component: {fileID: 1472553894}
   - component: {fileID: 1472553893}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Tilemap
   m_TagString: BulletSolid
   m_Icon: {fileID: 0}
@@ -13679,9 +13736,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1481346726}
   - component: {fileID: 1481346727}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (2)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13763,9 +13820,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1494648300}
   - component: {fileID: 1494648301}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (3)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13847,9 +13904,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1501749871}
   - component: {fileID: 1501749872}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (10)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13931,9 +13988,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1526464588}
   - component: {fileID: 1526464589}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (4)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14015,9 +14072,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1566635222}
   - component: {fileID: 1566635223}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponSpawn (1)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14099,9 +14156,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1602883483}
   - component: {fileID: 1602883484}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (11)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14183,9 +14240,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1655524378}
   - component: {fileID: 1655524379}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WeaponSpawn (3)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14328,9 +14385,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1847389828}
   - component: {fileID: 1847389829}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (4)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14412,9 +14469,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1874713649}
   - component: {fileID: 1874713650}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TurretSpawn (6)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14496,9 +14553,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1892494866}
   - component: {fileID: 1892494867}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (7)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14613,7 +14670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1946631576}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Turrets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14657,9 +14714,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1995083193}
   - component: {fileID: 1995083194}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (8)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14741,9 +14798,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2027541926}
   - component: {fileID: 2027541927}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (5)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14825,9 +14882,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2061180304}
   - component: {fileID: 2061180305}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EnemySpawn (13)
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15050,6 +15107,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322245866972679297, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4715433004544147806, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
       propertyPath: m_Name
       value: PlayerObjects
@@ -15299,3 +15360,4 @@ SceneRoots:
   - {fileID: 676925446}
   - {fileID: 1302489288}
   - {fileID: 951810878}
+  - {fileID: 20871083}

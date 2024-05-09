@@ -49,8 +49,14 @@ public class PauseMenu : MonoBehaviour
         Debug.Log(AudioManager.currentTrack);
         Debug.Log(ui.activeSelf);
         if(AudioManager.currentTrack != null) {
-            if(ui.activeSelf) AudioManager.currentTrack.Pause();
-            else AudioManager.currentTrack.UnPause();
+            if(ui.activeSelf) {
+                AudioManager.instance.isPaused = true;
+                AudioManager.currentTrack.Pause();
+            }
+            else {
+                AudioManager.instance.isPaused = false;
+                AudioManager.currentTrack.UnPause();
+            }
         }
         // Setting the time scale down.
         if (ui.activeSelf) Time.timeScale = 0f;

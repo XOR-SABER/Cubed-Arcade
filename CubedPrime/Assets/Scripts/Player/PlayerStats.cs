@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public Image healthbar;
+    public bool isInMenu = true;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI currentTrack;
@@ -103,10 +104,20 @@ public class PlayerStats : MonoBehaviour
 
     public void onDeath() {
         Debug.Log("DEATH");
+        SaveScore();
         isPlayerDead = true;
         Instantiate(deathPartcles, _playerRef.transform.position, _playerRef.transform.rotation, _playerRef.transform);
         _playerRef.onDeath();
         // Game over screen right there.. 
+    }
+
+    private void SaveScore()
+    {
+        int highScore = PlayerPrefs.GetInt("highScore", 0);
+        if (highScore < points)
+        {
+            PlayerPrefs.SetInt("highScore", points);
+        }
     }
     
     public void reset() {

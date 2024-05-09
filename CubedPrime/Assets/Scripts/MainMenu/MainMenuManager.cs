@@ -29,6 +29,7 @@ public class MainMenuManager : MonoBehaviour
         customizationCanvas.SetActive(false);
         audioMan = FindObjectOfType<AudioManager>();
         startAnimation.SetTrigger("StartTransition");
+        if(AudioManager.currentTrack != null) AudioManager.currentTrack.Stop();
         audioMan.Play("MainMenuTheme");
     }
 

@@ -31,7 +31,7 @@ public class SlimeEnemy : MonoBehaviour
         {
             Vector3 offset = Random.insideUnitCircle * 3.5f; 
             Vector3 spawnPos = transform.position + new Vector3(offset.x, offset.y, 0);
-
+            PlayerStats.instance.currentEnemiesCount++;
             Instantiate(slimes, spawnPos, Quaternion.identity);
         }
 
