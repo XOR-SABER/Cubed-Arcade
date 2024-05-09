@@ -1,10 +1,12 @@
 using System;
+using Cinemachine;
 using UnityEngine;
 
 
 public class Weapon : MonoBehaviour
 {
-    
+    private CinemachineImpulseSource _impulseSource;
+    public float impluseForce = 1;
     public Vector3 equipOffset;
     public Transform firePoint;
     public GameObject projectilePrefab;
@@ -29,6 +31,11 @@ public class Weapon : MonoBehaviour
     
     
     private double nextFire;
+
+    private void Start()
+    {
+        _impulseSource = FindObjectOfType<CinemachineImpulseSource>();
+    }
 
     public void ShootOrder()
     {
@@ -70,5 +77,11 @@ public class Weapon : MonoBehaviour
         {
             AudioManager.instance.PlayOnShot(soundName);
         }
+        Impulse();
+    }
+    
+    private void Impulse()
+    {
+        _impulseSource.GenerateImpulse((-transform.up).normalized * impluseForce);
     }
 }

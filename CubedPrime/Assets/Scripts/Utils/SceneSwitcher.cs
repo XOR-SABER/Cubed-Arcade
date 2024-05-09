@@ -14,6 +14,8 @@ namespace Scripts
         public static SceneSwitcher instance;
         public int levelToGoto;
 
+        public Level levelToLoad;
+
         void Awake() {
             SceneManager.sceneLoaded += OnSceneLoaded;
             if (instance == null) instance = this;
@@ -26,7 +28,6 @@ namespace Scripts
         }
         private void Start()
         {
-            img = FindObjectOfType<FadeImage>().fadeIMG;
             StartCoroutine(FadeIn());
         }
 
@@ -66,7 +67,7 @@ namespace Scripts
         }
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            img = FindObjectOfType<FadeImage>().fadeIMG;
+            //img = FindObjectOfType<FadeImage>().fadeIMG;
             StartCoroutine(FadeIn());
         }
     }
