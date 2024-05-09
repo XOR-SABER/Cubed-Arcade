@@ -315,6 +315,16 @@ MonoBehaviour:
     isMusicTrack: 1
     meta: Arcade Exploration - Robotic Steel
     addIntoQueue: 1
+  - audioName: TrainHorn
+    clip: {fileID: 8300000, guid: 2334948c4c35fd4498d04714bb3f2494, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.177
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+    meta: 
+    addIntoQueue: 0
   curve:
     serializedVersion: 2
     m_Curve:
