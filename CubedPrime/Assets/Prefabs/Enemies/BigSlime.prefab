@@ -180,11 +180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   startHealth: 100
-  health: 0
-  delayDeath: 1
   points: 100
   healthBar: {fileID: 7679085599450364553}
-  onDeathEffect: {fileID: 0}
+  delayedDeath: 1
 --- !u!195 &1324973243201482133
 NavMeshAgent:
   m_ObjectHideFlags: 0
