@@ -47,9 +47,17 @@ public class WeaponManager : MonoBehaviour
             secondary.transform.position = secondaryWeaponSlot.transform.position;
             secondary.transform.rotation = secondaryWeaponSlot.transform.rotation;
             secondary.tag = "weaponEquipped";
+            
+            if (secondary.GetComponent<Weapon>().isMagicBook)
+            {
+                secondary.GetComponent<Weapon>().gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                secondary.GetComponent<Weapon>().gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            }
+            
         }
         
         _mainWeapon = primary.GetComponent<Weapon>();
+        
         
         _playersControls = new PlayersControls();
         
@@ -97,6 +105,11 @@ public class WeaponManager : MonoBehaviour
                 secondary = Instantiate(_weaponsOnGround[i].gameObject, mainWeaponSlot.transform);
                 secondary.transform.position = secondaryWeaponSlot.transform.position;
                 secondary.transform.rotation = secondaryWeaponSlot.transform.rotation;
+                if (secondary.GetComponent<Weapon>().isMagicBook)
+                {
+                    secondary.GetComponent<Weapon>().gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                    secondary.GetComponent<Weapon>().gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                }
                 Destroy(_weaponsOnGround[i].gameObject);
                 secondary.tag = "weaponEquipped";
                 return;
@@ -115,7 +128,17 @@ public class WeaponManager : MonoBehaviour
             
             secondary.transform.position = secondaryWeaponSlot.transform.position;
             secondary.transform.rotation = secondaryWeaponSlot.transform.rotation;
+            if (_mainWeapon.isMagicBook)
+            {
+                _mainWeapon.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                _mainWeapon.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            }
             _mainWeapon = primary.GetComponent<Weapon>();
+            if (_mainWeapon.isMagicBook)
+            {
+                _mainWeapon.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                _mainWeapon.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            }
         }
     }
     

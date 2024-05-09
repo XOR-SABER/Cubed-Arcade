@@ -20,6 +20,10 @@ public class Weapon : MonoBehaviour
     public bool isTracking;
     private float _nextFireTime;
     public string soundName;
+
+    public bool isMagicBook;
+    
+    
     
     private float _timeHeld = 0;
     
