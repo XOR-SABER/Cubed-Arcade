@@ -17,7 +17,6 @@ public class LevelButton : MonoBehaviour
 
     public void OnClickLoadLevel()
     {
-        PlayerStats.instance.isInMenu = false;
         _levelSelector.LoadLevel(_level);
     }
 

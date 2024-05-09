@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -40,7 +41,8 @@ public class AudioManager : MonoBehaviour
         Shuffle(trackQueue);
     }
     void Update() {
-        if (currentTrack != null && !currentTrack.isPlaying && !PlayerStats.instance.isInMenu) {
+        if (currentTrack != null && !currentTrack.isPlaying) {
+            if(currentTrack.loop) return;
             currentTrack = null; 
             if (trackQueue.Count > 0) {
                 string nextTrackName = trackQueue[0];
