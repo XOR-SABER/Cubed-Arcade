@@ -28,6 +28,7 @@ public class GameOver : MonoBehaviour
     {
         if (_isPlaying)
         {
+            AudioManager.instance.isGameOver = true;
             _isPlaying = false;
             Toggle();
         }
@@ -51,6 +52,7 @@ public class GameOver : MonoBehaviour
     public void Retry()
     {
         _audMan.Play("ButtonDeConfirm");
+        AudioManager.instance.isGameOver = false;
         PlayerStats.instance.reset();
         Toggle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -60,6 +62,7 @@ public class GameOver : MonoBehaviour
     {
         _audMan.Play("ButtonDeConfirm");
         if(AudioManager.currentTrack != null) {
+            AudioManager.instance.isGameOver = false;
             AudioManager.currentTrack.Stop();
             AudioManager.currentTrack = null;
         }

@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
     private static Dictionary<string, int> _soundMap;
     public List<string> trackQueue;
     public bool isPaused;
-    public bool isMenu;
+    public bool isGameOver;
     void Awake() {
         
         if (instance != null && instance != this)
@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         if(PlayerStats.instance != null && currentTrack != null) {
             PlayerStats.instance.currentlyPlaying = currentTrackMeta;
         }
-        if (currentTrack != null && !currentTrack.isPlaying && !isPaused) {
+        if (currentTrack != null && !currentTrack.isPlaying && !isPaused && !isGameOver) {
             if(currentTrack.loop) return;
             currentTrack = null; 
             if (trackQueue.Count > 0) {

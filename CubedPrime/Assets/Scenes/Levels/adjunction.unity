@@ -3433,9 +3433,9 @@ GameObject:
   - component: {fileID: 502096176}
   - component: {fileID: 502096175}
   - component: {fileID: 502096174}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Tilemap
-  m_TagString: BulletSolid
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
