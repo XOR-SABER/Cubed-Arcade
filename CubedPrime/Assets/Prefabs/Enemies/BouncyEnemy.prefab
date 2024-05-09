@@ -238,8 +238,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   startHealth: 100
+  health: 0
+  delayDeath: 0
   points: 100
   healthBar: {fileID: 5244045799025827299}
+  onDeathEffect: {fileID: 3740811121154756120, guid: 7acf8be221007c64a8534e2f44a9040d, type: 3}
 --- !u!50 &2154704082156893539
 Rigidbody2D:
   serializedVersion: 4

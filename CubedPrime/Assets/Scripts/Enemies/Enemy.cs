@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,11 +6,16 @@ public class Enemy : MonoBehaviour
 {
     public int damage = 1;
     public int startHealth = 100;
-    private int health;
+    [HideInInspector]
+    public int health;
+
+    public bool delayDeath;
 
     public int points = 100;
     
-    public Image healthBar; 
+    public Image healthBar;
+
+    public GameObject onDeathEffect;
 
     void Start()
     {
@@ -38,7 +44,7 @@ public class Enemy : MonoBehaviour
     {
         health -= damageAmount;
         healthBar.fillAmount = (float)health / startHealth;
-        if (health <= 0)
+        if (health <= 0 && ! delayDeath)
         {
             EnemyDeath();
         }
@@ -50,10 +56,21 @@ public class Enemy : MonoBehaviour
         PlayerStats.instance.TotalEnemiesKilled++;
         Turret tur = GetComponent<Turret>();
         if(tur != null) {
+            if(onDeathEffect != null)
+            {
+                Instantiate(onDeathEffect, transform.position, quaternion.identity);
+            }            
             tur.turretDeath();
             Destroy(tur.mainObject);
         }
-         else Destroy(gameObject);
+         else
+         {
+             if(onDeathEffect != null)
+             {
+                 Instantiate(onDeathEffect, transform.position, quaternion.identity);
+             } 
+             Destroy(gameObject);
+         }
     }
     
     
