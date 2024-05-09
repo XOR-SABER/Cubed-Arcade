@@ -10,4 +10,5 @@ public class Level : ScriptableObject
     public string levelDescription;
     public string gameMode;
     public string levelTheme;
+    public string levelHighScoreTag;
 }
