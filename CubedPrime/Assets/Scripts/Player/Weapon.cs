@@ -43,7 +43,6 @@ public class Weapon : MonoBehaviour
             Shoot();
         }
 
-        Debug.Log(_timeHeld);
         _timeHeld += Time.deltaTime;
         _timeHeld = Mathf.Clamp(_timeHeld, 0, maxRevTime);
     }
