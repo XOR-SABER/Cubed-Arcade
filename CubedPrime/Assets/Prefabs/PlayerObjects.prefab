@@ -1988,7 +1988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: inputType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7588545709921747359, guid: dfd666cf045f94739953ab746265b457, type: 3}
       propertyPath: slowFactor
