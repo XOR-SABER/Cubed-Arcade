@@ -57,6 +57,12 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    // This method is called when the application is paused or resumed
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        isPaused = pauseStatus;
+    }
     private void Shuffle<T>(List<T> list)
     {
         System.Random random = new System.Random();
