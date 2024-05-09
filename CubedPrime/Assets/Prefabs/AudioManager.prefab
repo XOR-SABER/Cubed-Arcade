@@ -88,13 +88,13 @@ MonoBehaviour:
   - audioName: LevelTrack1
     clip: {fileID: 8300000, guid: ee86fe2a064ef604da027833e9f36734, type: 3}
     audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
-    volume: 0.5
+    volume: 0.262
     pitch: 1
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
     meta: RENEGADE by AKIRA
-    addIntoQueue: 0
+    addIntoQueue: 1
   - audioName: LevelTrack2
     clip: {fileID: 8300000, guid: 7f168756f7382ad47a6a90bffa244b94, type: 3}
     audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -104,17 +104,17 @@ MonoBehaviour:
     loop: 0
     isMusicTrack: 1
     meta: JodySummer by INTL.CMD
-    addIntoQueue: 0
+    addIntoQueue: 1
   - audioName: LevelTrack3
     clip: {fileID: 8300000, guid: a72d62e08486ae14496beec486f303e9, type: 3}
     audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
-    volume: 0.5
+    volume: 0.274
     pitch: 1
     source: {fileID: 0}
     loop: 0
     isMusicTrack: 1
     meta: Nightcrawler turbo boost by Nightcrawler music
-    addIntoQueue: 0
+    addIntoQueue: 1
   - audioName: GlockShot
     clip: {fileID: 8300000, guid: a6b199769a7e2f64d8a8692a9f953c40, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
@@ -275,6 +275,46 @@ MonoBehaviour:
     isMusicTrack: 0
     meta: 
     addIntoQueue: 0
+  - audioName: LevelTrack4
+    clip: {fileID: 8300000, guid: d13ee51df40e0254397b36142e2aecf0, type: 3}
+    audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.264
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 1
+    meta: Hyperspace by Occlusive Occurrences
+    addIntoQueue: 1
+  - audioName: LevelTrack5
+    clip: {fileID: 8300000, guid: af13d520fbdd5704188ab4915a9abe46, type: 3}
+    audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.264
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 1
+    meta: Drifter - Line Nine
+    addIntoQueue: 1
+  - audioName: LevelTrack6
+    clip: {fileID: 8300000, guid: 83f9c0d3831d8b34dba3a27791cc3e74, type: 3}
+    audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.264
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 1
+    meta: Escape - Rafiki Music
+    addIntoQueue: 1
+  - audioName: LevelTrack7
+    clip: {fileID: 8300000, guid: 20651a231abbc65429d70e47dbd6a06f, type: 3}
+    audioMixerGroup: {fileID: 4449381934645534453, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.264
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 1
+    meta: Arcade Exploration - Robotic Steel
+    addIntoQueue: 1
   curve:
     serializedVersion: 2
     m_Curve:

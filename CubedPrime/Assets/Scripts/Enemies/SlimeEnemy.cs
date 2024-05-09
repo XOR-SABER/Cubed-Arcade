@@ -10,7 +10,6 @@ public class SlimeEnemy : MonoBehaviour
     public GameObject slimes;
     public GameObject onDeathEffect;
     
-    
     // Start is called before the first frame update
     void Start()
     {
