@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     private static Dictionary<string, int> _soundMap;
     public List<string> trackQueue;
     public bool isPaused;
+    public bool isMenu;
     void Awake() {
         
         if (instance != null && instance != this)
@@ -42,6 +43,9 @@ public class AudioManager : MonoBehaviour
         Shuffle(trackQueue);
     }
     void Update() {
+        if(PlayerStats.instance != null && currentTrack != null) {
+            PlayerStats.instance.currentlyPlaying = currentTrackMeta;
+        }
         if (currentTrack != null && !currentTrack.isPlaying && !isPaused) {
             if(currentTrack.loop) return;
             currentTrack = null; 
@@ -83,10 +87,10 @@ public class AudioManager : MonoBehaviour
         }
         currentTrack = s.source;
         currentTrack.Play();
+        currentTrackMeta = s.meta;
         if (PlayerStats.instance != null)
         {
             PlayerStats.instance.currentlyPlaying = s.meta;
-            currentTrackMeta = s.meta;
         }
     }
 
