@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/RecRoom.unity
     guid: ac4ff671c21bccb41bf633214d3eecb4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Adjunction.unity
+    guid: e420387d548e2bf44a0ba932d98b7c58
   m_configObjects: {}

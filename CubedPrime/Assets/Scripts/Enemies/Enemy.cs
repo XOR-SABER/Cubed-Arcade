@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
     {
         PlayerStats.instance.AddPoints(points);
         PlayerStats.instance.TotalEnemiesKilled++;
+        PlayerStats.instance.currentEnemiesCount--;
         if(delayedDeath) return;
         Turret tur = GetComponent<Turret>();
         if(tur != null) {

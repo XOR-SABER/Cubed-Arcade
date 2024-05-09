@@ -292,6 +292,7 @@ public class WormBoss : MonoBehaviour
         if (_health <= 0 && !_is_dead)
         {
             _is_dead = true;
+            PlayerStats.instance.isBossActive = false;
             bossFlame.SetActive(false);
             lineRen.enabled = false;
             lazerRen.enabled = false;

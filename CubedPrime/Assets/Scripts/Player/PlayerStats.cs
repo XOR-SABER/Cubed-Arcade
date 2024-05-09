@@ -27,6 +27,9 @@ public class PlayerStats : MonoBehaviour
     public int TotalShotsTaken = 0;
     public int TotalShotsHit = 0;
     public bool isPlayerDead = false;
+    public bool isBossActive = false;
+    public int currentEnemiesCount = 0;
+    public int maxEnemies = 50;
     public string currentlyPlaying;
     private PlayerMovement _playerRef;
     private void Awake()
@@ -106,12 +109,15 @@ public class PlayerStats : MonoBehaviour
         // Game over screen right there.. 
     }
     
-    // public void reset() {
-    //     Health = startingHealth;
-    //     points = 0;
-    //     TotalHealed = 0;
-    //     TotalDamageDealt = 0;
-    //     TotalDamageTaken = 0;
-    //     TotalEnemiesKilled = 0;
-    // }
+    public void reset() {
+        isBossActive = false;
+        _isInvincible = false;
+        isPlayerDead = false;
+        Health = startingHealth;
+        points = 0;
+        TotalHealed = 0;
+        TotalDamageDealt = 0;
+        TotalDamageTaken = 0;
+        TotalEnemiesKilled = 0;
+    }
 }
