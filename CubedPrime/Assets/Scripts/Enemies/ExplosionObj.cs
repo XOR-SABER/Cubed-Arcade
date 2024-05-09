@@ -10,6 +10,7 @@ public class ExplosionObj : MonoBehaviour
     public string target_tags;
     public string soundName;
     public LayerMask enemyLayer;
+    public LayerMask playerLayer;
 
     void Start() {
         if(target_tags == "Enemy") {
@@ -28,7 +29,7 @@ public class ExplosionObj : MonoBehaviour
     }
 
     void dealEnemyDamage() {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, damageRadius, Vector2.right, enemyLayer);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, damageRadius, Vector2.right, 0f, enemyLayer);
         if(hits.Length > 0) {
             foreach(RaycastHit2D hit in hits) {
                 Enemy obj = hit.collider.gameObject.GetComponent<Enemy>();
@@ -38,21 +39,19 @@ public class ExplosionObj : MonoBehaviour
     }
 
     void dealPlayerDamage() {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, damageRadius, Vector2.right);
-        if(hits.Length > 0) {
-            foreach(RaycastHit2D hit in hits) {
-                if(hit.collider.CompareTag("Player")) PlayerStats.instance.TakeDamage(1);
-            }
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, damageRadius, Vector2.right, 0f, playerLayer);
+        if(hit.collider != null) {
+            if(hit.collider.CompareTag("Player")) PlayerStats.instance.TakeDamage(1);
         }
     }
 
     void dealAll() {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, damageRadius, Vector2.right, enemyLayer);
+        dealPlayerDamage();
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, damageRadius, Vector2.right, 0f, enemyLayer);
         if(hits.Length > 0) {
             foreach(RaycastHit2D hit in hits) {
                 Enemy obj = hit.collider.gameObject.GetComponent<Enemy>();
                 if(obj != null) obj.TakeDamage(150);
-                if(hit.collider.CompareTag("Player")) PlayerStats.instance.TakeDamage(1);
             }
         }
     }

@@ -8,13 +8,11 @@ public class BulletScript : MonoBehaviour
     public int numberOfPierces = 1;
     public GameObject wallParticles;
     public GameObject bloodParticles;
+    public bool isMissle; 
+    public GameObject explosionOBJ;
     private bool _isHit = false; 
     private Vector2 _playerVelocity;
     
-    void Start() {
-        PlayerStats.instance.TotalShotsTaken++;
-    }
-
     public void SetPlayerVelocity(Vector2 velocity)
     {
         _playerVelocity = velocity;
@@ -23,7 +21,7 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.Translate((Vector2.up + _playerVelocity) * (speed * Time.deltaTime));
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 10f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -42,9 +40,11 @@ public class BulletScript : MonoBehaviour
             numberOfPierces--;
         }
         if(numberOfPierces <= 0) {
-            Destroy(gameObject);
-            if(_isHit) PlayerStats.instance.TotalShotsHit++;
-            Instantiate(bloodParticles, transform.position, Quaternion.Inverse(transform.rotation));
+            if(_isHit) {
+                _isHit = false;
+                PlayerStats.instance.TotalShotsHit++;
+            }
+            hitObj(bloodParticles);
         }
     }
     void dealBossDamage(Collider2D other) {
@@ -56,9 +56,11 @@ public class BulletScript : MonoBehaviour
             numberOfPierces--;
         }
         if(numberOfPierces <= 0) {
-            Destroy(gameObject);
-            if(_isHit) PlayerStats.instance.TotalShotsHit++;
-            Instantiate(bloodParticles, transform.position, Quaternion.Inverse(transform.rotation));
+            if(_isHit) {
+                _isHit = false;
+                PlayerStats.instance.TotalShotsHit++;
+            }
+            hitObj(bloodParticles);
         }
     }
     void BarrelCheck(Collider2D other) {
@@ -68,9 +70,11 @@ public class BulletScript : MonoBehaviour
             body.destroyBarrel();
         }
         if(numberOfPierces <= 0) {
-            Destroy(gameObject);
-            if(_isHit) PlayerStats.instance.TotalShotsHit++;
-            Instantiate(wallParticles, transform.position, Quaternion.Inverse(transform.rotation));
+            if(_isHit) {
+                _isHit = false;
+                PlayerStats.instance.TotalShotsHit++;
+            }
+            hitObj(wallParticles);
         }
     }
     void solidCheck(Collider2D other) {
@@ -80,10 +84,24 @@ public class BulletScript : MonoBehaviour
             numberOfPierces--;
         }
         if(numberOfPierces <= 0) {
-            Destroy(gameObject);
-            if(_isHit) PlayerStats.instance.TotalShotsHit++;
-            Instantiate(wallParticles, transform.position, Quaternion.Inverse(transform.rotation));
+            if(_isHit) {
+                _isHit = false;
+                PlayerStats.instance.TotalShotsHit++;
+            }
+            hitObj(wallParticles);
         }
+    }
+
+    void hitObj(GameObject partcleEffect) {
+        if(isMissle) {
+            GameObject OBJ = Instantiate(explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
+            ExplosionObj exp = OBJ.GetComponent<ExplosionObj>();
+            exp.target_tags = "Enemy";
+            exp.radius = 20F;
+            exp.damageRadius = 7.5F;
+        }
+        Destroy(gameObject);
+        Instantiate(partcleEffect, transform.position, Quaternion.Inverse(transform.rotation));
     }
 }
 

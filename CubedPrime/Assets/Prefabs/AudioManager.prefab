@@ -318,7 +318,17 @@ MonoBehaviour:
   - audioName: TrainHorn
     clip: {fileID: 8300000, guid: 2334948c4c35fd4498d04714bb3f2494, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
-    volume: 0.177
+    volume: 0.093
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+    meta: 
+    addIntoQueue: 0
+  - audioName: MissleLaunch
+    clip: {fileID: 8300000, guid: 9e9f9602bf3acb342bc0d60f1271d0e6, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.093
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -351,3 +361,5 @@ MonoBehaviour:
     m_RotationOrder: 4
   currentTrackMeta: 
   trackQueue: []
+  isPaused: 0
+  isGameOver: 0

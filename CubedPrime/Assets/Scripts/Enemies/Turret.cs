@@ -4,7 +4,6 @@ public class Turret : MonoBehaviour
 {
 
     public float fireRate = 1f;
-    
     public int range = 15;
     public GameObject mainObject;
     public GameObject projectilePrefab;
@@ -14,6 +13,10 @@ public class Turret : MonoBehaviour
     public GameObject ExplosionFX;
     public LayerMask playerLayerMask; 
     public LayerMask enviromentLayerMask;
+    public bool isMissleTurret;
+    public bool isShotgunTurret;
+    public int numOfShotgunPellets = 3;
+    public int shotGunPelletSpreadAngle = 15;
     private float _nextFireTime;
     void Start()
     {
@@ -49,7 +52,8 @@ public class Turret : MonoBehaviour
 
         if (Vector3.Distance(transform.position, playerTransform.position) <= range && Time.time >= _nextFireTime)
         {
-            Shoot();
+            if(isShotgunTurret) shotgunShoot();
+            else Shoot();
             _nextFireTime = Time.time + 1f / fireRate;
         }
     }
@@ -57,6 +61,19 @@ public class Turret : MonoBehaviour
     public void Shoot()
     {
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        if(isMissleTurret) AudioManager.instance.PlayOnShot("MissleLaunch");
+        else AudioManager.instance.PlayOnShot("ShortShot");
+
+    }
+    public void shotgunShoot()
+    {
+        float startAngle = -shotGunPelletSpreadAngle * (numOfShotgunPellets - 1) / 2f;
+    
+        for (int i = 0; i < numOfShotgunPellets; i++)
+        {
+            Quaternion spreadRotation = Quaternion.Euler(0, 0, startAngle + shotGunPelletSpreadAngle * i);
+            Instantiate(projectilePrefab, firePoint.position, firePoint.rotation * spreadRotation);
+        }
         AudioManager.instance.PlayOnShot("ShortShot");
 
     }

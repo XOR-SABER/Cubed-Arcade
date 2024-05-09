@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6736083256958345270}
   - component: {fileID: 9184421507218990098}
   - component: {fileID: -8500069238729568562}
-  - component: {fileID: 465454335629531616}
+  - component: {fileID: 6201331973750570283}
   m_Layer: 8
-  m_Name: Magnum Bullet
+  m_Name: SMG Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 2592730709790584201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.253, z: 0}
-  m_LocalScale: {x: 0.25, y: 1.9669999, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0.72671366, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.697198, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e76eb4a4845ea4e90982f4977c3d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 150
-  damage: 100
-  numberOfPierces: 2
+  speed: 75
+  damage: 50
+  numberOfPierces: 1
   wallParticles: {fileID: 3424826621523161289, guid: 8f36a0d700844004caf89570175a2e11, type: 3}
   bloodParticles: {fileID: 2969572892610431116, guid: 89c19a1f2f76fc34abb184cdb20f085c, type: 3}
 --- !u!50 &9184421507218990098
@@ -164,7 +164,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1266823}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -175,9 +175,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.75336444}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!96 &465454335629531616
+--- !u!96 &6201331973750570283
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 5
-  m_PreviewTimeScale: 0.1
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -229,7 +229,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.45000076
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -237,16 +237,16 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.18474522
-        value: 0.2298032
-        inSlope: -1.4946573
-        outSlope: -1.4946573
+        time: 0.2642868
+        value: 0.34999746
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
-        time: 0.9964286
+        time: 0.4214286
         value: 0
         inSlope: 0
         outSlope: 0
@@ -259,8 +259,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.8248069, b: 0, a: 1}
-      key1: {r: 1, g: 0.5267917, b: 0, a: 1}
+      key0: {r: 0.9960785, g: 0.69803923, b: 0, a: 1}
+      key1: {r: 1, g: 0.44483572, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -290,7 +290,7 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 1
+    textureMode: 0
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0

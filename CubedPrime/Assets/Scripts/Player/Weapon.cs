@@ -29,7 +29,6 @@ public class Weapon : MonoBehaviour
     public bool isMagicBook;
     
     
-    
     private float _timeHeld = 0;
     
     
@@ -91,6 +90,7 @@ public class Weapon : MonoBehaviour
             AudioManager.instance.PlayOnShot(soundName);
         }
         Impulse();
+        PlayerStats.instance.TotalShotsTaken++;
     }
     
     private void Impulse()
