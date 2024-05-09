@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     private WeaponManager _weaponManager;
 
 
-#if UNITY_IOS || _UNITY_ANDROID
+#if UNITY_IOS || UNITY_ANDROID
     private const bool IsMobile = true;
 #else
     private const bool IsMobile = false;
