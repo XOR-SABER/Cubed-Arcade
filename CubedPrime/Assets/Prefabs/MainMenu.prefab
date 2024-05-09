@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 3843717087375828544}
   - component: {fileID: 2722707289052180828}
   - component: {fileID: 2274052681090776010}
+  - component: {fileID: 8843573667064320839}
   m_Layer: 5
   m_Name: HightScoreText
   m_TagString: Untagged
@@ -368,7 +369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '// Hightest_score: 0'
+  m_text: '// Hightest_score:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84522529178364d45b62f89d5de75233, type: 2}
   m_sharedMaterial: {fileID: -2372099169131408840, guid: 84522529178364d45b62f89d5de75233, type: 2}
@@ -458,6 +459,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8843573667064320839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169155874951930499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e3de03017054c4fa21cad362dbdcab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScoreText: {fileID: 2722707289052180828}
 --- !u!1 &194770887699612913
 GameObject:
   m_ObjectHideFlags: 0
