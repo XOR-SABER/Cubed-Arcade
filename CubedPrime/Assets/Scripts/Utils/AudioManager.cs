@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public string currentTrackMeta;
     private static Dictionary<string, int> _soundMap;
     public List<string> trackQueue;
+    public bool isPaused;
     void Awake() {
         
         if (instance != null && instance != this)
@@ -41,7 +42,7 @@ public class AudioManager : MonoBehaviour
         Shuffle(trackQueue);
     }
     void Update() {
-        if (currentTrack != null && !currentTrack.isPlaying) {
+        if (currentTrack != null && !currentTrack.isPlaying && !isPaused) {
             if(currentTrack.loop) return;
             currentTrack = null; 
             if (trackQueue.Count > 0) {
