@@ -18,5 +18,5 @@ public class Sound {
     public bool loop;
     public bool isMusicTrack;
     public string meta;
-  
+    public bool addIntoQueue;
 }

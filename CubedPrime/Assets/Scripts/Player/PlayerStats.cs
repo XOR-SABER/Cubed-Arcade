@@ -80,6 +80,8 @@ public class PlayerStats : MonoBehaviour
         TotalHealed += healAmount;
         Health += healAmount;
         Health = Math.Clamp(Health, 0, startingHealth);
+        healthbar.fillAmount = (float)Health / startingHealth;
+        healthText.text = string.Format("{0}/{1}", Health, startingHealth);
         Instantiate(healParticles, _playerRef.transform.position, _playerRef.transform.rotation, _playerRef.transform); 
     }
 
