@@ -25,6 +25,10 @@ public class RandomEnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (playerTransform is null)
+        {
+            return;
+        }
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
         
         if (distanceToPlayer < rushDistance)
