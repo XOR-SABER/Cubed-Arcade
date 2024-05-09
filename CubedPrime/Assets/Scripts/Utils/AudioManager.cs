@@ -32,9 +32,34 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            if(s.addIntoQueue) trackQueue.Add(s.audioName);
             Debug.Log(string.Format("Adding {0}, {1} to the map", s.audioName, index));
             _soundMap.Add(s.audioName, index);
             index++;
+        }
+        Shuffle(trackQueue);
+    }
+    void Update() {
+        if (currentTrack != null && !currentTrack.isPlaying) {
+            currentTrack = null; 
+            if (trackQueue.Count > 0) {
+                string nextTrackName = trackQueue[0];
+                trackQueue.RemoveAt(0);
+                trackQueue.Add(nextTrackName);
+                Play(nextTrackName);
+            }
+        }
+    }
+    private void Shuffle<T>(List<T> list)
+    {
+        System.Random random = new System.Random();
+        int n = list.Count;
+        for (int i = n - 1; i > 0; i--)
+        {
+            int j = random.Next(i + 1);
+            T temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
         }
     }
     private Sound getSound(string name) {
