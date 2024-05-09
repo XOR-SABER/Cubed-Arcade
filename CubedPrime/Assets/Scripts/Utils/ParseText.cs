@@ -22,7 +22,7 @@ namespace Utils
         {
             try
             {
-                string path = Application.dataPath + "/" +_folder + "/"+ _filename + ".txt";
+                string path = Application.streamingAssetsPath + "/" +_folder + "/"+ _filename + ".txt";
                 Text = File.ReadAllText(path);
             }
             catch (Exception e)
