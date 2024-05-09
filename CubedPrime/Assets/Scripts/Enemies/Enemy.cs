@@ -56,5 +56,8 @@ public class Enemy : MonoBehaviour
          else Destroy(gameObject);
     }
     
+    public int getHealth() {
+        return health;
+    }
     
 }
