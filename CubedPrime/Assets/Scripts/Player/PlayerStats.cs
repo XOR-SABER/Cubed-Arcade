@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Scripts;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -33,6 +34,7 @@ public class PlayerStats : MonoBehaviour
     public int maxEnemies = 50;
     public string currentlyPlaying;
     private PlayerMovement _playerRef;
+    private SceneSwitcher _sceneSwitcher;
     private void Awake()
     {
         if (instance == null)
@@ -43,6 +45,7 @@ public class PlayerStats : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        _sceneSwitcher = SceneSwitcher.instance;
     }
     
      private void Start()
@@ -117,6 +120,15 @@ public class PlayerStats : MonoBehaviour
         if (highScore < points)
         {
             PlayerPrefs.SetInt("highScore", points);
+        }
+
+        if (_sceneSwitcher != null)
+        {
+            int levelScore = PlayerPrefs.GetInt(_sceneSwitcher.levelToLoad.levelHighScoreTag, 0);
+            if (levelScore < points)
+            {
+                PlayerPrefs.SetInt(_sceneSwitcher.levelToLoad.levelHighScoreTag, points);
+            }
         }
     }
     

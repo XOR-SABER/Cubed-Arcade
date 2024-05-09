@@ -28,6 +28,7 @@ public class LevelSelector : MonoBehaviour
 
     public TypingText nameText;
     public TypingText descriptionText;
+    public TypingText highScoreText;
 
     private SceneSwitcher _sceneSwitcher;
     void Start()
@@ -100,6 +101,7 @@ public class LevelSelector : MonoBehaviour
         Level level = levels[_currentIndex];
         nameText.RestartType(level.levelName);
         descriptionText.RestartType(level.levelDescription);
+        highScoreText.RestartType(PlayerPrefs.GetInt(level.levelHighScoreTag, 0).ToString());
     }
 
     public void LoadLevel(Level level)

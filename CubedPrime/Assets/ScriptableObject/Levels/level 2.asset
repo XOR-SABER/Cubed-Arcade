@@ -17,3 +17,4 @@ MonoBehaviour:
   levelDescription: I told you to get on the f%#king train!
   gameMode: EXHAUSTIVE
   levelTheme: LevelTrack6
+  levelHighScoreTag: level2
