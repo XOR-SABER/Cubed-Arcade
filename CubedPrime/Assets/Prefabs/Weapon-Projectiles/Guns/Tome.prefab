@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 976293072898636223}
   - component: {fileID: 3280918677917350861}
   - component: {fileID: 5379849622557117443}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Tome
   m_TagString: weapon
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4282382088284823514}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

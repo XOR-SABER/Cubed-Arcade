@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7562239258590473808}
   - component: {fileID: 4968732557534253597}
   - component: {fileID: 4899758923373239247}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Minigun
   m_TagString: weapon
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8568425533484806874}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

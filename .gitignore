@@ -38,3 +38,10 @@ sysinfo.txt
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.log
+*.log
+*.log
+CubedPrime/Logs/AssetImportWorker0.log
+CubedPrime/Logs/AssetImportWorker1.log
+CubedPrime/Logs/shadercompiler-AssetImportWorker0.log
+CubedPrime/Logs/shadercompiler-UnityShaderCompiler.exe0.log

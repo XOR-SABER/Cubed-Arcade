@@ -64,11 +64,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 overAllDirection;
     private Camera _camera;
     private Vector2 dashDir;
-
     private WeaponManager _weaponManager;
 
 
-#if UNITY_IOS
+#if UNITY_IOS || UNITY_ANDROID
     private const bool IsMobile = true;
 #else
     private const bool IsMobile = false;
@@ -77,10 +76,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        #if UNITY_IOS || UNITY_ANDROID
         if (IsMobile)
         {
             inputType = InputType.Mobile;
         }
+        #endif
         Debug.Log(Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>());
         Application.targetFrameRate = Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>();
         _weaponManager = GetComponent<WeaponManager>();
