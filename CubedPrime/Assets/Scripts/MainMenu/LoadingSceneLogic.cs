@@ -14,16 +14,16 @@ public class LoadingSceneLogic : MonoBehaviour
     {
         _sceneSw = SceneSwitcher.instance;
         _audMan = AudioManager.instance;
-        _audMan.fadeInNewTrack(_sceneSw.levels[_sceneSw.levelToGoto].levelTheme, 1f);
-        topTextField.startType(_sceneSw.levels[_sceneSw.levelToGoto].GameMode);
-        bottomTextField.startType(_sceneSw.levels[_sceneSw.levelToGoto].LevelName);
-        DiscordPresence.state = "Loading into " + _sceneSw.levels[_sceneSw.levelToGoto].LevelName;
+        _audMan.fadeInNewTrack(_sceneSw.levelToLoad.levelTheme, 1f);
+        topTextField.startType(_sceneSw.levelToLoad.gameMode);
+        bottomTextField.startType(_sceneSw.levelToLoad.levelName);
+        DiscordPresence.state = "Loading into " + _sceneSw.levelToLoad.sceneName;
         StartCoroutine(loadTimer(7.5f));
     }
 
     IEnumerator loadTimer(float sec) {
         yield return new WaitForSeconds(sec);
         // Load to recRoom for now.. 
-        _sceneSw.FadeTo(_sceneSw.levels[_sceneSw.levelToGoto].SceneName);
+        _sceneSw.FadeTo(_sceneSw.levelToLoad.sceneName);
     }
 }

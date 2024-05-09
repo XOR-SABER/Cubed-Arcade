@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 4242626533870502297}
   - component: {fileID: 9179195672231606659}
   - component: {fileID: 4826435959527079787}
+  - component: {fileID: 7198011895684597720}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -345,10 +346,6 @@ MonoBehaviour:
   dashDuration: 0.4
   deceleration: 2
   joystickDeadZone: 0.3
-  isDashing: 0
-  slowFactor: 0.5
-  duration: 0.25
-  recoveryTime: 0.1
 --- !u!50 &8504114632245242664
 Rigidbody2D:
   serializedVersion: 4
@@ -453,15 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5d67fb9304cc747b105abd65967ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbar: {fileID: 0}
-  bloodParticles: {fileID: 0}
   startingHealth: 4
-  invincibilityDurationSeconds: 1
   points: 0
-  TotalHealed: 0
-  TotalDamageDealt: 0
-  TotalDamageTaken: 0
-  TotalEnemiesKilled: 0
 --- !u!114 &4826435959527079787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +473,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   pickupDistance: 4
+--- !u!114 &7198011895684597720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540230005384580758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927b11459cd49344d8332bfbea08d392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headColor: {fileID: 3815768485064682445}
+  baseColor: {fileID: 2436790970332202338}
 --- !u!1 &7040283292542869427
 GameObject:
   m_ObjectHideFlags: 0

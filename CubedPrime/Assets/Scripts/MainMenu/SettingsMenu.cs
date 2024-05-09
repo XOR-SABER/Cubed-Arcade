@@ -18,6 +18,10 @@ public class SettingsMenu : MonoBehaviour
     
     private void Start()
     {
+        masterVolume.value = PlayerPrefs.GetFloat("MasterVolume", -40);
+        musicVolume.value = PlayerPrefs.GetFloat("MusicVolume", -40);
+        sfxVolume.value = PlayerPrefs.GetFloat("SfxVolume", -40);
+        
         fullScreenToggle.isOn = Screen.fullScreen;
         _resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
@@ -64,15 +68,18 @@ public class SettingsMenu : MonoBehaviour
     public void ChangeMasterVolume()
     {
         mainAudioMixer.SetFloat("MasterVolume", masterVolume.value);
+        PlayerPrefs.SetFloat("MasterVolume", masterVolume.value);
     }
     
     public void ChangeMusicVolume()
     {
         mainAudioMixer.SetFloat("MusicVolume", musicVolume.value);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume.value);
     }
     
     public void ChangeSfxVolume()
     {
         mainAudioMixer.SetFloat("SfxVolume", sfxVolume.value);
+        PlayerPrefs.SetFloat("SfxVolume", sfxVolume.value);
     }
 }

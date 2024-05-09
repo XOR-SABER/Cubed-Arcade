@@ -1,3 +1,5 @@
+using System;
+using Cinemachine;
 using UnityEngine;
 
 public class explosiveBarrel : MonoBehaviour
@@ -5,7 +7,7 @@ public class explosiveBarrel : MonoBehaviour
     public GameObject explosiveFx; 
     public float particleRadius;
     public float damageRadius;
-
+    
     public void destroyBarrel() {
         GameObject explosion = Instantiate(explosiveFx, transform.position, transform.rotation);
         ExplosionObj exp = explosion.GetComponent<ExplosionObj>();
