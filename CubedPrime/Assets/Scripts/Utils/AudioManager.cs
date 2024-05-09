@@ -8,8 +8,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public AnimationCurve curve;
     public static AudioSource currentTrack;
+    public string currentTrackMeta;
     private static Dictionary<string, int> _soundMap;
-
+    public List<string> trackQueue;
     void Awake() {
         
         if (instance != null && instance != this)
@@ -57,6 +58,7 @@ public class AudioManager : MonoBehaviour
         if (PlayerStats.instance != null)
         {
             PlayerStats.instance.currentlyPlaying = s.meta;
+            currentTrackMeta = s.meta;
         }
     }
 

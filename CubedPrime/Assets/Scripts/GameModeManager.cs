@@ -34,6 +34,7 @@ public class GameModeManager : MonoBehaviour {
         SpawnWeapon();
         SpawnTurret();
         if (_player_ref == null) Debug.LogError("Please set the player object with the 'Player' Tag");
+        if(PlayerStats.instance.currentlyPlaying == null) PlayerStats.instance.currentlyPlaying = AudioManager.instance.currentTrackMeta;
     }
     private void Update() {
         _time += Time.deltaTime; 
