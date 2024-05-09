@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 976293072898636223}
   - component: {fileID: 3280918677917350861}
   - component: {fileID: 5379849622557117443}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tome
   m_TagString: weapon
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impluseForce: 1
   equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 4282382088284823514}
   projectilePrefab: {fileID: 2592730709790584201, guid: f117b296539c006418ca8c3283b09054, type: 3}
@@ -175,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1774094600220757683}
   - component: {fileID: 6780726935418758610}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tome2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4282382088284823514}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

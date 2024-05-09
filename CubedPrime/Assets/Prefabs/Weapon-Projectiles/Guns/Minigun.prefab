@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7562239258590473808}
   - component: {fileID: 4968732557534253597}
   - component: {fileID: 4899758923373239247}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Minigun
   m_TagString: weapon
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impluseForce: 1
   equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 8568425533484806874}
   projectilePrefab: {fileID: 3630596066284524872, guid: 23b0ae24e8c6dab40bfb1a8d66faadff, type: 3}
@@ -136,6 +137,7 @@ MonoBehaviour:
   isMagic: 0
   isTracking: 0
   soundName: MachineShot
+  isMagicBook: 0
 --- !u!61 &4899758923373239247
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8568425533484806874}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

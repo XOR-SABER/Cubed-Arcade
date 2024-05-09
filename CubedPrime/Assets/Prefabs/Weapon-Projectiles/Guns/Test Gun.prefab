@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 976293072898636223}
   - component: {fileID: 3280918677917350861}
   - component: {fileID: -240562839515529919}
-  m_Layer: 3
+  m_Layer: 13
   m_Name: Test Gun
   m_TagString: weapon
   m_Icon: {fileID: 0}
@@ -99,10 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impluseForce: 1
   equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 4282382088284823514}
   projectilePrefab: {fileID: 2592730709790584201, guid: 27201929704fcd6499d8ad460a851ee9, type: 3}
   fireRate: 2
+  maxFireRateRevUpWeapon: 30
   isRevUp: 0
   maxRevTime: 2
   revUpCurve:
@@ -111,13 +113,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isEquipped: 0
   shootParticles: {fileID: 0}
   isBurst: 0
   roundsPerBurst: 0
   isMagic: 0
   isTracking: 0
   soundName: 
+  isMagicBook: 0
 --- !u!60 &-240562839515529919
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -175,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4282382088284823514}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
