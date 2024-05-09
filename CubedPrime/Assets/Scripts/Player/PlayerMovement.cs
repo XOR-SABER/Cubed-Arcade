@@ -80,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         if (IsMobile)
         {
             inputType = InputType.Mobile;
+            dashType = DashType.InMovementDirection;
         }
         Debug.Log(Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>());
         Application.targetFrameRate = Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>();
