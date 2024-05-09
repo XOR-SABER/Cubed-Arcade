@@ -190,3 +190,94 @@ Received Import Request.
 Start importing Assets/Sprites/Icons/LevelEditor/AssetIcon.png using Guid(efd45a0fb99f39e4aa2c6ea529091a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8807a21590aed92b11cb867e203f5fa') in 0.493592 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 659.885182 seconds.
+  path: Assets/Prefabs/Enemies/HomingEnemy.prefab
+  artifactKey: Guid(ca4e852c162c5174a809a37b3d939480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/HomingEnemy.prefab using Guid(ca4e852c162c5174a809a37b3d939480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1244055800a7fbe1660cf9c3648ae915') in 2.933435 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 48
+========================================================================
+Received Import Request.
+  Time since last request: 0.000089 seconds.
+  path: Assets/Prefabs/Enemies/TurretEnemy.prefab
+  artifactKey: Guid(3f18e0d0193e10041a598e7b23e7e411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/TurretEnemy.prefab using Guid(3f18e0d0193e10041a598e7b23e7e411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c9ec8a9ba67dd50f9496a82920347db') in 0.239204 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 69
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  5.489 seconds
+Refreshing native plugins compatible for Editor in 17.38 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 50.529 seconds
+Domain Reload Profiling: 56014ms
+	BeginReloadAssembly (2029ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (147ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (5ms)
+		CreateAndSetChildDomain (869ms)
+	RebuildCommonClasses (97ms)
+	RebuildNativeTypeToScriptingClass (26ms)
+	initialDomainReloadingComplete (86ms)
+	LoadAllAssembliesAndSetupDomain (3244ms)
+		LoadAssemblies (3699ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (159ms)
+			TypeCache.Refresh (80ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (2ms)
+			ResolveRequiredComponents (76ms)
+	FinalizeReload (50533ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (9889ms)
+			LogAssemblyErrors (2ms)
+			InitializePlatformSupportModulesInManaged (152ms)
+			SetLoadedEditorAssemblies (241ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1108ms)
+			ProcessInitializeOnLoadAttributes (7735ms)
+			ProcessInitializeOnLoadMethodAttributes (595ms)
+			AfterProcessingInitializeOnLoad (48ms)
+			EditorAssembliesLoaded (10ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (131ms)
+Refreshing native plugins compatible for Editor in 379.81 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6193 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 54 unused Assets / (395.5 KB). Loaded Objects now: 6889.
+Memory consumption went from 217.1 MB to 216.7 MB.
+Total: 6041.820100 ms (FindLiveObjects: 358.089600 ms CreateObjectMapping: 4.944500 ms MarkObjects: 5195.480500 ms  DeleteObjects: 483.296100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 62b5816608c3102f162a1797e29626cf -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 528.420183 seconds.
+  path: Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectTurret.prefab
+  artifactKey: Guid(64d467b123084d54b9b9554ed94f4e88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectTurret.prefab using Guid(64d467b123084d54b9b9554ed94f4e88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a32bc5adf812592232c0235c2e5753c1') in 17.064937 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24

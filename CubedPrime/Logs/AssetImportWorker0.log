@@ -182,3 +182,110 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2110564.815135 seconds.
+  path: Assets/Prefabs/Enemies/BouncyEnemy.prefab
+  artifactKey: Guid(56777ea9db4c9454085482bff867facb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/BouncyEnemy.prefab using Guid(56777ea9db4c9454085482bff867facb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b11fdbd0aed311fa9452e6f8812b7df6') in 4.045217 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 47
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  5.488 seconds
+Refreshing native plugins compatible for Editor in 21.02 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 50.537 seconds
+Domain Reload Profiling: 56024ms
+	BeginReloadAssembly (2030ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (167ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (965ms)
+	RebuildCommonClasses (99ms)
+	RebuildNativeTypeToScriptingClass (26ms)
+	initialDomainReloadingComplete (88ms)
+	LoadAllAssembliesAndSetupDomain (3237ms)
+		LoadAssemblies (3599ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (155ms)
+			TypeCache.Refresh (79ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (73ms)
+	FinalizeReload (50544ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (10018ms)
+			LogAssemblyErrors (1ms)
+			InitializePlatformSupportModulesInManaged (132ms)
+			SetLoadedEditorAssemblies (187ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1032ms)
+			ProcessInitializeOnLoadAttributes (8011ms)
+			ProcessInitializeOnLoadMethodAttributes (605ms)
+			AfterProcessingInitializeOnLoad (46ms)
+			EditorAssembliesLoaded (4ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (168ms)
+Refreshing native plugins compatible for Editor in 135.33 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6193 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 54 unused Assets / (394.4 KB). Loaded Objects now: 6885.
+Memory consumption went from 216.8 MB to 216.4 MB.
+Total: 3042.830200 ms (FindLiveObjects: 88.280800 ms CreateObjectMapping: 13.747000 ms MarkObjects: 2625.182300 ms  DeleteObjects: 315.611800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 62b5816608c3102f162a1797e29626cf -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 520.676800 seconds.
+  path: Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectBouncy.prefab
+  artifactKey: Guid(7acf8be221007c64a8534e2f44a9040d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectBouncy.prefab using Guid(7acf8be221007c64a8534e2f44a9040d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4f273ae270179344157c5de919e5b96') in 20.396645 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.033079 seconds.
+  path: Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectLittleSlime.prefab
+  artifactKey: Guid(a94969a0bf1deae4187c7f5bde74ab21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectLittleSlime.prefab using Guid(a94969a0bf1deae4187c7f5bde74ab21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f23746da4c5366f03ca0d308e465d946') in 0.356321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.003404 seconds.
+  path: Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectHoming.prefab
+  artifactKey: Guid(6f4bec3eef18da34381f060c1bda4280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectHoming.prefab using Guid(6f4bec3eef18da34381f060c1bda4280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f98b5df78264b3d884e3b0ccb19c1425') in 0.239346 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.004595 seconds.
+  path: Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectSlime.prefab
+  artifactKey: Guid(ade59a8e1dfefab4c9cd927f422e2814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Weapon-Projectiles/FX/DeathEffectSlime.prefab using Guid(ade59a8e1dfefab4c9cd927f422e2814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60f8b872bcfe882fba3c1a8c5cad4304') in 0.079179 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
