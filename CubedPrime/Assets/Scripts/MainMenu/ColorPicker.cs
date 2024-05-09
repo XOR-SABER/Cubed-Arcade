@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Discord;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class ColorPicker : MonoBehaviour
 {
     public float currentHue;

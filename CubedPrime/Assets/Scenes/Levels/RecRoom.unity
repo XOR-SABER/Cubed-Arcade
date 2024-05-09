@@ -12314,6 +12314,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7760715986530549628, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
+      propertyPath: dashType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8026227539716252352, guid: 198a75901fe1ac14db5d8e3e328b9092, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
