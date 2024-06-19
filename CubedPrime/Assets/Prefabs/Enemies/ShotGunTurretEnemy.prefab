@@ -164,6 +164,7 @@ MonoBehaviour:
   enviromentLayerMask:
     serializedVersion: 2
     m_Bits: 2048
+  isMissleTurret: 0
   isShotgunTurret: 1
   numOfShotgunPellets: 3
   shotGunPelletSpreadAngle: 15
@@ -550,6 +551,10 @@ PrefabInstance:
     - target: {fileID: 6886298710360613597, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106710304934740891, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8109939264585055423, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
       propertyPath: m_Name

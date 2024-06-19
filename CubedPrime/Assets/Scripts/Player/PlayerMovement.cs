@@ -248,6 +248,7 @@ public class PlayerMovement : MonoBehaviour
                 if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
             }
         } else {
+            Debug.Log("Something hit the player");
             PlayerStats.instance.TakeDamage(1);
         }
     }

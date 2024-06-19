@@ -103,11 +103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   startHealth: 15
-  health: 0
-  delayDeath: 0
   points: 25
   healthBar: {fileID: 4652744897899859576}
-  onDeathEffect: {fileID: 7872469476912402860, guid: a94969a0bf1deae4187c7f5bde74ab21, type: 3}
+  delayedDeath: 0
 --- !u!195 &1887070769565414983
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -420,7 +418,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &3750562642788984007
 MonoBehaviour:
@@ -444,7 +442,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5453099406031737308
 MonoBehaviour:
   m_ObjectHideFlags: 0

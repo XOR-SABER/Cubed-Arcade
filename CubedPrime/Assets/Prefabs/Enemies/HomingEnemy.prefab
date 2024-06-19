@@ -105,6 +105,7 @@ MonoBehaviour:
   startHealth: 100
   points: 100
   healthBar: {fileID: 7079105570464375408}
+  delayedDeath: 0
 --- !u!195 &3810823806857119316
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -382,9 +383,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2967090606488496636, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6886298710360613597, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106710304934740891, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8109939264585055423, guid: df6cdba07a34ec640a555e356e92ec20, type: 3}
       propertyPath: m_Name
