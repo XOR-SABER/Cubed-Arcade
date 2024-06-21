@@ -5,16 +5,14 @@ public class Enemy : MonoBehaviour
 {
     public int damage = 1;
     public int startHealth = 100;
-    private int health;
-
+    protected int _health;
     public int points = 100;
-    
     public Image healthBar;
     public bool delayedDeath = false; 
 
     void Start()
     {
-        health = startHealth;
+        resetHealth();
     } 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,11 +20,11 @@ public class Enemy : MonoBehaviour
         if(other.gameObject.CompareTag("Train")) TakeDamage(10000);
     }
 
-    public void TakeDamage(int damageAmount)
+    public virtual void TakeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        healthBar.fillAmount = (float)health / startHealth;
-        if (health <= 0)
+        _health -= damageAmount;
+        healthBar.fillAmount = (float)_health / startHealth;
+        if (_health <= 0)
         {
             EnemyDeath();
         }
@@ -47,7 +45,9 @@ public class Enemy : MonoBehaviour
     }
     
     public int getHealth() {
-        return health;
+        return _health;
     }
-    
-}
+    public void resetHealth() {
+        _health = startHealth;
+    }
+}   
