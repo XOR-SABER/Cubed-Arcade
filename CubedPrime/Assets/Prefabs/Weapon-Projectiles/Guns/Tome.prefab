@@ -100,13 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunStats: {fileID: 0}
   impluseForce: 1
-  equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 4282382088284823514}
   projectilePrefab: {fileID: 2592730709790584201, guid: f117b296539c006418ca8c3283b09054, type: 3}
   fireRate: 5
-  maxFireRateRevUpWeapon: 0
   isRevUp: 0
+  minFireRate: 3
   maxRevTime: 2
   revUpCurve:
     serializedVersion: 2
@@ -117,13 +117,11 @@ MonoBehaviour:
   shootParticles: {fileID: 4566381003206891631, guid: 07c1aa33f2a03764da1da2bf260abfb6, type: 3}
   isBurst: 0
   roundsPerBurst: 0
-  isShotgun: 0
-  numOfShotgunPellets: 5
-  shotGunPelletSpreadAngle: 15
-  isMagic: 1
-  isTracking: 0
+  hasSpread: 0
+  numOfPellets: 5
+  pelletSpreadAngle: 15
   soundName: MagicShot
-  isMagicBook: 1
+  isDualSprite: 1
 --- !u!61 &5379849622557117443
 BoxCollider2D:
   m_ObjectHideFlags: 0

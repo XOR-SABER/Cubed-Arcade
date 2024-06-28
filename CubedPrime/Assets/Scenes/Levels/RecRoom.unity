@@ -1350,11 +1350,9 @@ MonoBehaviour:
   - {fileID: 6656197191988811996, guid: 09ac68d58f688d649a7b3b922d639d5d, type: 3}
   - {fileID: 6656197191988811996, guid: 77d5673590748594aa01d6fe829966eb, type: 3}
   enemiesMiddleTier:
-  - {fileID: 6656197191988811996, guid: ca4e852c162c5174a809a37b3d939480, type: 3}
   - {fileID: 1361590180252973703, guid: 481995ed99a8acb41846f4b1930d0921, type: 3}
   - {fileID: 3121696706395917766, guid: 895a3f5f37a77014a9c0bb94230decb4, type: 3}
   enemiesLowTier:
-  - {fileID: 7998097055090839181, guid: 56777ea9db4c9454085482bff867facb, type: 3}
   - {fileID: 6656197191988811996, guid: ca4e852c162c5174a809a37b3d939480, type: 3}
   turrets:
   - {fileID: 6726966883309761910, guid: 3f18e0d0193e10041a598e7b23e7e411, type: 3}
@@ -6394,7 +6392,7 @@ GameObject:
   - component: {fileID: 1192994369}
   - component: {fileID: 1192994368}
   - component: {fileID: 1192994371}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: BG
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -6828,7 +6826,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 550, y: 300, z: 0}
+  m_LocalScale: {x: 800, y: 550, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2070730161}
@@ -7312,7 +7310,6 @@ GameObject:
   - component: {fileID: 1472553887}
   - component: {fileID: 1472553889}
   - component: {fileID: 1472553891}
-  - component: {fileID: 1472553892}
   - component: {fileID: 1472553894}
   - component: {fileID: 1472553893}
   m_Layer: 11
@@ -13655,51 +13652,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1472553892
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472553885}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 106, y: 54}
-  m_EdgeRadius: 0
 --- !u!114 &1472553893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15024,7 +14976,7 @@ MonoBehaviour:
   m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: aa8263701ef40fa4e9e485b2433b7988, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 640b93fa1c042d34ca7c668cdd41ba41, type: 2}
 --- !u!114 &2070730163
 MonoBehaviour:
   m_ObjectHideFlags: 0

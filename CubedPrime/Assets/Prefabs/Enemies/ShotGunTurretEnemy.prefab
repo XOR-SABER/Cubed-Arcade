@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4790369866908367076}
   - component: {fileID: 3545127960270361967}
-  - component: {fileID: 5176463101467014149}
   - component: {fileID: 7229989848169625533}
   - component: {fileID: 115110765509018379}
   - component: {fileID: 5428051672124194740}
@@ -121,23 +120,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5176463101467014149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152739105046114473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 421e32c6b2be8004884e2aa440c7708f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  startHealth: 400
-  points: 400
-  healthBar: {fileID: 3789671059267332194}
-  delayedDeath: 0
 --- !u!114 &7229989848169625533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,24 +132,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9aa0879f861bd4b903af0720c93766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  startHealth: 400
+  points: 400
+  healthBar: {fileID: 3789671059267332194}
+  delayedDeath: 0
   fireRate: 1
   range: 45
-  mainObject: {fileID: 6726966883309761910}
   projectilePrefab: {fileID: 8435193044771063964, guid: 7daa4620951795a45bb3fc069364a9a4, type: 3}
   firePoint: {fileID: 4843754071638159270}
-  player: {fileID: 0}
-  playerTransform: {fileID: 0}
   ExplosionFX: {fileID: 1969284129530096252, guid: f138a9e14ace3c246b94b8c641c847b4, type: 3}
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 1024
   enviromentLayerMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 256
   isMissleTurret: 0
   isShotgunTurret: 1
-  numOfShotgunPellets: 3
-  shotGunPelletSpreadAngle: 15
+  numOfShotgunPellets: 5
+  shotGunPelletSpreadAngle: 10
 --- !u!60 &115110765509018379
 PolygonCollider2D:
   m_ObjectHideFlags: 0

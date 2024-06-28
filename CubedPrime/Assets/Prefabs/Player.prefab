@@ -464,7 +464,7 @@ MonoBehaviour:
   FPSCounter: {fileID: 0}
   bloodParticles: {fileID: 2969572892610431116, guid: 89c19a1f2f76fc34abb184cdb20f085c, type: 3}
   healParticles: {fileID: 6001081164048008213, guid: b162e3fd852ce69449ee7b4d038c4d27, type: 3}
-  deathPartcles: {fileID: 4607246751269438094, guid: 34ca0c06f0abc5447b164f80b321fba7, type: 3}
+  deathPartcles: {fileID: 2969572892610431116, guid: 0222fcd63c3f20c468ee82463bccdc34, type: 3}
   startingHealth: 8
   invincibilityDurationSeconds: 2
   points: 0

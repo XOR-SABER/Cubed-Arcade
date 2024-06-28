@@ -1,15 +1,12 @@
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : Enemy
 {
 
     public float fireRate = 1f;
     public int range = 15;
-    public GameObject mainObject;
     public GameObject projectilePrefab;
     public Transform firePoint;
-    public GameObject player;
-    public Transform playerTransform;
     public GameObject ExplosionFX;
     public LayerMask playerLayerMask; 
     public LayerMask enviromentLayerMask;
@@ -18,22 +15,26 @@ public class Turret : MonoBehaviour
     public int numOfShotgunPellets = 3;
     public int shotGunPelletSpreadAngle = 15;
     private float _nextFireTime;
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null) playerTransform = player.GetComponent<Transform>();
-        else Debug.LogError("Please set the player object with the 'Player' Tag");
+    public override void EnemyDeath() {
+        PlayerStats.instance.AddPoints(points);
+        PlayerStats.instance.TotalEnemiesKilled++;
+        PlayerStats.instance.currentEnemiesCount--;
+        Instantiate(ExplosionFX, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 
-     void Update()
-    {
-        if (player == null) return; 
+    public override void init() {
+        if(_player_trans == null) {
+            Debug.LogError("Player is null, and is being accessed by the Turret");
+        }
+    }
+
+    public override void enemyBehaviour() {
+        if (_player_trans == null) return; 
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, range, Vector2.right, 0f, playerLayerMask);  
         if (hit.collider != null) {
             handleTurret();
         }
-        
-        
     }
 
     void OnDrawGizmos()
@@ -43,14 +44,14 @@ public class Turret : MonoBehaviour
     }
 
     void handleTurret() {
-        Vector3 direction = playerTransform.position - transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Vector3.Distance(transform.position, playerTransform.position), enviromentLayerMask);
+        Vector3 direction = _player_trans.position - transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Vector3.Distance(transform.position, _player_trans.position), enviromentLayerMask);
         if (hit.collider != null) return;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle + 270, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5f);
 
-        if (Vector3.Distance(transform.position, playerTransform.position) <= range && Time.time >= _nextFireTime)
+        if (Vector3.Distance(transform.position, _player_trans.position) <= range && Time.time >= _nextFireTime)
         {
             if(isShotgunTurret) shotgunShoot();
             else Shoot();
@@ -77,8 +78,6 @@ public class Turret : MonoBehaviour
         AudioManager.instance.PlayOnShot("ShortShot");
 
     }
-    public void turretDeath() {
-        Instantiate(ExplosionFX, transform.position, transform.rotation);
-    }
+    
 }
 

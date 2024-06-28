@@ -62,6 +62,7 @@ public class GameModeManager : MonoBehaviour {
             SpawnBoss();
         }
         timeText.text = string.Format("Time survived: {0} seconds", math.round(_time));
+        DiscordPresence.state = PlayerStats.instance.scoreText.text;
     }
 
     private void SpawnEnemy() {
@@ -121,6 +122,7 @@ public class GameModeManager : MonoBehaviour {
     }
 
     private void DecideLocations(ref List<Transform> finalLocations, Transform[] locations) { 
+        if(_player_ref == null) return;
         Transform player = _player_ref.transform;
         foreach (Transform trans in locations) {
             float distance = Vector3.Distance(player.position, trans.position);

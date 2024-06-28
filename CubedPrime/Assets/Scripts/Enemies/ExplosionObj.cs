@@ -45,6 +45,14 @@ public class ExplosionObj : MonoBehaviour
         }
     }
 
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(transform.position, damageRadius);
+    //     Gizmos.color = Color.blue;
+    //     Gizmos.DrawWireSphere(transform.position, damageRadius);
+    // }
+
     void dealAll() {
         dealPlayerDamage();
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, damageRadius, Vector2.right, 0f, enemyLayer);

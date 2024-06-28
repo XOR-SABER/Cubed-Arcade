@@ -17,6 +17,7 @@ public class LoadingSceneLogic : MonoBehaviour
         _audMan.fadeInNewTrack(_sceneSw.levelToLoad.levelTheme, 1f);
         topTextField.startType(_sceneSw.levelToLoad.gameMode);
         bottomTextField.startType(_sceneSw.levelToLoad.levelName);
+        DiscordPresence.details = _sceneSw.levelToLoad.sceneName;
         DiscordPresence.state = "Loading into " + _sceneSw.levelToLoad.sceneName;
         StartCoroutine(loadTimer(7.5f));
     }

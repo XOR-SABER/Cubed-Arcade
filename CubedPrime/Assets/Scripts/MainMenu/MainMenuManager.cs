@@ -31,6 +31,8 @@ public class MainMenuManager : MonoBehaviour
         startAnimation.SetTrigger("StartTransition");
         if(AudioManager.currentTrack != null) AudioManager.currentTrack.Stop();
         audioMan.Play("MainMenuTheme");
+        DiscordPresence.details = "Main Menu";
+        DiscordPresence.state = "Chilling in the main menu";
     }
 
     public void OnClickLoadGameScene()

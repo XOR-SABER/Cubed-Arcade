@@ -101,14 +101,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 150
-  damage: 100
   numberOfPierces: 2
+  bulletLifeTime: 10
+  isMissle: 0
+  explosionOBJ: {fileID: 0}
+  isBouncy: 0
+  isOnlyEnemyPiercing: 0
+  isTracking: 0
+  bounceOffset: 0.25
   wallParticles: {fileID: 3424826621523161289, guid: 8f36a0d700844004caf89570175a2e11, type: 3}
   bloodParticles: {fileID: 2969572892610431116, guid: 89c19a1f2f76fc34abb184cdb20f085c, type: 3}
-  isMissle: 0
-  isBouncy: 0
-  numberOfBounces: 0
-  explosionOBJ: {fileID: 0}
+  damage: 100
 --- !u!50 &9184421507218990098
 Rigidbody2D:
   serializedVersion: 4

@@ -20,6 +20,7 @@ public class EnemyProjectiles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // This is fucking awfull 
         player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -53,12 +54,7 @@ public class EnemyProjectiles : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             if(isMissile) {
-                GameObject OBJ = Instantiate(explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
-                ExplosionObj exp = OBJ.GetComponent<ExplosionObj>();
-                exp.target_tags = "Player";
-                exp.radius = 15f;
-                exp.damageRadius = 5.0F;
-                Destroy(gameObject);
+                createMissleExplosion();
             } else {
                 PlayerStats.instance.TakeDamage(damage);
                 Destroy(gameObject);
@@ -66,16 +62,15 @@ public class EnemyProjectiles : MonoBehaviour
         }
         if(other.CompareTag("BulletSolid")) {
             if(isMissile) {
-                GameObject OBJ = Instantiate(explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
-                ExplosionObj exp = OBJ.GetComponent<ExplosionObj>();
-                exp.target_tags = "Player";
-                exp.radius = 15f;
-                exp.damageRadius = 5.0F;
-                Destroy(gameObject);
+                createMissleExplosion();
             } else {
-                PlayerStats.instance.TakeDamage(damage);
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void createMissleExplosion() {
+        Instantiate(explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
+        Destroy(gameObject);
     }
 }

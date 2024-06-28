@@ -104,21 +104,42 @@ MonoBehaviour:
   firePoint: {fileID: 4282382088284823514}
   projectilePrefab: {fileID: 2592730709790584201, guid: 27201929704fcd6499d8ad460a851ee9, type: 3}
   fireRate: 2
-  maxFireRateRevUpWeapon: 30
-  isRevUp: 0
-  maxRevTime: 2
+  maxFireRateRevUpWeapon: 2
+  isRevUp: 1
+  maxRevTime: 5
   revUpCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   shootParticles: {fileID: 0}
   isBurst: 0
   roundsPerBurst: 0
+  isShotgun: 0
+  numOfShotgunPellets: 5
+  shotGunPelletSpreadAngle: 15
   isMagic: 0
   isTracking: 0
-  soundName: 
+  soundName: ShortShot
   isMagicBook: 0
 --- !u!60 &-240562839515529919
 PolygonCollider2D:
