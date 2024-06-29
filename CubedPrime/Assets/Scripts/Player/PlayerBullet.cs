@@ -33,7 +33,7 @@ public class PlayerBullet : Bullet
             PlayerStats.instance.TotalShotsHit++;
         }
         // Spawn the partcles for missles.. 
-        if(isMissle) {
+        if(isExplosive) {
             Instantiate(explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
             Destroy(gameObject);
             return;

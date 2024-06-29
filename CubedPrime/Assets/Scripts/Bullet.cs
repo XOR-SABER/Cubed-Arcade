@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public float speed = 50f;
     public int numberOfPierces = 1;
     public float bulletLifeTime = 10f;
-    public bool isMissle; 
+    public bool isExplosive; 
     public GameObject explosionOBJ;
     public bool isBouncy;
     public bool isOnlyEnemyPiercing;
@@ -58,7 +58,7 @@ public class Bullet : MonoBehaviour
         if(isBouncy) handleBounce(other);
         if(numberOfPierces > 0) return;
         // Spawn the partcles for missles.. 
-        if(isMissle) {
+        if(isExplosive) {
             createMissleExplosion();
             return;
         }

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ef7d95d484a94429e1823d17554306, type: 3}
+  m_Name: TurretRocket
+  m_EditorClassIdentifier: 
+  speed: 50
+  numberOfPierces: 1
+  bulletLifeTime: 10
+  isExplosive: 0
+  explosionOBJ: {fileID: 0}
+  isBouncy: 0
+  isOnlyEnemyPiercing: 0
+  bounceOffset: 0.25
+  isTracking: 0
+  playerDamage: 0
+  enemyDamage: 0
+  wallParticles: {fileID: 0}
+  bloodParticles: {fileID: 0}
