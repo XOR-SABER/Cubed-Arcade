@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151d22d0bda6b5f45a52f3f6488ab185, type: 3}
+  m_Name: SniperShot
+  m_EditorClassIdentifier: 
+  soundInstance:
+    audioName: SniperShot
+    clip: {fileID: 8300000, guid: ad7b95842b391054bb76aaac884696e8, type: 3}
+    audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
+    volume: 0.042
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isMusicTrack: 0
+    meta: 
+    addIntoQueue: 0

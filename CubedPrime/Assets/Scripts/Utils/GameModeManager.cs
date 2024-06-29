@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
@@ -26,14 +27,14 @@ public class GameModeManager : MonoBehaviour {
     private float _turret_current_spawn_time;
     private float _boss_current_spawn_time;
     private float _weapon_current_spawn_time;
-    private GameObject _player_ref;
+    private Transform _player_ref;
     public LayerMask weaponMask;
     public LayerMask enemyMask;
     public Transform bossSpawnLoc;
     public GameObject boss;
 
     private void Start() {
-        _player_ref = GameObject.FindGameObjectWithTag("Player");
+        _player_ref = PlayerStats.instance.getPlayerRef().transform;
         SpawnEnemy(); 
         SpawnWeapon();
         SpawnTurret();
@@ -130,15 +131,6 @@ public class GameModeManager : MonoBehaviour {
             finalLocations.Add(trans);
         }
     }
-    // private Transform DecideLocation(Transform[] locations) { 
-    //     Transform player = _player_ref.transform;
-    //     while(true) {
-    //         int rand = UnityEngine.Random.Range(0, locations.Length);
-    //         float distance = Vector3.Distance(player.position, locations[rand].position);
-    //         if(distance < spawnDistance) continue;
-    //         else return locations[rand];
-    //     }
-    // }
 
     private GameObject DecideEnemy() {
         int randEnemy;
@@ -213,4 +205,4 @@ public class GameModeManager : MonoBehaviour {
         randWeapon = UnityEngine.Random.Range(0, lowTierWeapons.Length);
         return lowTierWeapons[randWeapon];
     }
-}
+}  

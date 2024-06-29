@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public virtual void init() { 
+    public virtual void init() {
         if(_player_trans == null) {
             Debug.LogError("Player is null, and is being accessed by the Enemy class");
         }

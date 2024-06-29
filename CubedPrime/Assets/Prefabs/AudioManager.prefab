@@ -335,6 +335,7 @@ MonoBehaviour:
     isMusicTrack: 0
     meta: 
     addIntoQueue: 0
+  soundCollection: {fileID: 11400000, guid: e9ac605baa15a2d4ba30af280a1e1e2f, type: 2}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -360,6 +361,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   currentTrackMeta: 
-  trackQueue: []
   isPaused: 0
   isGameOver: 0
