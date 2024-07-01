@@ -5,31 +5,24 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //  ------------------ Public ------------------
-    public float speed = 50f;
-    public int numberOfPierces = 1;
-    public float bulletLifeTime = 10f;
-    public bool isExplosive; 
-    public GameObject explosionOBJ;
-    public bool isBouncy;
-    public bool isOnlyEnemyPiercing;
-    public bool isTracking; 
-    public float bounceOffset = 0.25f;
-    public GameObject wallParticles;
-    public GameObject bloodParticles;
+    public BulletStats stats; 
     // ------------------ Protected ------------------
     protected Vector2 _bulletVelocity;
     protected bool _isEntityHit = false;
     protected Transform _trackingTrans; 
-    void Start() {
+    protected int numberOfPierces;
+    void Start() 
+    {
         _bulletVelocity = Vector2.up;
-        if(isTracking) _trackingTrans = _trackInit(); 
-        Destroy(gameObject, bulletLifeTime);
+        if(stats.isTracking) _trackingTrans = _trackInit(); 
+        Destroy(gameObject, stats.bulletLifeTime);
+        numberOfPierces = stats.numberOfPierces;
     }
 
     void Update()
     {
-        transform.Translate(_bulletVelocity * (speed * Time.deltaTime));
-        if(isTracking) _track();
+        transform.Translate(_bulletVelocity * (stats.speed * Time.deltaTime));
+        if(stats.isTracking) _track();
     }
 
     public virtual void handleBounce(Collider2D other)
@@ -40,7 +33,7 @@ public class Bullet : MonoBehaviour
         if (hit.collider != null)
         {
             Vector2 collisionNormal = hit.normal;
-            collisionNormal += new Vector2(Random.Range(-bounceOffset, bounceOffset), Random.Range(-bounceOffset, bounceOffset));
+            collisionNormal += new Vector2(Random.Range(-stats.bounceOffset, stats.bounceOffset), Random.Range(-stats.bounceOffset, stats.bounceOffset));
             collisionNormal.Normalize();
             _bulletVelocity = Vector2.Reflect(_bulletVelocity, collisionNormal);
         }
@@ -55,22 +48,22 @@ public class Bullet : MonoBehaviour
 
     public virtual void updatePierces(Collider2D other) {
         numberOfPierces--;
-        if(isBouncy) handleBounce(other);
+        if(stats.isBouncy) handleBounce(other);
         if(numberOfPierces > 0) return;
         // Spawn the partcles for missles.. 
-        if(isExplosive) {
+        if(stats.isExplosive) {
             createMissleExplosion();
             return;
         }
 
 
-        if (_isEntityHit) Instantiate(bloodParticles, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 180)));
-        else Instantiate(wallParticles, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 180)));
+        if (_isEntityHit) Instantiate(stats.bloodParticles, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 180)));
+        else Instantiate(stats.wallParticles, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 180)));
         Destroy(gameObject);
     }
 
     public void createMissleExplosion() {
-        Instantiate(explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
+        Instantiate(stats.explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
         Destroy(gameObject);
     }
 
@@ -94,8 +87,8 @@ public class Bullet : MonoBehaviour
         Vector2 targetDirection = (_trackingTrans.position - transform.position).normalized;
         float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, speed * Time.deltaTime);
-        transform.position += transform.up * (speed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, stats.trackingStrength * Time.deltaTime);
+        transform.position += transform.up * (stats.speed * Time.deltaTime);
     }
     
 }

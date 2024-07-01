@@ -99,11 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunStats: {fileID: 0}
-  impluseForce: 1
   firePoint: {fileID: 8568425533484806874}
+  isDualSprite: 0
+  stat: {fileID: 11400000, guid: 6a4fe730e7b57e94fb00ed10f2dc9055, type: 2}
+  soundName: MachineShot
+  shootParticles: {fileID: 3424826621523161289, guid: 8566f5f5ed4271d4e91576fcb4f7079a, type: 3}
   projectilePrefab: {fileID: 3630596066284524872, guid: 23b0ae24e8c6dab40bfb1a8d66faadff, type: 3}
   fireRate: 50
+  impluseForce: 1
   isRevUp: 1
   minFireRate: 3
   maxRevTime: 5
@@ -131,14 +134,18 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  shootParticles: {fileID: 3424826621523161289, guid: 8566f5f5ed4271d4e91576fcb4f7079a, type: 3}
   isBurst: 0
+  burstDelay: 0
   roundsPerBurst: 0
   hasSpread: 0
   numOfPellets: 5
   pelletSpreadAngle: 15
-  soundName: MachineShot
-  isDualSprite: 0
+  isCharge: 0
+  chargeTime: 0
+  isLazer: 0
+  cooldownTime: 0
+  numOfShotsPreCool: 0
+  isEquiped: 0
 --- !u!61 &4899758923373239247
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: TomeBullet
   m_EditorClassIdentifier: 
   speed: 50
-  numberOfPierces: 1
+  numberOfPierces: 4
   bulletLifeTime: 10
   isExplosive: 0
   explosionOBJ: {fileID: 0}
-  isBouncy: 0
+  isBouncy: 1
   isOnlyEnemyPiercing: 0
   bounceOffset: 0.25
   isTracking: 0
-  playerDamage: 0
-  enemyDamage: 0
-  wallParticles: {fileID: 0}
-  bloodParticles: {fileID: 0}
+  playerDamage: 1
+  enemyDamage: 75
+  wallParticles: {fileID: 4566381003206891631, guid: 07c1aa33f2a03764da1da2bf260abfb6, type: 3}
+  bloodParticles: {fileID: 4566381003206891631, guid: 07c1aa33f2a03764da1da2bf260abfb6, type: 3}

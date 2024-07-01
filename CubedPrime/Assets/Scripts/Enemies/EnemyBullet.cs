@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnenyBullet : Bullet {
-    //  ------------------ Public ------------------
-    public int damage = 1;
     void OnTriggerEnter2D(Collider2D other) {
         _solidCheck(other);
         _playerCheck(other);
@@ -15,15 +13,14 @@ public class EnenyBullet : Bullet {
         _playerCheck(collision.collider);
     }
 
-    protected override Transform _trackInit()
-    {
+    protected override Transform _trackInit() {
         // Holy Fuck this is better... 
-        if(!isTracking) return null;
+        if(!stats.isTracking) return null;
         var _playerRef = PlayerStats.instance.getPlayerRef();
         if(_playerRef == null) {
             // Don't track if nothing is there.. 
             Debug.LogError("Player with the player tag does not exist in scene: Tracking disabled");
-            isTracking = false;
+            stats.isTracking = false;
             return null;
         } 
         return _playerRef.transform;
@@ -32,9 +29,9 @@ public class EnenyBullet : Bullet {
     protected void _playerCheck(Collider2D other) {
         Debug.Log("Somthing happened here");
         if(!other.CompareTag("Player")) return;
-        if(isExplosive) createMissleExplosion();
+        if(stats.isExplosive) createMissleExplosion();
         else {
-            PlayerStats.instance.TakeDamage(damage);
+            PlayerStats.instance.TakeDamage(stats.playerDamage);
             updatePierces(other);
         }
     }

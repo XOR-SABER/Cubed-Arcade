@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PlayerBullet : Bullet
 {
-    //  ------------------ Public ------------------
-    public int damage = 50;
     //  ------------------ Private ------------------
     private bool _isHit = false; 
     void OnTriggerEnter2D(Collider2D other)
@@ -18,30 +16,28 @@ public class PlayerBullet : Bullet
         if (enemy == null) return;
         _isHit = true;
         _isEntityHit = true;
-        enemy.TakeDamage(damage);
-        PlayerStats.instance.TotalDamageDealt+= damage;
+        enemy.TakeDamage(stats.enemyDamage);
+        PlayerStats.instance.TotalDamageDealt+= stats.enemyDamage;
         updatePierces(other);
-        
-        
     }
     public override void updatePierces(Collider2D other) {
         numberOfPierces--;
-        if(isBouncy) handleBounce(other);
+        if(stats.isBouncy) handleBounce(other);
         if(numberOfPierces > 0) return;
         if(_isHit) {
             _isHit = false;
             PlayerStats.instance.TotalShotsHit++;
         }
         // Spawn the partcles for missles.. 
-        if(isExplosive) {
-            Instantiate(explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
+        if(stats.isExplosive) {
+            Instantiate(stats.explosionOBJ, transform.position, Quaternion.Inverse(transform.rotation));
             Destroy(gameObject);
             return;
         }
 
 
-        if (_isEntityHit) Instantiate(bloodParticles, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 180)));
-        else Instantiate(wallParticles, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 180)));
+        if (_isEntityHit) Instantiate(stats.bloodParticles, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 180)));
+        else Instantiate(stats.wallParticles, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 180)));
         Destroy(gameObject);
     }
 
@@ -51,8 +47,8 @@ public class PlayerBullet : Bullet
         if(boss == null) return;
         _isHit = true;
         _isEntityHit = true;
-        boss.TakeDamage(damage);
-        PlayerStats.instance.TotalDamageDealt+= damage;
+        boss.TakeDamage(stats.enemyDamage);
+        PlayerStats.instance.TotalDamageDealt+= stats.enemyDamage;
         updatePierces(other);
     }
     private void _barrelCheck(Collider2D other) {
