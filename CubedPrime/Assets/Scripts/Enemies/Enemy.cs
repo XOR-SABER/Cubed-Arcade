@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent agent;
     protected int _distanceFromPlayer;
     protected static Transform _player_trans = null;
+    protected bool _isCoolingDown;
+    
+
     
     void Start()
     {
@@ -54,15 +57,6 @@ public class Enemy : MonoBehaviour
     }
     public void resetHealth() {
         _health = startHealth;
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow; // Change color as needed
-        float radius = 0.5f; // Adjust radius as needed
-
-        // Draw a wire sphere around the object's center
-        Gizmos.DrawWireSphere(transform.position, radius);
     }
 
     public virtual void enemyBehaviour() {

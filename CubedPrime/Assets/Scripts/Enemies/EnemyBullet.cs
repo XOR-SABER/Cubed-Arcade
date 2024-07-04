@@ -27,7 +27,6 @@ public class EnenyBullet : Bullet {
     }
 
     protected void _playerCheck(Collider2D other) {
-        Debug.Log("Somthing happened here");
         if(!other.CompareTag("Player")) return;
         if(stats.isExplosive) createMissleExplosion();
         else {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ef7d95d484a94429e1823d17554306, type: 3}
   m_Name: TurretBullet
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 100
   numberOfPierces: 1
   bulletLifeTime: 2
   isExplosive: 0
@@ -20,7 +20,9 @@ MonoBehaviour:
   isBouncy: 0
   isOnlyEnemyPiercing: 0
   bounceOffset: 0.25
+  bounceChance: 0
   isTracking: 0
+  trackingStrength: 0
   playerDamage: 1
   enemyDamage: 25
   wallParticles: {fileID: 3424826621523161289, guid: 8f36a0d700844004caf89570175a2e11, type: 3}
