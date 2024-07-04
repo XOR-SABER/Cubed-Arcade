@@ -233,17 +233,17 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void handleDashing(GameObject obj){
-        if(isDashing) {
-            Enemy temp = obj.GetComponent<Enemy>();
-            if(temp != null) {
-                Instantiate(dashParticles, transform.position, transform.rotation, transform.parent);
-                temp.TakeDamage(100);
-                PlayerStats.instance.heal(1);
-                if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
-            }
-        } else {
+        Enemy temp = obj.GetComponent<Enemy>();
+        if(isDashing && temp != null) {
+            Instantiate(dashParticles, transform.position, transform.rotation, transform.parent);
+            temp.TakeDamage(100);
+            PlayerStats.instance.heal(1);
+            if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
+        } else if (temp != null) {
             Debug.Log("Something hit the player");
             PlayerStats.instance.TakeDamage(1);
+        } else {
+            Debug.Log("You shouldn't get here at all home dog.");
         }
     }
 

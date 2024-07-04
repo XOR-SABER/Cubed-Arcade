@@ -12,13 +12,13 @@ public class GameModeManager : MonoBehaviour {
     public float TurretSpawnTime;
     public float BossSpawnTime;
     public TextMeshProUGUI timeText;
-    public GameObject[] enemiesHighTier;
-    public GameObject[] enemiesMiddleTier;
-    public GameObject[] enemiesLowTier;
+    public DropTableStats enemiesLowTier;
+    public DropTableStats enemiesMiddleTier;
+    public DropTableStats enemiesHighTier;
     public GameObject[] turrets;
-    public GameObject[] lowTierWeapons;
-    public GameObject[] midTierWeapons;
-    public GameObject[] highTierWeapons;
+    public DropTableStats lowTierWeapons;
+    public DropTableStats midTierWeapons;
+    public DropTableStats highTierWeapons;
     public Transform[] enemySpawnLocations;
     public Transform[] turretSpawnLocations;
     public Transform[] weaponSpawnLocations;
@@ -76,7 +76,7 @@ public class GameModeManager : MonoBehaviour {
             foreach(Transform loc in locations) {
                 number++;
                 PlayerStats.instance.currentEnemiesCount++;
-                Instantiate(DecideEnemy(), loc.position, loc.rotation);
+                Instantiate(DecideEnemy(), loc.position, quaternion.identity);
                 if(number >= rand) break;
             }
         }
@@ -154,19 +154,19 @@ public class GameModeManager : MonoBehaviour {
             // Shit is getting real
         }
         if(rand <= 4) {
-            randEnemy = UnityEngine.Random.Range(0, enemiesLowTier.Length);
-            return enemiesLowTier[randEnemy];
+            randEnemy = UnityEngine.Random.Range(0, enemiesLowTier.objs.Length);
+            return enemiesLowTier.objs[randEnemy].obj;
         }
         if(rand > 4 && rand <= 7) {
-            randEnemy = UnityEngine.Random.Range(0, enemiesMiddleTier.Length);
-            return enemiesMiddleTier[randEnemy];
+            randEnemy = UnityEngine.Random.Range(0, enemiesMiddleTier.objs.Length);
+            return enemiesMiddleTier.objs[randEnemy].obj;
         }
         if(rand > 7) {
-            randEnemy = UnityEngine.Random.Range(0, enemiesHighTier.Length);
-            return enemiesHighTier[randEnemy];
+            randEnemy = UnityEngine.Random.Range(0, enemiesHighTier.objs.Length);
+            return enemiesHighTier.objs[randEnemy].obj;
         }
-        randEnemy = UnityEngine.Random.Range(0, enemiesLowTier.Length);
-        return enemiesLowTier[randEnemy];
+        randEnemy = UnityEngine.Random.Range(0, enemiesLowTier.objs.Length);
+        return enemiesLowTier.objs[randEnemy].obj;
     }
 
     private GameObject DecideWeapon() {
@@ -191,18 +191,18 @@ public class GameModeManager : MonoBehaviour {
             // Shit is getting real
         }
         if(rand <= 4) {
-            randWeapon = UnityEngine.Random.Range(0, lowTierWeapons.Length);
-            return lowTierWeapons[randWeapon];
+            randWeapon = UnityEngine.Random.Range(0, lowTierWeapons.objs.Length);
+            return lowTierWeapons.objs[randWeapon].obj;
         }
         if(rand > 4 && rand <= 7) {
-            randWeapon = UnityEngine.Random.Range(0, midTierWeapons.Length);
-            return midTierWeapons[randWeapon];
+            randWeapon = UnityEngine.Random.Range(0, midTierWeapons.objs.Length);
+            return midTierWeapons.objs[randWeapon].obj;
         }
         if(rand > 7) {
-            randWeapon = UnityEngine.Random.Range(0, highTierWeapons.Length);
-            return highTierWeapons[randWeapon];
+            randWeapon = UnityEngine.Random.Range(0, highTierWeapons.objs.Length);
+            return highTierWeapons.objs[randWeapon].obj;
         }
-        randWeapon = UnityEngine.Random.Range(0, lowTierWeapons.Length);
-        return lowTierWeapons[randWeapon];
+        randWeapon = UnityEngine.Random.Range(0, lowTierWeapons.objs.Length);
+        return lowTierWeapons.objs[randWeapon].obj;
     }
 }  

@@ -90,7 +90,7 @@ MonoBehaviour:
   points: 25
   onDeathEffect: {fileID: 7872469476912402860, guid: a94969a0bf1deae4187c7f5bde74ab21, type: 3}
   healthBar: {fileID: 4652744897899859576}
-  delayedDeath: 0
+  agent: {fileID: 1887070769565414983}
 --- !u!195 &1887070769565414983
 NavMeshAgent:
   m_ObjectHideFlags: 0

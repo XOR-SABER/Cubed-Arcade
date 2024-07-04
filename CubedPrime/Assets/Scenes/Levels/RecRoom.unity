@@ -1403,30 +1403,16 @@ MonoBehaviour:
   TurretSpawnTime: 30
   BossSpawnTime: 300
   timeText: {fileID: 1064862114}
-  enemiesHighTier:
-  - {fileID: 6656197191988811996, guid: 09ac68d58f688d649a7b3b922d639d5d, type: 3}
-  - {fileID: 6656197191988811996, guid: 77d5673590748594aa01d6fe829966eb, type: 3}
-  enemiesMiddleTier:
-  - {fileID: 1361590180252973703, guid: 481995ed99a8acb41846f4b1930d0921, type: 3}
-  - {fileID: 3121696706395917766, guid: 895a3f5f37a77014a9c0bb94230decb4, type: 3}
-  enemiesLowTier:
-  - {fileID: 6656197191988811996, guid: ca4e852c162c5174a809a37b3d939480, type: 3}
+  enemiesLowTier: {fileID: 11400000, guid: d9544ed815b51bf41a47e3721f8aa754, type: 2}
+  enemiesMiddleTier: {fileID: 11400000, guid: 72cf7c71f860b5e48bf2dd7bc8e4864a, type: 2}
+  enemiesHighTier: {fileID: 11400000, guid: 1d35c326c39cf6e41971f90ca922f01c, type: 2}
   turrets:
   - {fileID: 6726966883309761910, guid: 3f18e0d0193e10041a598e7b23e7e411, type: 3}
   - {fileID: 6726966883309761910, guid: dd015d76a960b4a49afadabfc6cecb99, type: 3}
   - {fileID: 6726966883309761910, guid: 4a5d23e33ef7fa9428b4a2620a1b799d, type: 3}
-  lowTierWeapons:
-  - {fileID: 4462865631501407864, guid: 8d49c62f123fd234a915ce2c14c0f116, type: 3}
-  - {fileID: 4462865631501407864, guid: b7180ad6a3b9b794ebd266ea61192bd5, type: 3}
-  - {fileID: 73161155782653689, guid: 6ca4133c5b6eb2d4e963a088c3f8bade, type: 3}
-  midTierWeapons:
-  - {fileID: 4462865631501407864, guid: 9221a781c99beab4593cfd211b6a9ef4, type: 3}
-  - {fileID: 4462865631501407864, guid: e900832828a81784597141b80b30a51e, type: 3}
-  - {fileID: 4462865631501407864, guid: 7607caed7e9415d46955ed04ef337c9a, type: 3}
-  - {fileID: 3361546805415272323, guid: f6223ba1ad1fa7747818088584930fba, type: 3}
-  highTierWeapons:
-  - {fileID: 3361546805415272323, guid: 146581b30c92d9742a57fcafa00ebe7a, type: 3}
-  - {fileID: 4462865631501407864, guid: 0720bc94c53b10c4cbf034cd85f404c3, type: 3}
+  lowTierWeapons: {fileID: 11400000, guid: 2edce084ba8005245b4de8593daed616, type: 2}
+  midTierWeapons: {fileID: 11400000, guid: f4c90d7802feaf940983c064ebbe465d, type: 2}
+  highTierWeapons: {fileID: 11400000, guid: d02ff7d228c875446940a9aa5da9fb67, type: 2}
   enemySpawnLocations:
   - {fileID: 1009177487}
   - {fileID: 107111762}

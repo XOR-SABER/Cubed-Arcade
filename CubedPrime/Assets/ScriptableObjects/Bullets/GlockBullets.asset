@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ef7d95d484a94429e1823d17554306, type: 3}
   m_Name: GlockBullets
   m_EditorClassIdentifier: 
-  speed: 150
+  speed: 100
   numberOfPierces: 1
   bulletLifeTime: 10
   isExplosive: 0

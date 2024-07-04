@@ -85,11 +85,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6804652434016694452}
   - component: {fileID: 3824049827286673431}
-  - component: {fileID: 5086815523147495249}
+  - component: {fileID: 1422438833045023358}
   - component: {fileID: 41354723293800585}
   - component: {fileID: 3325490941920059982}
   - component: {fileID: 8013798668234794081}
-  - component: {fileID: 1422438833045023358}
   m_Layer: 12
   m_Name: BomberEnemy
   m_TagString: Enemy
@@ -149,7 +148,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5086815523147495249
+--- !u!114 &1422438833045023358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,14 +157,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3121696706395917766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 421e32c6b2be8004884e2aa440c7708f, type: 3}
+  m_Script: {fileID: 11500000, guid: e2b80c96e62f7fe438d5854ef699ca85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
   startHealth: 100
   points: 100
+  onDeathEffect: {fileID: 0}
   healthBar: {fileID: 3895982518429129932}
-  delayedDeath: 0
+  agent: {fileID: 41354723293800585}
+  explosionEnemies: {fileID: 1969284129530096252, guid: 905dae0db9d876844913dafd042b5bb4, type: 3}
+  explosionPlayer: {fileID: 1969284129530096252, guid: 440b44f28e6aa434489624ae9245dbe0, type: 3}
 --- !u!195 &41354723293800585
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -267,19 +269,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &1422438833045023358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3121696706395917766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2b80c96e62f7fe438d5854ef699ca85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 1969284129530096252, guid: f138a9e14ace3c246b94b8c641c847b4, type: 3}
 --- !u!1 &6082547875037854416
 GameObject:
   m_ObjectHideFlags: 0

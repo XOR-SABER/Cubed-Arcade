@@ -10,8 +10,7 @@ public class Enemy : MonoBehaviour
     public int points = 100;
     public GameObject onDeathEffect;
     public Image healthBar;
-    public bool delayedDeath = false; 
-    protected NavMeshAgent agent;
+    public NavMeshAgent agent;
     protected int _distanceFromPlayer;
     protected static Transform _player_trans = null;
     
@@ -47,9 +46,7 @@ public class Enemy : MonoBehaviour
         PlayerStats.instance.AddPoints(points);
         PlayerStats.instance.TotalEnemiesKilled++;
         PlayerStats.instance.currentEnemiesCount--;
-        // Todo: for later 
-        if(delayedDeath) return;
-        else Destroy(gameObject);
+        Destroy(gameObject);
     }
     
     public int getHealth() {
@@ -57,6 +54,15 @@ public class Enemy : MonoBehaviour
     }
     public void resetHealth() {
         _health = startHealth;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow; // Change color as needed
+        float radius = 0.5f; // Adjust radius as needed
+
+        // Draw a wire sphere around the object's center
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 
     public virtual void enemyBehaviour() {
@@ -81,7 +87,6 @@ public class Enemy : MonoBehaviour
         if(_player_trans == null) {
             Debug.LogError("Player is null, and is being accessed by the Enemy class");
         }
-        agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }

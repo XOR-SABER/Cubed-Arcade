@@ -7,19 +7,14 @@ public class Minimap : MonoBehaviour
 {
     public float angle;
     private Transform _player;
-
-    private GameObject[] _enemies;
-
     public Transform minimapOverlay;
-
     private Transform _offset;
     private float _prevZ;
     // Start is called before the first frame update
     void Start()
     {
         _prevZ = transform.position.z;
-        _player = GameObject.FindWithTag("Player").transform;
-        _enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        _player = PlayerStats.instance.getPlayerRef().transform;
     }
 
     // Update is called once per frame

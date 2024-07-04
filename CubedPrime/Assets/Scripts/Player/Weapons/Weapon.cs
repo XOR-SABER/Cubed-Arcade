@@ -87,7 +87,6 @@ public class Weapon : MonoBehaviour
 
     //Burst shot logic
     private IEnumerator _burstShot() {
-        Debug.Log("Burst!");
         for (int i = 0; i < stat.roundsPerBurst; i++)
         {   
                 if(!isEquiped) break;

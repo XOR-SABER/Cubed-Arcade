@@ -217,7 +217,7 @@ MonoBehaviour:
   points: 100
   onDeathEffect: {fileID: 6708134889346956186, guid: ade59a8e1dfefab4c9cd927f422e2814, type: 3}
   healthBar: {fileID: 7679085599450364553}
-  delayedDeath: 0
+  agent: {fileID: 1324973243201482133}
   childSpawns: 3
   child: {fileID: 1784639087411115883, guid: 688045b23f05a4045a0a71e243da77ad, type: 3}
 --- !u!195 &1324973243201482133

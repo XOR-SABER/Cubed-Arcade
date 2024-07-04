@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             if (s.addIntoQueue) trackQueue.Enqueue(s.audioName);
-            Debug.Log(string.Format("Adding {0}, {1} to the map", s.audioName, index));
+            // Debug.Log(string.Format("Adding {0}, {1} to the map", s.audioName, index));
             _soundMap.Add(s.audioName, index);
             index++;
         }
@@ -87,9 +87,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Attempted to play a sound with a null or empty name.");
             return;
         }
-        Debug.Log(name);
+        // Debug.Log(name);
         Sound s = getSound(name);
-        Debug.Log(s.audioName);
+        // Debug.Log(s.audioName);
         if (!s.isMusicTrack)
         {
             s.source.Play();
@@ -149,7 +149,6 @@ public class AudioManager : MonoBehaviour
         Play(name);
         float prevVolume = currentTrack.volume;
         currentTrack.volume = 0;
-        Debug.Log("Fading in");
 
         while (t < fadeTime)
         {

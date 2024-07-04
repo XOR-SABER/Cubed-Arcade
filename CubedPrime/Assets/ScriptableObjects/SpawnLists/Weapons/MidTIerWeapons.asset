@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c6db3756a01c94c952993e340f55f5, type: 3}
+  m_Name: MidTIerWeapons
+  m_EditorClassIdentifier: 
+  objs:
+  - obj: {fileID: 4462865631501407864, guid: 9221a781c99beab4593cfd211b6a9ef4, type: 3}
+    spawnChance: 0.715
+  - obj: {fileID: 4462865631501407864, guid: e900832828a81784597141b80b30a51e, type: 3}
+    spawnChance: 0.775
+  - obj: {fileID: 4462865631501407864, guid: 7607caed7e9415d46955ed04ef337c9a, type: 3}
+    spawnChance: 0.822
+  - obj: {fileID: 3361546805415272323, guid: f6223ba1ad1fa7747818088584930fba, type: 3}
+    spawnChance: 0.715
+  - obj: {fileID: 4462865631501407864, guid: b7180ad6a3b9b794ebd266ea61192bd5, type: 3}
+    spawnChance: 0.9
+  - obj: {fileID: 4462865631501407864, guid: c315b8442fe2e42448d5b590aa5f9af8, type: 3}
+    spawnChance: 0.806
