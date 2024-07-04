@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -114,7 +115,7 @@ public class Turret : Enemy
 
     protected Quaternion _handleRotation(float angle) { 
         Quaternion rotation = Quaternion.AngleAxis(angle + 270, Vector3.forward);
-        return Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5f + 0.25f);
+        return Quaternion.Slerp(transform.rotation, rotation, Mathf.Clamp01(Time.deltaTime * 5f + 0.25f));
     }
 
 }
