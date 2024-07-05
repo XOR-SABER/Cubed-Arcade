@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -34,9 +35,6 @@ public class Enemy : MonoBehaviour
             _player_trans = PlayerStats.instance.getPlayerRef().transform;
         init();
     } 
-    // void Update() {
-    //     enemyBehaviour();
-    // }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -70,7 +68,6 @@ public class Enemy : MonoBehaviour
     }
 
     public virtual void enemyBehaviour() {
-        // Mad dash to the player for now.. 
         if(_player_trans == null) return;
         float distanceToPlayer = Vector3.Distance(transform.position, _player_trans.position);
         float idealDistance = _distanceFromPlayer;
@@ -88,10 +85,8 @@ public class Enemy : MonoBehaviour
     }
 
     public virtual void init() {
-        if(_player_trans == null) {
-            Debug.LogError("Player is null, and is being accessed by the Enemy class");
-        }
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        if(_player_trans == null) return;
     }
 }   

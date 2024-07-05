@@ -7,9 +7,16 @@ public class BomberEnemy : Enemy
     private bool _exploded = false;
     public GameObject explosionEnemies;
     public GameObject explosionPlayer;
+    private static PlayerMovement _PLRMOVEMENT = null;
+    void Start() {
+        if(_PLRMOVEMENT == null) {
+            _PLRMOVEMENT = PlayerStats.instance.getPlayerRef();
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !_exploded)
+        if(_PLRMOVEMENT == null) return;
+        if (other.CompareTag("Player") && !_exploded && !_PLRMOVEMENT.isDashing)
         {
             Explode();
             Destroy(gameObject);

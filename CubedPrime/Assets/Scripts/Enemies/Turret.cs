@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
-using Unity.Mathematics;
-using Unity.VisualScripting;
+using Unity.Collections;
 using UnityEngine;
 
 public class Turret : Enemy
@@ -25,7 +23,7 @@ public class Turret : Enemy
     private float _timeShooting;
     private float _timeToRetract; 
     private Vector3 _prev_pos;
-    private Vector3 _DEFAULT_DIST = new Vector3(0f, 1f, 0f);
+    [ReadOnly] private Vector3 _DEFAULT_DIST = new Vector3(0f, 1f, 0f);
     public override void EnemyDeath() {
         PlayerStats.instance.AddPoints(points);
         PlayerStats.instance.TotalEnemiesKilled++;
