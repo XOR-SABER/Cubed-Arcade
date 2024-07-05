@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33ef7d95d484a94429e1823d17554306, type: 3}
-  m_Name: TurretBullet
+  m_Name: LaunchedGrenade
   m_EditorClassIdentifier: 
-  speed: 125
+  speed: 40
   numberOfPierces: 1
-  bulletLifeTime: 2
-  isExplosive: 0
-  explosionOBJ: {fileID: 0}
+  bulletLifeTime: 10
+  isExplosive: 1
+  explosionOBJ: {fileID: 1969284129530096252, guid: 905dae0db9d876844913dafd042b5bb4, type: 3}
   isBouncy: 0
   isOnlyEnemyPiercing: 0
   bounceOffset: 0.25

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ef7d95d484a94429e1823d17554306, type: 3}
   m_Name: TurretShotgunBullet
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 45
   numberOfPierces: 1
   bulletLifeTime: 2
   isExplosive: 0

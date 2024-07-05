@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 151d22d0bda6b5f45a52f3f6488ab185, type: 3}
-  m_Name: Overheat
+  m_Name: Pop
   m_EditorClassIdentifier: 
   soundInstance:
-    audioName: OverHeat
-    clip: {fileID: 8300000, guid: c296f9ac46c1450468506bb3f1601652, type: 3}
+    audioName: Pop
+    clip: {fileID: 8300000, guid: 6bcdde6354a3e11468347fe78f6ddc39, type: 3}
     audioMixerGroup: {fileID: -7828914241037903431, guid: 65f04e1f38acaf841905960e3337b6df, type: 2}
     volume: 0.5
     pitch: 1

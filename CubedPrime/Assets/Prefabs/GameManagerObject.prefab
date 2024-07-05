@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 7446877747973645190}
   - component: {fileID: 989001513568817391}
   - component: {fileID: 6454271938660814918}
+  - component: {fileID: 3959246192484749818}
   m_Layer: 0
   m_Name: GameManagerObject
   m_TagString: Untagged
@@ -207,6 +208,18 @@ MonoBehaviour:
     levelTheme: LevelTrack2
   levelToGoto: 0
   levelToLoad: {fileID: 11400000, guid: e38097570c44de24a930f6f389fec873, type: 2}
+--- !u!114 &3959246192484749818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263668349710663686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e599fb987293146ac6c572680ccf7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7955398629143485511
 GameObject:
   m_ObjectHideFlags: 0

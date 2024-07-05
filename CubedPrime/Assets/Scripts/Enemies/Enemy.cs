@@ -15,7 +15,17 @@ public class Enemy : MonoBehaviour
     protected static Transform _player_trans = null;
     protected bool _isCoolingDown;
     
+    void OnEnable() {
+        TickSystem.onSecAction += OnTick;
+    }
 
+    void OnDisable() {
+        TickSystem.onSecAction -= OnTick;
+    }
+
+    protected void OnTick() {
+        enemyBehaviour();
+    }
     
     void Start()
     {
@@ -24,9 +34,9 @@ public class Enemy : MonoBehaviour
             _player_trans = PlayerStats.instance.getPlayerRef().transform;
         init();
     } 
-    void Update() {
-        enemyBehaviour();
-    }
+    // void Update() {
+    //     enemyBehaviour();
+    // }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -21,6 +21,7 @@ public class Minimap : MonoBehaviour
     void Update()
     {
         if(PlayerStats.instance.isPlayerDead) return;
+        if(_player == null) return;
         transform.position = new Vector3(_player.position.x, _player.position.y, _prevZ);
         RotateOverlay();
     }

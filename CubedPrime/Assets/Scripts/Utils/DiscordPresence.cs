@@ -25,7 +25,7 @@ public class DiscordPresence : MonoBehaviour
     #endif
     
     void Awake()  {
-        if (instance == null) instance = this;
+        if (instance == null && instance != this) instance = this;
         else {
             // Debug.LogWarning("Discord presence already exists");
             Destroy(gameObject);

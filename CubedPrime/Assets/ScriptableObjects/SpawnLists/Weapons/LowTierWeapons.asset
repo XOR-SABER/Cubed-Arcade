@@ -21,3 +21,5 @@ MonoBehaviour:
     spawnChance: 0.05
   - obj: {fileID: 4462865631501407864, guid: 8d49c62f123fd234a915ce2c14c0f116, type: 3}
     spawnChance: 0.1
+  - obj: {fileID: 4462865631501407864, guid: b53c1f854017bab49979f323eec83450, type: 3}
+    spawnChance: 0.783

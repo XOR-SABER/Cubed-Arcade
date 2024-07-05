@@ -40,6 +40,11 @@ public class Turret : Enemy
         }
     }
 
+    // Unsubscribe since it doesn't use pathfinding.   
+    void OnEnable() {
+        TickSystem.onSecAction -= OnTick;
+    }
+
     public override void enemyBehaviour() {
         if (_player_trans == null) return; 
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, range, Vector2.right, 0f, playerLayerMask);  
@@ -63,11 +68,15 @@ public class Turret : Enemy
         }
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red; // Setting the color of the Gizmo to red
-        Gizmos.DrawWireSphere(transform.position, range); // Drawing a wireframe sphere at the transform's position
+    void Update() {
+        enemyBehaviour();
     }
+
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red; // Setting the color of the Gizmo to red
+    //     Gizmos.DrawWireSphere(transform.position, range); // Drawing a wireframe sphere at the transform's position
+    // }
 
     void handleTurret() {
         Vector3 direction = _player_trans.position - transform.position;

@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 7953906015535480656}
   - component: {fileID: 2814751040442949414}
   - component: {fileID: 1826299416348345056}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TestDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,8 +560,9 @@ MonoBehaviour:
   damage: 0
   startHealth: 10000
   points: 0
+  onDeathEffect: {fileID: 0}
   healthBar: {fileID: 895916244952250415}
-  delayedDeath: 0
+  agent: {fileID: 0}
   TotalDamageDealt: 0
   totalDamageText: {fileID: 3699744841704991565}
   DPSText: {fileID: 1966192108335773732}

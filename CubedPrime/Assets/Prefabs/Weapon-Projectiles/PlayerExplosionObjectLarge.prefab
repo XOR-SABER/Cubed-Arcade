@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6148952997408175108}
   - component: {fileID: 1626040294388049132}
   m_Layer: 0
-  m_Name: PlayerExplosionObjectMedium
+  m_Name: PlayerExplosionObjectLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2315014052580790121}
+  - {fileID: 1935986073155991232}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1626040294388049132
@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae43e7d6639db6b4c918ebf955e11a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
-  damageRadius: 12.5
-  damage: 300
+  radius: 40
+  damageRadius: 25
+  damage: 350
   target_tags: Enemy
   soundName: Explosion
   enemyLayer:
@@ -56,7 +56,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
---- !u!1001 &6329549392433895369
+--- !u!1001 &7865967429174865504
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -64,6 +64,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6148952997408175108}
     m_Modifications:
+    - target: {fileID: 1157278032720790513, guid: 6f440b80d57ed5d4aad5af63da38c685, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157278032720790513, guid: 6f440b80d57ed5d4aad5af63da38c685, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650554023601633143, guid: 6f440b80d57ed5d4aad5af63da38c685, type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650554023601633143, guid: 6f440b80d57ed5d4aad5af63da38c685, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 8555022245141203915, guid: 6f440b80d57ed5d4aad5af63da38c685, type: 3}
       propertyPath: m_Name
       value: Explosion
@@ -113,8 +129,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f440b80d57ed5d4aad5af63da38c685, type: 3}
---- !u!4 &2315014052580790121 stripped
+--- !u!4 &1935986073155991232 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8644526035713546400, guid: 6f440b80d57ed5d4aad5af63da38c685, type: 3}
-  m_PrefabInstance: {fileID: 6329549392433895369}
+  m_PrefabInstance: {fileID: 7865967429174865504}
   m_PrefabAsset: {fileID: 0}
