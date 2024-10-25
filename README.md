@@ -11,9 +11,9 @@ Sprites are done by Alexander Betancourt
 All music is CC credited in game, please go see owners. 
 
 ### Original Game by
-Alexander Betancourt
-Steeve Ke
-Ange Sicard
-Nathaniel Trujillo
-Zainab Abbasi
-Thomas Scheepers
+- Alexander Betancourt
+- Steeve Ke
+- Ange Sicard
+- Nathaniel Trujillo
+- Zainab Abbasi
+- Thomas Scheepers
