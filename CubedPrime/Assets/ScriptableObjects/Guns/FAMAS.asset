@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a82eb525d446a49a15af83a7687f7a, type: 3}
+  m_Name: FAMAS
+  m_EditorClassIdentifier: 
+  soundName: ShortShot
+  shootParticles: {fileID: 3424826621523161289, guid: 8566f5f5ed4271d4e91576fcb4f7079a, type: 3}
+  projectilePrefab: {fileID: 2592730709790584201, guid: 27201929704fcd6499d8ad460a851ee9, type: 3}
+  fireRate: 2.5
+  impluseForce: 1
+  isRevUp: 0
+  minFireRate: 3
+  maxRevTime: 0.4
+  revUpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isBurst: 1
+  burstDelay: 0.05
+  roundsPerBurst: 3
+  hasSpread: 0
+  numOfPellets: 5
+  pelletSpreadAngle: 15
+  isCharge: 0
+  chargeTime: 0
+  isLazer: 0
+  cooldownTime: 0
+  numOfShotsPreCool: 0

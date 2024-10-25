@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -49,8 +50,9 @@ public class PlayerMovement : MonoBehaviour
     public float slowFactor = 0.5f;
     public float duration = 0.25f; 
     public float recoveryTime = 0.1f;
-    private bool _isTimeStopped = false;
     public GameObject dashParticles;
+    public GameObject deathPartcles;
+    private bool _isTimeStopped = false;
     private PlayersControls _playersControls;
     private Rigidbody2D _rb;
     private Vector2 _movement;
@@ -64,8 +66,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 overAllDirection;
     private Camera _camera;
     private Vector2 dashDir;
-
     private WeaponManager _weaponManager;
+    private static CinemachineImpulseSource _impulseSource = null;
 
 
 #if UNITY_IOS || UNITY_ANDROID
@@ -83,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
             dashType = DashType.InMovementDirection;
         }
         Debug.Log(Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>());
+        if(_impulseSource == null) _impulseSource = FindObjectOfType<CinemachineImpulseSource>();
         Application.targetFrameRate = Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>();
         _weaponManager = GetComponent<WeaponManager>();
         if (inputType == InputType.Mobile)
@@ -216,6 +219,9 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        // adding rizz..
+        _impulseSource.GenerateImpulse(dashDir.normalized * 5f);
+        
         isDashing = true;
         dashDir = dashType switch
         {
@@ -231,24 +237,19 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Boss")) PlayerStats.instance.TakeDamage(1);
         if(other.gameObject.CompareTag("Train")) PlayerStats.instance.TakeDamage(100);
     }
-    // This only exists for the bouncy enemy!
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Enemy")) handleDashing(collision.gameObject);
-    }
 
     void handleDashing(GameObject obj){
-        if(isDashing) {
-            Enemy temp = obj.GetComponent<Enemy>();
-            if(temp != null) {
-                var dashFx = Instantiate(dashParticles, transform.position, transform.rotation, transform.parent);
-                dashFx.transform.position = new Vector3(dashFx.transform.position.x, dashFx.transform.position.y, -1);
-                temp.TakeDamage(100);
-                PlayerStats.instance.heal(1);
-                if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
-            }
-        } else {
+        Enemy temp = obj.GetComponent<Enemy>();
+        if(isDashing && temp != null) {
+            Instantiate(dashParticles, transform.position, transform.rotation, transform.parent);
+            temp.TakeDamage(100);
+            PlayerStats.instance.heal(1);
+            if(!_isTimeStopped) StartCoroutine(SlowMotionRoutine(slowFactor, duration, recoveryTime));
+        } else if (temp != null) {
+            Debug.Log("Something hit the player");
             PlayerStats.instance.TakeDamage(1);
+        } else {
+            Debug.Log("You shouldn't get here at all home dog.");
         }
     }
 
@@ -274,6 +275,7 @@ public class PlayerMovement : MonoBehaviour
         _isTimeStopped = false;
     }
     public void onDeath() {
+        Instantiate(deathPartcles, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

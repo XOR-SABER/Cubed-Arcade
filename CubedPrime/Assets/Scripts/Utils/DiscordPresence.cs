@@ -17,7 +17,7 @@ public class DiscordPresence : MonoBehaviour
     public static string state = "Snarky funny flavor text!";
     [Space]
     public static string largeImage = "game_logo";
-    public static string largeText = "Cubed Prime";
+    public static string largeText = "Cubed Arcade";
     private long time;    
     private static DiscordPresence instance;
     #if UNITY_STANDALONE
@@ -25,9 +25,9 @@ public class DiscordPresence : MonoBehaviour
     #endif
     
     void Awake()  {
-        if (instance == null) instance = this;
+        if (instance == null && instance != this) instance = this;
         else {
-            Debug.Log("Discord presence already exists");
+            // Debug.LogWarning("Discord presence already exists");
             Destroy(gameObject);
             return;
         }

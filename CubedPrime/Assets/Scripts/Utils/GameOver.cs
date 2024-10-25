@@ -53,7 +53,7 @@ public class GameOver : MonoBehaviour
     {
         _audMan.Play("ButtonDeConfirm");
         AudioManager.instance.isGameOver = false;
-        PlayerStats.instance.reset();
+        PlayerStats.instance.resetStats();
         Toggle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -66,7 +66,7 @@ public class GameOver : MonoBehaviour
             AudioManager.currentTrack.Stop();
             AudioManager.currentTrack = null;
         }
-        PlayerStats.instance.reset();
+        PlayerStats.instance.resetStats();
         Toggle();
         SceneManager.LoadScene(menuSceneName);
     }

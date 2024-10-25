@@ -18,7 +18,7 @@ namespace Scripts
 
         void Awake() {
             SceneManager.sceneLoaded += OnSceneLoaded;
-            if (instance == null) instance = this;
+            if (instance == null && instance != this) instance = this;
             else
             {
                 Destroy(gameObject);
@@ -62,7 +62,7 @@ namespace Scripts
                 img.color = color;
                 yield return 0;
             }
-
+            
             SceneManager.LoadScene(scene);
         }
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

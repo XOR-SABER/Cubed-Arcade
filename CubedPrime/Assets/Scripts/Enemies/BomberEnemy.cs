@@ -2,34 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BomberEnemy : MonoBehaviour
+public class BomberEnemy : Enemy
 {
-    
-    public GameObject explosion;
-
-    private Enemy enemy;
-    private bool exploded;
-    private ExplosionObj explosionStats;
-
-    private void Start()
-    {
-        enemy = GetComponent<Enemy>();
-        explosionStats = explosion.GetComponent<ExplosionObj>();
-        explosionStats.target_tags = "all";
-    }
-
-    private void Update()
-    {
-        if (enemy.getHealth() <= 0 && !exploded)
-        {
-            DeathExplosion();
-        }
-        
-    }
-
+    private bool _exploded = false;
+    public GameObject explosionEnemies;
+    public GameObject explosionPlayer;
+    private static PlayerMovement _PLRMOVEMENT = null;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !exploded)
+        if(_PLRMOVEMENT == null) return;
+        if (other.CompareTag("Player") && !_exploded && !_PLRMOVEMENT.isDashing)
         {
             Explode();
             Destroy(gameObject);
@@ -38,18 +20,28 @@ public class BomberEnemy : MonoBehaviour
 
     private void Explode()
     {
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        Instantiate(explosionPlayer, transform.position, Quaternion.identity);
 
-        exploded = true;
+        _exploded = true;
         Destroy(gameObject);
     }
 
-    private void DeathExplosion()
+
+    public override void EnemyDeath()
     {
-        exploded = true;
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        enemy.EnemyDeath();
+        Instantiate(explosionEnemies, transform.position, Quaternion.identity);
+        base.EnemyDeath();
     }
 
-   
+    public override void init() {
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        if(_player_trans == null) return;
+        if(_PLRMOVEMENT == null) {
+            _PLRMOVEMENT = PlayerStats.instance.getPlayerRef();
+        }
+
+        // If its still null.. 
+        if(_PLRMOVEMENT == null) return;
+    }
 }

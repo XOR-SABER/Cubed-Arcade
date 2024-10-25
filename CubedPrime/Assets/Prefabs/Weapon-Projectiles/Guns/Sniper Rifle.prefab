@@ -99,27 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impluseForce: 1
-  equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 4282382088284823514}
-  projectilePrefab: {fileID: 2592730709790584201, guid: 69650d84da02ecd42951b334cb259061, type: 3}
-  fireRate: 0.75
-  maxFireRateRevUpWeapon: 0
-  isRevUp: 0
-  maxRevTime: 2
-  revUpCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  shootParticles: {fileID: 3424826621523161289, guid: 8566f5f5ed4271d4e91576fcb4f7079a, type: 3}
-  isBurst: 0
-  roundsPerBurst: 0
-  isMagic: 0
-  isTracking: 0
-  soundName: SniperShot
-  isMagicBook: 0
+  isDualSprite: 0
+  stat: {fileID: 11400000, guid: b281b56dc779ba74783a7244f08aa334, type: 2}
+  isEquiped: 0
 --- !u!61 &5379849622557117443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +135,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0050829407, y: 0.030735698}
+  m_Offset: {x: 0.005322028, y: 0.015328344}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,7 +146,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.029751047, y: 0.08179841}
+  m_Size: {x: 0.05056099, y: 0.25268}
   m_EdgeRadius: 0
 --- !u!1 &6897218884023681920
 GameObject:

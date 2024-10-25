@@ -100,11 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e76eb4a4845ea4e90982f4977c3d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 150
-  damage: 100
-  numberOfPierces: 2
-  wallParticles: {fileID: 3424826621523161289, guid: 8f36a0d700844004caf89570175a2e11, type: 3}
-  bloodParticles: {fileID: 2969572892610431116, guid: 89c19a1f2f76fc34abb184cdb20f085c, type: 3}
+  stats: {fileID: 11400000, guid: 0c6f717c3558f3e439444855baae91fd, type: 2}
 --- !u!50 &9184421507218990098
 Rigidbody2D:
   serializedVersion: 4
@@ -186,7 +182,7 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2592730709790584201}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -220,7 +216,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 5
-  m_PreviewTimeScale: 0.1
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

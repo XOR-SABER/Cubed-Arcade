@@ -187,7 +187,6 @@ GameObject:
   m_Component:
   - component: {fileID: 566403402875716482}
   - component: {fileID: 8084783586946680703}
-  - component: {fileID: 4342336199082909981}
   m_Layer: 0
   m_Name: SceneSwitcher
   m_TagString: Untagged
@@ -255,15 +254,3 @@ MonoBehaviour:
     levelTheme: LevelTrack2
   levelToGoto: 0
   levelToLoad: {fileID: 11400000, guid: e38097570c44de24a930f6f389fec873, type: 2}
---- !u!114 &4342336199082909981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3395864181405580299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8547d87466c4b43b0f20a2075586d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

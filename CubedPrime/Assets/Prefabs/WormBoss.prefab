@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 37a46c3a74aebec40afe43027ce82406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
   length: 11
   lineRen: {fileID: 1895468899608785291}
   target: {fileID: 5346328168200163755}
-  targetDistance: 7
+  targetDistance: 8
   smoothSpeed: 0
   bodyParts:
   - {fileID: 2685439695135607874}
@@ -522,7 +522,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 37a46c3a74aebec40afe43027ce82406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -641,7 +641,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
   m_FlipX: 0
@@ -809,7 +809,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 21
   m_Sprite: {fileID: 21300000, guid: d336467e7dee61b43a4436878adcef46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -919,12 +919,12 @@ Transform:
   - {fileID: 8589080618910399809}
   - {fileID: 2685439695135607874}
   - {fileID: 5508918896915603280}
-  - {fileID: 232442527103026441}
   - {fileID: 8921100845833702541}
-  - {fileID: 6765916769607545987}
+  - {fileID: 232442527103026441}
   - {fileID: 8275523851826358757}
-  - {fileID: 1205540249081550479}
+  - {fileID: 6765916769607545987}
   - {fileID: 843833943323243613}
+  - {fileID: 1205540249081550479}
   - {fileID: 8641860040227013752}
   - {fileID: 8950222239303378242}
   m_Father: {fileID: 0}
@@ -1004,7 +1004,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -97
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
@@ -1013,30 +1013,21 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0039252564
-        value: 0.82906
+        time: 0
+        value: 0.12622875
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0.2393139
-        inSlope: -0.2868545
-        outSlope: -0.2868545
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.17948645
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.60304666, b: 0, a: 1}
-      key1: {r: 1, g: 0.56868994, b: 0, a: 1}
+      key0: {r: 1, g: 0.09661572, b: 0, a: 1}
+      key1: {r: 1, g: 0.12588629, b: 0, a: 1}
       key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1177,7 +1168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 84983176c0d059e4e86594838868fe2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1477,7 +1468,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
   m_FlipX: 0
@@ -1732,7 +1723,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 84983176c0d059e4e86594838868fe2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1815,6 +1806,10 @@ PrefabInstance:
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673994191823846341, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1971,11 +1966,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
-      value: Body (4)
+      value: Body (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673994191823846341, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2047,17 +2046,9 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
-    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
-      propertyPath: maxDistance
-      value: 75
-      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
-      propertyPath: m_TagString
-      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2135,11 +2126,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
-      value: Body (5)
+      value: Body (4)
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673994191823846341, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2217,11 +2212,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
-      value: Body (3)
+      value: Body (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673994191823846341, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2299,11 +2298,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
-      value: Body (2)
+      value: Body (3)
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673994191823846341, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2381,11 +2384,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
-      value: Body (7)
+      value: Body (6)
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673994191823846341, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2587,11 +2594,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
-      value: Body (6)
+      value: Body (7)
       objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673994191823846341, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2663,17 +2674,9 @@ PrefabInstance:
       propertyPath: mainWorm
       value: 
       objectReference: {fileID: 6533230026940467192}
-    - target: {fileID: 5241734567913599089, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
-      propertyPath: maxDistance
-      value: 75
-      objectReference: {fileID: 0}
     - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
       propertyPath: m_Name
       value: Body
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611814098155553527, guid: 789df7e7e9de3b843b821ae0f9f8e14c, type: 3}
-      propertyPath: m_TagString
-      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2700,6 +2703,10 @@ PrefabInstance:
     - target: {fileID: 252733950920140459, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 726518306063084498, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 931652471371484710, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
       propertyPath: m_LocalScale.x
@@ -2748,6 +2755,38 @@ PrefabInstance:
     - target: {fileID: 931652471371484710, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075994325449974908, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703259587630180125, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2901355317297569283, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796887904699274915, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866169120673501667, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6256112611204045083, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651546434126944009, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666045736733906651, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8672703923743975021, guid: 29b39fd6449279641aca2624bc0e3955, type: 3}
       propertyPath: mainWorm

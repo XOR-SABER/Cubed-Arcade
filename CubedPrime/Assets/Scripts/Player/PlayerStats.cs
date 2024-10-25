@@ -14,9 +14,7 @@ public class PlayerStats : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI currentTrack;
     public TextMeshProUGUI FPSCounter;
-    public GameObject bloodParticles;
     public GameObject healParticles;
-    public GameObject deathPartcles;
     public int startingHealth = 8;
     public static int Health;
     private bool _isInvincible = false;
@@ -46,10 +44,6 @@ public class PlayerStats : MonoBehaviour
             Destroy(gameObject);
         }
         _sceneSwitcher = SceneSwitcher.instance;
-    }
-    
-     private void Start()
-    {
         _playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         if(_playerRef == null) Debug.LogError("Player with the player tag does not exist in scene"); 
         Health = startingHealth;
@@ -63,14 +57,12 @@ public class PlayerStats : MonoBehaviour
     }
      
     public static PlayerStats instance;
-
     public void TakeDamage(int damageReceived)
     {
         
         TotalDamageTaken += damageReceived;
         if(isPlayerDead) return;
         if(_isInvincible) return;
-        Instantiate(bloodParticles, _playerRef.transform.position, Quaternion.Inverse(_playerRef.transform.rotation), _playerRef.transform);
         AudioManager.instance.PlayOnShot("DamageSound");
         StartCoroutine(Invincibility());
         Health -= damageReceived;
@@ -109,7 +101,6 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("DEATH");
         SaveScore();
         isPlayerDead = true;
-        Instantiate(deathPartcles, _playerRef.transform.position, _playerRef.transform.rotation, _playerRef.transform);
         _playerRef.onDeath();
         // Game over screen right there.. 
     }
@@ -131,8 +122,13 @@ public class PlayerStats : MonoBehaviour
             }
         }
     }
+
+    // Handle Null.. 
+    public PlayerMovement getPlayerRef() { 
+        return _playerRef;
+    }
     
-    public void reset() {
+    public void resetStats() {
         isBossActive = false;
         _isInvincible = false;
         isPlayerDead = false;

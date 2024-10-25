@@ -99,27 +99,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47030cedec49ff914ef1a85dfb2325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impluseForce: 1
-  equipOffset: {x: 0, y: 2.35, z: -1}
   firePoint: {fileID: 4282382088284823514}
+  isDualSprite: 0
+  stat: {fileID: 11400000, guid: 39b051a74dca03b46aed8c889f9651f6, type: 2}
+  soundName: ShortShot
+  shootParticles: {fileID: 0}
   projectilePrefab: {fileID: 2592730709790584201, guid: 27201929704fcd6499d8ad460a851ee9, type: 3}
   fireRate: 2
-  maxFireRateRevUpWeapon: 30
-  isRevUp: 0
-  maxRevTime: 2
+  impluseForce: 1
+  isRevUp: 1
+  minFireRate: 3
+  maxRevTime: 5
   revUpCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  shootParticles: {fileID: 0}
   isBurst: 0
+  burstDelay: 0
   roundsPerBurst: 0
-  isMagic: 0
-  isTracking: 0
-  soundName: 
-  isMagicBook: 0
+  hasSpread: 0
+  numOfPellets: 5
+  pelletSpreadAngle: 15
+  isCharge: 0
+  chargeTime: 0
+  isLazer: 0
+  cooldownTime: 0
+  numOfShotsPreCool: 0
+  isEquiped: 0
 --- !u!60 &-240562839515529919
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3236706250278679041}
   - component: {fileID: 2928762085943289353}
-  - component: {fileID: 6948501996918020726}
   - component: {fileID: 6858170543972028484}
   - component: {fileID: 1887070769565414983}
   - component: {fileID: 5948344795218115638}
@@ -74,21 +73,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6948501996918020726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784639087411115883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b6b141e5fbf824fb134773c84d9a0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerTransform: {fileID: 0}
-  distanceFromPlayer: 0
 --- !u!114 &6858170543972028484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,11 +87,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   startHealth: 15
-  health: 0
-  delayDeath: 0
   points: 25
+  onDeathEffect: {fileID: 2969572892610431116, guid: c33b0da5b2441814bb9e5248276d8721, type: 3}
   healthBar: {fileID: 4652744897899859576}
-  onDeathEffect: {fileID: 7872469476912402860, guid: a94969a0bf1deae4187c7f5bde74ab21, type: 3}
+  agent: {fileID: 1887070769565414983}
+  isSlime: 1
 --- !u!195 &1887070769565414983
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -117,11 +101,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 1784639087411115883}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.65
   m_Speed: 16
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0.9
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -420,7 +404,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &3750562642788984007
 MonoBehaviour:
@@ -444,7 +428,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5453099406031737308
 MonoBehaviour:
   m_ObjectHideFlags: 0
