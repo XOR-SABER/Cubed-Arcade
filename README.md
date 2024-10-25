@@ -1,4 +1,4 @@
-# CubedPrime
+# Cubed Arcade
 
 TLDR: Cool game I worked on as a Game dev project for CST-326
 
