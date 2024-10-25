@@ -8,11 +8,6 @@ public class BomberEnemy : Enemy
     public GameObject explosionEnemies;
     public GameObject explosionPlayer;
     private static PlayerMovement _PLRMOVEMENT = null;
-    void Start() {
-        if(_PLRMOVEMENT == null) {
-            _PLRMOVEMENT = PlayerStats.instance.getPlayerRef();
-        }
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(_PLRMOVEMENT == null) return;
@@ -36,5 +31,17 @@ public class BomberEnemy : Enemy
     {
         Instantiate(explosionEnemies, transform.position, Quaternion.identity);
         base.EnemyDeath();
+    }
+
+    public override void init() {
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        if(_player_trans == null) return;
+        if(_PLRMOVEMENT == null) {
+            _PLRMOVEMENT = PlayerStats.instance.getPlayerRef();
+        }
+
+        // If its still null.. 
+        if(_PLRMOVEMENT == null) return;
     }
 }

@@ -17,7 +17,7 @@ public class DiscordPresence : MonoBehaviour
     public static string state = "Snarky funny flavor text!";
     [Space]
     public static string largeImage = "game_logo";
-    public static string largeText = "Cubed Prime";
+    public static string largeText = "Cubed Arcade";
     private long time;    
     private static DiscordPresence instance;
     #if UNITY_STANDALONE

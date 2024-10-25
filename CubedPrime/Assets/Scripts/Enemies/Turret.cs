@@ -90,7 +90,6 @@ public class Turret : Enemy
         sightline.SetPosition(1, Vector3.Slerp(_DEFAULT_DIST, _prev_pos, lerpProgress));
         
         if(_timeShooting < 1f) return;
-        // Vector3.Distance(transform.position, _player_trans.position) <= range && 
         if (Time.time >= _nextFireTime)
         {
             if(isShotgunTurret) StartCoroutine(shotgunShoot());
@@ -103,6 +102,7 @@ public class Turret : Enemy
     public void Shoot()
     {
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        if (Vector3.Distance(transform.position, _player_trans.position) > range) return; 
         if(isMissleTurret) AudioManager.instance.PlayOnShot("MissleLaunch");
         else AudioManager.instance.PlayOnShot("GlockShot");
 
@@ -115,7 +115,8 @@ public class Turret : Enemy
             Quaternion spreadRotation = Quaternion.Euler(0, 0, startAngle + shotGunPelletSpreadAngle * i);
             Instantiate(projectilePrefab, firePoint.position, firePoint.transform.rotation * spreadRotation);
         }
-        AudioManager.instance.PlayOnShot("ShortShot");
+        if (Vector3.Distance(transform.position, _player_trans.position) <= range) 
+            AudioManager.instance.PlayOnShot("ShortShot");
         yield return null;
 
     }

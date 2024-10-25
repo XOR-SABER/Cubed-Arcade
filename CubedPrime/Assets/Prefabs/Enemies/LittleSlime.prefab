@@ -88,9 +88,10 @@ MonoBehaviour:
   damage: 1
   startHealth: 15
   points: 25
-  onDeathEffect: {fileID: 7872469476912402860, guid: a94969a0bf1deae4187c7f5bde74ab21, type: 3}
+  onDeathEffect: {fileID: 2969572892610431116, guid: c33b0da5b2441814bb9e5248276d8721, type: 3}
   healthBar: {fileID: 4652744897899859576}
   agent: {fileID: 1887070769565414983}
+  isSlime: 1
 --- !u!195 &1887070769565414983
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1784639087411115883}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.65
   m_Speed: 16
   m_Acceleration: 8
   avoidancePriority: 50

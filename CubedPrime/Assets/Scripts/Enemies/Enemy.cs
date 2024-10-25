@@ -12,11 +12,14 @@ public class Enemy : MonoBehaviour
     public GameObject onDeathEffect;
     public Image healthBar;
     public NavMeshAgent agent;
+    public bool isSlime;
     protected int _distanceFromPlayer;
     protected static Transform _player_trans = null;
     protected bool _isCoolingDown;
     
     void OnEnable() {
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
         TickSystem.onSecAction += OnTick;
     }
 
@@ -30,10 +33,10 @@ public class Enemy : MonoBehaviour
     
     void Start()
     {
+        init();
         resetHealth();
         if(_player_trans == null && !PlayerStats.instance.isPlayerDead) 
             _player_trans = PlayerStats.instance.getPlayerRef().transform;
-        init();
     } 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -57,6 +60,9 @@ public class Enemy : MonoBehaviour
         PlayerStats.instance.AddPoints(points);
         PlayerStats.instance.TotalEnemiesKilled++;
         PlayerStats.instance.currentEnemiesCount--;
+        if (onDeathEffect != null) Instantiate(onDeathEffect, transform.position, Quaternion.identity);
+        
+        playDeathSFX();
         Destroy(gameObject);
     }
     
@@ -88,5 +94,12 @@ public class Enemy : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         if(_player_trans == null) return;
+    }
+
+    public void playDeathSFX() { 
+        if (_player_trans == null) return; 
+        if (Vector3.Distance(transform.position, _player_trans.position) > 35) return;
+        if(!isSlime) AudioManager.instance.PlayOnShot("NormalEnemyDeath");
+        else AudioManager.instance.PlayOnShot("SlimeyEnemyDeath");
     }
 }   

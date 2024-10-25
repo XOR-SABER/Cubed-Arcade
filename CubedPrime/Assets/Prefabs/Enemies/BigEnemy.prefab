@@ -67,8 +67,8 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -86,11 +86,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  startHealth: 500
+  startHealth: 1000
   points: 400
-  onDeathEffect: {fileID: 0}
+  onDeathEffect: {fileID: 2969572892610431116, guid: 0222fcd63c3f20c468ee82463bccdc34, type: 3}
   healthBar: {fileID: 7079105570464375408}
   agent: {fileID: 3810823806857119316}
+  isSlime: 0
 --- !u!195 &3810823806857119316
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6656197191988811996}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 2
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50

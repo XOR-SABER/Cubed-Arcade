@@ -10,10 +10,10 @@ public class AudioManager : MonoBehaviour
     public AnimationCurve curve;
     public static AudioSource currentTrack;
     public string currentTrackMeta;
-    private static Dictionary<string, int> _soundMap;
-    public ConcurrentQueue<string> trackQueue;
+    private ConcurrentQueue<string> _trackQueue;
     public bool isPaused;
     public bool isGameOver;
+    private static Dictionary<string, int> _soundMap;
     void Awake()
     {
 
@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         int index = 0;
         _soundMap = new Dictionary<string, int>();
-        trackQueue = new ConcurrentQueue<string>();
+        _trackQueue = new ConcurrentQueue<string>();
 
         // Loading new..
         foreach (SoundObject so in soundCollection.sounds) {
@@ -38,13 +38,13 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
-            if (s.addIntoQueue) trackQueue.Enqueue(s.audioName);
+            if (s.addIntoQueue) _trackQueue.Enqueue(s.audioName);
             // Debug.Log(string.Format("Adding {0}, {1} to the map", s.audioName, index));
             _soundMap.Add(s.audioName, index);
             index++;
         }
 
-        CollectionExtensions.Shuffle(trackQueue);
+        CollectionExtensions.Shuffle(_trackQueue);
     }
     void Update()
     {
@@ -56,12 +56,12 @@ public class AudioManager : MonoBehaviour
         {
             if (currentTrack.loop) return;
             currentTrack = null;
-            if (trackQueue.Count > 0)
+            if (_trackQueue.Count > 0)
             {
                 string nextTrackName;
-                if (trackQueue.TryDequeue(out nextTrackName))
+                if (_trackQueue.TryDequeue(out nextTrackName))
                 {
-                    trackQueue.Enqueue(nextTrackName);
+                    _trackQueue.Enqueue(nextTrackName);
                     Play(nextTrackName);
                 }
             }
@@ -112,6 +112,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Sound s = getSound(name);
+        if (s == null) {
+            Debug.LogError("Sound not found: " + name);
+            return;
+        }
         s.source.PlayOneShot(s.source.clip);
         return;
 

@@ -119,7 +119,7 @@ public class GameModeManager : MonoBehaviour {
 
     private void SpawnBoss() {
         
-        Instantiate(boss, bossSpawnLoc.position, bossSpawnLoc.rotation);
+        Instantiate(boss, bossSpawnLoc.position, quaternion.identity);
     }
 
     private void DecideLocations(ref List<Transform> finalLocations, Transform[] locations) { 

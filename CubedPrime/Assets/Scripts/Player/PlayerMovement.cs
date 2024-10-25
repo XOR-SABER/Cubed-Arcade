@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -66,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private Camera _camera;
     private Vector2 dashDir;
     private WeaponManager _weaponManager;
+    private static CinemachineImpulseSource _impulseSource = null;
 
 
 #if UNITY_IOS || UNITY_ANDROID
@@ -83,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
             dashType = DashType.InMovementDirection;
         }
         Debug.Log(Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>());
+        if(_impulseSource == null) _impulseSource = FindObjectOfType<CinemachineImpulseSource>();
         Application.targetFrameRate = Screen.currentResolution.refreshRateRatio.value.ConvertTo<int>();
         _weaponManager = GetComponent<WeaponManager>();
         if (inputType == InputType.Mobile)
@@ -216,6 +219,9 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        // adding rizz..
+        _impulseSource.GenerateImpulse(dashDir.normalized * 5f);
+        
         isDashing = true;
         dashDir = dashType switch
         {
