@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 336865306967808155, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
+      propertyPath: m_text
+      value: Cubed Arcade
+      objectReference: {fileID: 0}
     - target: {fileID: 382708966584817270, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -313,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1669999720001769292, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
       propertyPath: m_text
-      value: "Version: \nSunset Sessions 0.0.1"
+      value: "Version: \nFranken Jam"
       objectReference: {fileID: 0}
     - target: {fileID: 1761673705623645588, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -394,6 +398,27 @@ PrefabInstance:
     - target: {fileID: 2200584522772580702, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
       propertyPath: m_Name
       value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282799702397259032, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
+      propertyPath: m_text
+      value: 'Original Game by
+
+        Alexander Betancourt
+
+        Steeve Ke
+
+        Ange
+        Sicard
+
+        Nathaniel Trujillo
+
+        Zainab Abbasi
+
+        Thomas
+        Scheepers
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3130510121320560824, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -546,6 +571,18 @@ PrefabInstance:
     - target: {fileID: 7675857593167610197, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839202381617931948, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839202381617931948, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839202381617931948, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7970184105933450039, guid: 4f32caef6059c9a47893561a3bfe6f2d, type: 3}
       propertyPath: m_AnchorMax.y
